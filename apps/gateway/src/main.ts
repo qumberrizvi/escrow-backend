@@ -1,22 +1,32 @@
 import { NestFactory } from '@nestjs/core';
 import { GatewayModule } from './gateway.module';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
-import { ConfigService } from '@nestjs/config';
-import { environmentConstant } from '../../../libs/common/constants/environment.constant';
+import { ConfigHelper } from '@libs/config/config.helper';
+import { environmentConstant } from '@libs/common/constants';
+import { Logger } from '@nestjs/common';
 
 async function bootstrap() {
-  const configService = new ConfigService();
-  const app = await NestFactory.createMicroservice<MicroserviceOptions>(
-    GatewayModule,
-    {
-      transport: Transport.REDIS,
-      options: {
-        host: configService.get(environmentConstant.REDIS_HOST),
-        port: configService.get(environmentConstant.REDIS_PORT),
-      },
+  const configHelper = await ConfigHelper.getInstance();
+  const redisConfig = configHelper.getRedisConfig();
+  const logger = new Logger('GatewayBootstrap');
+
+  const app = await NestFactory.create(GatewayModule);
+
+  app.connectMicroservice<MicroserviceOptions>({
+    transport: Transport.REDIS,
+    options: {
+      host: redisConfig.host,
+      port: redisConfig.port,
     },
+  });
+
+  await app.startAllMicroservices();
+
+  const gatewayPort = configHelper.getConfig<number>(
+    environmentConstant.GATEWAY_PORT,
   );
-  await app.listen();
+  await app.listen(gatewayPort);
+  logger.log(`🚀 Server started on port ${gatewayPort}.`);
 }
 
 bootstrap();

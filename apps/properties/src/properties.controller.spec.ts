@@ -15,8 +15,8 @@ describe('PropertiesController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(propertiesController.getHello()).toBe('Hello World!');
+    it('should return "Hello Properties!"', () => {
+      expect(propertiesController.getHello()).toBe('Hello Properties!');
     });
   });
 });

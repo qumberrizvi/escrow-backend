@@ -17,8 +17,8 @@ describe('OrchestratorController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(orchestratorController.getHello()).toBe('Hello World!');
+    it('should return "Hello Orchestrator!"', () => {
+      expect(orchestratorController.getHello()).toBe('Hello Orchestrator!');
     });
   });
 });

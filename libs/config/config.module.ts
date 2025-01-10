@@ -1,6 +1,6 @@
 import { ConfigModule } from '@nestjs/config';
 import { Module } from '@nestjs/common';
-import * as Joi from 'joi';
+import Joi from 'joi';
 
 @Module({
   imports: [

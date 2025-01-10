@@ -15,8 +15,8 @@ describe('NotifyController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(notifyController.getHello()).toBe('Hello World!');
+    it('should return "Hello Notify!"', () => {
+      expect(notifyController.getHello()).toBe('Hello Notify!');
     });
   });
 });
