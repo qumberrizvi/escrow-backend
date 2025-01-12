@@ -15,8 +15,10 @@ describe('GatewayController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(gatewayController.getHello()).toBe('Hello World!');
+    it('should return "Hello from Gateway Service!"', () => {
+      expect(gatewayController.pingGateway()).toBe(
+        'Hello from Gateway Service!',
+      );
     });
   });
 });

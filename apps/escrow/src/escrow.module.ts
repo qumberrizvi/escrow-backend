@@ -1,15 +1,10 @@
 import { Module } from '@nestjs/common';
 import { EscrowController } from './escrow.controller';
 import { EscrowService } from './escrow.service';
-import { QushahConfigModule } from '@libs/config/config.module';
-import { ClientProxyModule } from '@libs/client-proxy/client-proxy.module';
-import { MicroServiceClient } from '@libs/common/enums';
+import { CommonModule } from '@qushah/common';
 
 @Module({
-  imports: [
-    QushahConfigModule,
-    ClientProxyModule.register(MicroServiceClient.ESCROW_CLIENT),
-  ],
+  imports: [CommonModule],
   controllers: [EscrowController],
   providers: [EscrowService],
 })

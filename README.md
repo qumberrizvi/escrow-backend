@@ -4,11 +4,32 @@
 
 Qushah Escrow System backend containing microservices, gateway, libs, etc.
 
+# Prerequisites
+
+To be able to run this project on machine, the following must be installed:
+
+- NodeJS 22 LTS
+- pnpm
+- Redis
+
 ## Project setup
+
+Make sure `pnpm` is installed
+
+```bash
+$ npm install --global pnpm
+```
+
+Install dependencies
 
 ```bash
 $ pnpm install
 ```
+
+## Install Redis
+
+Follow the official docs to [install Redis on your machine](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/).
+
 
 ## Compile and run the project
 
@@ -43,11 +64,11 @@ qushah-backend/
 │
 ├── apps/
 │   ├── qushah-auth/        # Authentication Service
-│   ├── qushah-users/       # User Management Service
+│   ├── qushah-user/       # User Management Service
 │   ├── qushah-escrow/      # Escrow and Deposits Service
-│   ├── qushah-payments/    # Payments and Transactions Service
-│   ├── qushah-properties/  # Property Listings Service
-│   ├── qushah-notify/      # Notifications Service
+│   ├── qushah-payment/    # Payments and Transactions Service
+│   ├── qushah-property/  # Property Listings Service
+│   ├── qushah-notification/      # Notifications Service
 │   └── qushah-gateway/     # API Gateway (separate app within the repo)
 │
 └── libs/                   # Shared Libraries (for DTOs, Interfaces, etc.)
@@ -66,9 +87,9 @@ qushah-backend/
                      │
      ┌──────────┬────────────┬──────────────┬───────────┐
      │          │            │              │           │
- [Auth]     [Users]     [Properties]     [Escrow]    [Payments]
+ [Auth]     [User]     [Property]     [Escrow]    [Payment]
      │                                      │
- [Notify]                                [Disputes]
+ [Notification]                                [Disputes]
 
 ```
 
@@ -83,14 +104,14 @@ Here are the key concerns for each microservice in this architecture:
 - **Secure API Communication**: Ensuring all communication (especially authentication data) is encrypted with HTTPS.
 - **User Roles and Permissions**: Managing user roles and ensuring each user (tenant, landlord, admin) has the correct permissions for their actions.
 
-### 2. **qushah-users** (User Management)
+### 2. **qushah-user** (User Management)
 - **User Data Management**: Ensuring that personal data is secure, especially sensitive information like emails, addresses, and phone numbers.
 - **Data Privacy**: Complying with regulations like GDPR or CCPA, especially regarding the collection and storage of user data.
 - **User Profile Updates**: Allowing users to update their profiles (e.g., changing names, contact details) while maintaining data integrity.
 - **Error Handling**: Handling errors effectively, such as invalid user data, and providing clear feedback to users.
 - **Scalability**: Ensuring the system can handle large numbers of users (tenants, landlords).
 
-### 3. **qushah-properties** (Property Management)
+### 3. **qushah-property** (Property Management)
 - **Property Data Validation**: Ensuring that property details are accurate, complete, and properly validated before being listed.
 - **Search Functionality**: Providing a fast and efficient way for tenants to search for properties (by location, price, features, etc.).
 - **Property Availability**: Managing the availability of properties and preventing double-booking or issues with properties already rented.
@@ -105,7 +126,7 @@ Here are the key concerns for each microservice in this architecture:
 - **Compliance**: Ensuring that escrow services comply with local financial and regulatory standards (especially for handling money).
 - **Event-Driven Updates**: Integrating with other services (e.g., notifying users about escrow releases or disputes) using event-driven architecture.
 
-### 5. **qushah-payments** (Payment Service)
+### 5. **qushah-payment** (Payment Service)
 - **Payment Gateway Integration**: Integrating with external payment providers (e.g., UPI, Paytm, Razorpay) for processing payments.
 - **Transaction Security**: Ensuring secure handling of payments and sensitive financial data. Use of encryption and secure protocols.
 - **Transaction Failures**: Handling payment failures and retries in case of network or gateway issues.
@@ -114,7 +135,7 @@ Here are the key concerns for each microservice in this architecture:
 - **Multi-currency Support**: Initially handling INR and later possibly adding other currencies, without complicating the architecture.
 - **Scalability**: Ensuring the service can handle large volumes of transactions, especially for a growing user base.
 
-### 6. **qushah-notify** (Notification Service)
+### 6. **qushah-notification** (Notification Service)
 - **Notification Delivery**: Ensuring timely delivery of notifications (SMS, email, push notifications) to users.
 - **Message Templates**: Using dynamic templates for notifications (e.g., rent payment reminders, property status updates).
 - **Multi-channel Support**: Ensuring support for multiple communication channels (SMS, email, mobile push notifications, etc.).

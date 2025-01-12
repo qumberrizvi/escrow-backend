@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { EscrowModule } from './escrow.module';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
-import { ConfigHelper } from '@libs/config/config.helper';
+import { ConfigHelper } from '@qushah/common/config/config.helper';
 
 async function bootstrap() {
   const configHelper = await ConfigHelper.getInstance();

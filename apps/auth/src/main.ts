@@ -1,9 +1,11 @@
 import { NestFactory } from '@nestjs/core';
 import { AuthModule } from './auth.module';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
-import { ConfigHelper } from '@libs/config/config.helper';
+import { ConfigHelper } from '@qushah/common/config/config.helper';
+import { Logger } from '@nestjs/common';
 
 async function bootstrap() {
+  const logger = new Logger('AuthBootstrap');
   const configHelper = await ConfigHelper.getInstance();
   const redisConfig = configHelper.getRedisConfig();
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(
@@ -16,7 +18,9 @@ async function bootstrap() {
       },
     },
   );
+  logger.debug('App started');
   await app.listen();
+  logger.debug('Auth Microservice listening');
 }
 
 bootstrap();

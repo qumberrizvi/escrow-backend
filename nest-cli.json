@@ -19,22 +19,22 @@
         "tsConfigPath": "apps/auth/tsconfig.app.json"
       }
     },
-    "users": {
+    "user": {
       "type": "application",
-      "root": "apps/users",
+      "root": "apps/user",
       "entryFile": "main",
-      "sourceRoot": "apps/users/src",
+      "sourceRoot": "apps/user/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/users/tsconfig.app.json"
+        "tsConfigPath": "apps/user/tsconfig.app.json"
       }
     },
-    "properties": {
+    "property": {
       "type": "application",
-      "root": "apps/properties",
+      "root": "apps/property",
       "entryFile": "main",
-      "sourceRoot": "apps/properties/src",
+      "sourceRoot": "apps/property/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/properties/tsconfig.app.json"
+        "tsConfigPath": "apps/property/tsconfig.app.json"
       }
     },
     "escrow": {
@@ -46,22 +46,22 @@
         "tsConfigPath": "apps/escrow/tsconfig.app.json"
       }
     },
-    "payments": {
+    "payment": {
       "type": "application",
-      "root": "apps/payments",
+      "root": "apps/payment",
       "entryFile": "main",
-      "sourceRoot": "apps/payments/src",
+      "sourceRoot": "apps/payment/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/payments/tsconfig.app.json"
+        "tsConfigPath": "apps/payment/tsconfig.app.json"
       }
     },
-    "notify": {
+    "notification": {
       "type": "application",
-      "root": "apps/notify",
+      "root": "apps/notification",
       "entryFile": "main",
-      "sourceRoot": "apps/notify/src",
+      "sourceRoot": "apps/notification/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/notify/tsconfig.app.json"
+        "tsConfigPath": "apps/notification/tsconfig.app.json"
       }
     },
     "media": {
@@ -89,6 +89,15 @@
       "sourceRoot": "apps/orchestrator/src",
       "compilerOptions": {
         "tsConfigPath": "apps/orchestrator/tsconfig.app.json"
+      }
+    },
+    "common": {
+      "type": "library",
+      "root": "libs/common",
+      "entryFile": "index",
+      "sourceRoot": "libs/common/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/common/tsconfig.lib.json"
       }
     }
   }

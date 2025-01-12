@@ -18,8 +18,11 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@libs/*": [
-        "libs/*"
+      "@qushah/common": [
+        "libs/common/src"
+      ],
+      "@qushah/common/*": [
+        "libs/common/src/*"
       ]
     },
     "esModuleInterop": true

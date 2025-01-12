@@ -15,8 +15,8 @@ describe('EscrowController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello Escrow!"', () => {
-      expect(escrowController.getHello()).toBe('Hello Escrow!');
+    it('should return "Hello from Escrow Service!"', () => {
+      expect(escrowController.getHello()).toBe('Hello from Escrow Service!');
     });
   });
 });

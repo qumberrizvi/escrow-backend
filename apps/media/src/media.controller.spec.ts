@@ -15,8 +15,8 @@ describe('MediaController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello Media!"', () => {
-      expect(mediaController.getHello()).toBe('Hello Media!');
+    it('should return "Hello from Media Service!"', () => {
+      expect(mediaController.getHello()).toBe('Hello from Media Service!');
     });
   });
 });

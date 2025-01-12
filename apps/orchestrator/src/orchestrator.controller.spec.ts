@@ -17,8 +17,10 @@ describe('OrchestratorController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello Orchestrator!"', () => {
-      expect(orchestratorController.getHello()).toBe('Hello Orchestrator!');
+    it('should return "Hello from Orchestrator Service!"', () => {
+      expect(orchestratorController.getHello()).toBe(
+        'Hello from Orchestrator Service!',
+      );
     });
   });
 });

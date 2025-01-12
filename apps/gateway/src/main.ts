@@ -1,8 +1,8 @@
 import { NestFactory } from '@nestjs/core';
 import { GatewayModule } from './gateway.module';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
-import { ConfigHelper } from '@libs/config/config.helper';
-import { environmentConstant } from '@libs/common/constants';
+import { ConfigHelper } from '@qushah/common/config/config.helper';
+import { EnvironmentConstant } from '@qushah/common';
 import { Logger } from '@nestjs/common';
 
 async function bootstrap() {
@@ -23,7 +23,7 @@ async function bootstrap() {
   await app.startAllMicroservices();
 
   const gatewayPort = configHelper.getConfig<number>(
-    environmentConstant.GATEWAY_PORT,
+    EnvironmentConstant.GATEWAY_PORT,
   );
   await app.listen(gatewayPort);
   logger.log(`🚀 Server started on port ${gatewayPort}.`);
