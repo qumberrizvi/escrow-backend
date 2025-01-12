@@ -18,9 +18,8 @@ async function bootstrap() {
       },
     },
   );
-  logger.debug('App started');
   await app.listen();
-  logger.debug('Auth Microservice listening');
+  logger.log('Microservice listening...');
 }
 
 bootstrap();
