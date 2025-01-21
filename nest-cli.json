@@ -82,15 +82,6 @@
         "tsConfigPath": "apps/gateway/tsconfig.app.json"
       }
     },
-    "orchestrator": {
-      "type": "application",
-      "root": "apps/orchestrator",
-      "entryFile": "main",
-      "sourceRoot": "apps/orchestrator/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/orchestrator/tsconfig.app.json"
-      }
-    },
     "common": {
       "type": "library",
       "root": "libs/common",
