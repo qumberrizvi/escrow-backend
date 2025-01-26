@@ -11,7 +11,7 @@ import { ConfigHelper } from '@qushah/common/config/config.helper';
 export class ClientsModule {
   static async register(...names: string[]): Promise<DynamicModule> {
     const configHelper = await ConfigHelper.getInstance();
-    const { host, port } = configHelper.getRedisConfig();
+    const { host, port } = configHelper.redisConfig;
     const clients: ClientsModuleOptions = names.map((name) => ({
       name,
       transport: Transport.REDIS,

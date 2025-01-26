@@ -4,4 +4,5 @@ export * from './common.module';
 export * from './common.service';
 export * from './constants';
 export * from './enums';
+export * from './graphql';
 export * from './utils';

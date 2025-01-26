@@ -7,7 +7,7 @@ export class Bootstrapper {
   static async init(module: any) {
     const logger = new Logger(`${module.name}Bootstrap`);
     const configHelper = await ConfigHelper.getInstance();
-    const redisConfig = configHelper.getRedisConfig();
+    const redisConfig = configHelper.redisConfig;
     const app = await NestFactory.create(module);
     app.connectMicroservice<MicroserviceOptions>({
       transport: Transport.REDIS,

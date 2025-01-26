@@ -28,10 +28,24 @@ export class ConfigHelper {
     return ConfigHelper.instance;
   }
 
-  getRedisConfig() {
+  get redisConfig() {
     const host = this.getConfig<string>(EnvironmentConstant.REDIS_HOST);
     const port = this.getConfig<number>(EnvironmentConstant.REDIS_PORT);
     return { host, port };
+  }
+
+  get databaseConfig() {
+    const type = this.getConfig<'postgres'>(EnvironmentConstant.DATABASE_TYPE);
+    const host = this.getConfig<string>(EnvironmentConstant.DATABASE_HOST);
+    const port = this.getConfig<number>(EnvironmentConstant.DATABASE_PORT);
+    const username = this.getConfig<string>(
+      EnvironmentConstant.DATABASE_USERNAME,
+    );
+    const password = this.getConfig<string>(
+      EnvironmentConstant.DATABASE_PASSWORD,
+    );
+    const database = this.getConfig<string>(EnvironmentConstant.DATABASE_NAME);
+    return { type, host, port, username, password, database };
   }
 
   getModulePort(moduleName: string) {
