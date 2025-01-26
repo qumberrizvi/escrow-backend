@@ -1,0 +1,305 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Qushah API Documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="./" class="navbar-brand">Qushah API Documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1>Qushah Backend</h1>
+<h2>Description</h2>
+<p>Qushah Escrow System backend containing microservices, gateway, libs, etc.</p>
+<h1>Prerequisites</h1>
+<p>To be able to run this project on machine, the following must be installed:</p>
+<ul>
+<li>NodeJS 22 LTS</li>
+<li>pnpm</li>
+<li>Redis</li>
+</ul>
+<h2>Project setup</h2>
+<p>Make sure <code>pnpm</code> is installed</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">$ npm install --global pnpm</code></pre></div><p>Install dependencies</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">$ pnpm install</code></pre></div><h2>Install Redis</h2>
+<p>Follow the official docs to <a href="https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/">install Redis on your machine</a>.</p>
+<h2>Compile and run the project</h2>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash"># development
+$ pnpm run start
+
+# watch mode
+$ pnpm run start:dev
+
+# production mode
+$ pnpm run start:prod</code></pre></div><h2>Run tests</h2>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash"># unit tests
+$ pnpm run test
+
+# e2e tests
+$ pnpm run test:e2e
+
+# test coverage
+$ pnpm run test:cov</code></pre></div><h2>Structure</h2>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">qushah-backend/
+│
+├── apps/
+│   ├── qushah-auth/        # Authentication Service
+│   ├── qushah-user/       # User Management Service
+│   ├── qushah-escrow/      # Escrow and Deposits Service
+│   ├── qushah-payment/    # Payments and Transactions Service
+│   ├── qushah-property/  # Property Listings Service
+│   ├── qushah-notification/      # Notifications Service
+│   └── qushah-gateway/     # API Gateway (separate app within the repo)
+│
+└── libs/                   # Shared Libraries (for DTOs, Interfaces, etc.)
+    ├── common/             # Common utilities, interceptors, and guards
+    ├── graphql/            # Shared GraphQL schemas and resolvers
+    └── db/                 # Database connection and models
+</code></pre></div><h2>Architecture</h2>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">            [Frontend (Angular)]
+                     │
+              [GraphQL Gateway]
+                     │
+     ┌──────────┬────────────┬──────────────┬───────────┐
+     │          │            │              │           │
+ [Auth]     [User]     [Property]     [Escrow]    [Payment]
+     │                                      │
+ [Notification]                                [Disputes]
+</code></pre></div><h2>Concerns</h2>
+<p>Here are the key concerns for each microservice in this architecture:</p>
+<h3>1. <strong>qushah-auth</strong> (Authentication and Authorization)</h3>
+<ul>
+<li><strong>Security</strong>: Ensuring the system is secure from unauthorized access. This includes strong password policies, token-based authentication (e.g., JWT), and OAuth if required.</li>
+<li><strong>Token Expiry and Refresh</strong>: Managing token expiration and refresh mechanisms. Implement token blacklisting for security.</li>
+<li><strong>Rate Limiting</strong>: Protecting against brute-force attacks by implementing rate limiting or CAPTCHA.</li>
+<li><strong>Secure API Communication</strong>: Ensuring all communication (especially authentication data) is encrypted with HTTPS.</li>
+<li><strong>User Roles and Permissions</strong>: Managing user roles and ensuring each user (tenant, landlord, admin) has the correct permissions for their actions.</li>
+</ul>
+<h3>2. <strong>qushah-user</strong> (User Management)</h3>
+<ul>
+<li><strong>User Data Management</strong>: Ensuring that personal data is secure, especially sensitive information like emails, addresses, and phone numbers.</li>
+<li><strong>Data Privacy</strong>: Complying with regulations like GDPR or CCPA, especially regarding the collection and storage of user data.</li>
+<li><strong>User Profile Updates</strong>: Allowing users to update their profiles (e.g., changing names, contact details) while maintaining data integrity.</li>
+<li><strong>Error Handling</strong>: Handling errors effectively, such as invalid user data, and providing clear feedback to users.</li>
+<li><strong>Scalability</strong>: Ensuring the system can handle large numbers of users (tenants, landlords).</li>
+</ul>
+<h3>3. <strong>qushah-property</strong> (Property Management)</h3>
+<ul>
+<li><strong>Property Data Validation</strong>: Ensuring that property details are accurate, complete, and properly validated before being listed.</li>
+<li><strong>Search Functionality</strong>: Providing a fast and efficient way for tenants to search for properties (by location, price, features, etc.).</li>
+<li><strong>Property Availability</strong>: Managing the availability of properties and preventing double-booking or issues with properties already rented.</li>
+<li><strong>Image and Media Handling</strong>: Handling and storing images, videos, and 3D scans securely and efficiently. Integrating with media service when required.</li>
+<li><strong>Data Consistency</strong>: Ensuring that any updates to the property data (e.g., status changes, price updates) are consistent and reflected across all services.</li>
+</ul>
+<h3>4. <strong>qushah-escrow</strong> (Escrow Service)</h3>
+<ul>
+<li><strong>Deposit Security</strong>: Ensuring that the deposit is secure, especially when handling large amounts of money.</li>
+<li><strong>Transaction Auditing</strong>: Providing an auditable trail of deposit and release actions for transparency and security.</li>
+<li><strong>Escrow Release Conditions</strong>: Implementing clear rules on when the deposit should be released to either the tenant or landlord.</li>
+<li><strong>Dispute Management</strong>: Handling any disputes regarding the deposit, such as property damage or failure to pay rent.</li>
+<li><strong>Compliance</strong>: Ensuring that escrow services comply with local financial and regulatory standards (especially for handling money).</li>
+<li><strong>Event-Driven Updates</strong>: Integrating with other services (e.g., notifying users about escrow releases or disputes) using event-driven architecture.</li>
+</ul>
+<h3>5. <strong>qushah-payment</strong> (Payment Service)</h3>
+<ul>
+<li><strong>Payment Gateway Integration</strong>: Integrating with external payment providers (e.g., UPI, Paytm, Razorpay) for processing payments.</li>
+<li><strong>Transaction Security</strong>: Ensuring secure handling of payments and sensitive financial data. Use of encryption and secure protocols.</li>
+<li><strong>Transaction Failures</strong>: Handling payment failures and retries in case of network or gateway issues.</li>
+<li><strong>Payment Confirmation</strong>: Sending clear confirmation of successful payments and generating receipts.</li>
+<li><strong>Recurring Payments</strong>: Supporting recurring rent payments (e.g., monthly payments) and ensuring they are processed on time.</li>
+<li><strong>Multi-currency Support</strong>: Initially handling INR and later possibly adding other currencies, without complicating the architecture.</li>
+<li><strong>Scalability</strong>: Ensuring the service can handle large volumes of transactions, especially for a growing user base.</li>
+</ul>
+<h3>6. <strong>qushah-notification</strong> (Notification Service)</h3>
+<ul>
+<li><strong>Notification Delivery</strong>: Ensuring timely delivery of notifications (SMS, email, push notifications) to users.</li>
+<li><strong>Message Templates</strong>: Using dynamic templates for notifications (e.g., rent payment reminders, property status updates).</li>
+<li><strong>Multi-channel Support</strong>: Ensuring support for multiple communication channels (SMS, email, mobile push notifications, etc.).</li>
+<li><strong>Handling Failures</strong>: Managing failed notification deliveries and retries, e.g., if an email service is down.</li>
+<li><strong>Personalization</strong>: Allowing notifications to be personalized based on user preferences (e.g., notification frequency, type of notifications).</li>
+<li><strong>Opt-in/Opt-out Preferences</strong>: Allowing users to manage their notification preferences (e.g., unsubscribing from specific types of notifications).</li>
+</ul>
+<h3>7. <strong>qushah-media</strong> (Media Handling)</h3>
+<ul>
+<li><strong>Storage</strong>: Securely storing large media files (images, videos, 3D scans) and ensuring they are easily accessible.</li>
+<li><strong>Performance</strong>: Ensuring that media uploads and downloads are fast and efficient, especially for large files.</li>
+<li><strong>Scalability</strong>: Managing storage at scale as media files (especially 3D scans) can consume significant space.</li>
+<li><strong>Compression and Optimization</strong>: Automatically compressing and optimizing media files for faster loading times and reduced storage usage.</li>
+<li><strong>Security</strong>: Protecting media files from unauthorized access and ensuring that the uploaded files are virus-free.</li>
+<li><strong>Integration</strong>: Providing an easy API for other microservices to use (e.g., for uploading profile pictures, property images, etc.).</li>
+</ul>
+<h3>8. <strong>qushah-gateway</strong> (API Gateway)</h3>
+<ul>
+<li><strong>Request Routing</strong>: Efficiently routing requests to the appropriate microservice based on the endpoint and service.</li>
+<li><strong>Security</strong>: Ensuring that requests passing through the gateway are authenticated and authorized.</li>
+<li><strong>Load Balancing</strong>: Ensuring requests are distributed evenly across multiple instances of each microservice for scalability.</li>
+<li><strong>Rate Limiting</strong>: Preventing abuse of the system by applying rate limits on specific endpoints.</li>
+<li><strong>API Documentation</strong>: Providing clear API documentation (e.g., using Swagger or GraphQL introspection) for the frontend and third-party developers.</li>
+<li><strong>Caching</strong>: Implementing caching for high-traffic endpoints to improve performance.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
