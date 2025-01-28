@@ -8,8 +8,8 @@
   "scripts": {
     "build": "nest build",
     "build:lib": "nest build common",
-    "doc:generate": "compodoc -p tsconfig.json -n 'Qushah API Documentation' --hideGenerator --customFavicon '.assets/images/favicon.png'",
-    "doc:serve": "compodoc -p tsconfig.json -n 'Qushah API Documentation' -s --hideGenerator --customFavicon '.assets/images/favicon.png'",
+    "docs:generate": "compodoc -p tsconfig.json -c apps/documentation/compodoc.config.json",
+    "docs:serve": "compodoc -p tsconfig.json -n 'Qushah API Documentation' -s --hideGenerator",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "migration": "ts-node typeorm-cli.ts",
     "prepare": "husky",

@@ -23,7 +23,7 @@
       ],
       "@qushah/common/*": [
         "libs/common/src/*"
-      ],
+      ]
     },
     "esModuleInterop": true
   }
