@@ -1,0 +1,23 @@
+{
+  "name": "Qushah Backend",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts",
+      "pnpmVersion": "latest"
+    },
+    "ghcr.io/itsmechlark/features/redis-server:1": {
+      "version": "latest"
+    }
+  },
+  "postCreateCommand": "/bin/bash .devcontainer/setup.sh",
+  "postStartCommand": "/bin/bash .devcontainer/start.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  }
+}
