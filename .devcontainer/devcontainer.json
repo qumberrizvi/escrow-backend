@@ -8,6 +8,9 @@
     },
     "ghcr.io/itsmechlark/features/redis-server:1": {
       "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/sshd:1": {
+        "version": "latest"
     }
   },
   "postCreateCommand": "/bin/bash .devcontainer/setup.sh",
@@ -24,5 +27,6 @@
     "cpus": 4,
     "memory": "16gb",
     "storage": "32gb"
-  }
+  },
+  "remoteUser": "codespace"
 }
