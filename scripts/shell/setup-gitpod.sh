@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+
 echo "Running setup.sh..."
 bash ./scripts/shell/setup.sh
 
