@@ -11,7 +11,7 @@ tasks:
     init: ./scripts/shell/setup-gitpod.sh
 
   - name: Start Redis + Services
-    command: ./scripts/shell/start.sh
+    command: ./scripts/shell/setup-gitpod.sh
 
 ports:
   - port: 3000
