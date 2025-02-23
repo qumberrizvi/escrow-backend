@@ -13,8 +13,8 @@
         "version": "latest"
     }
   },
-  "postCreateCommand": "/bin/bash .devcontainer/setup.sh",
-  "postStartCommand": "/bin/bash .devcontainer/start.sh",
+  "postCreateCommand": "/bin/bash scripts/shell/setup.sh",
+  "postStartCommand": "/bin/bash scripts/shell/start.sh",
   "customizations": {
     "vscode": {
       "extensions": [

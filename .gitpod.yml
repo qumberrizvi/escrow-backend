@@ -8,10 +8,10 @@ image: gitpod/workspace-full
 
 tasks:
   - name: Setup
-    init: chmod +x ./.devcontainer/setup.sh && ./.devcontainer/setup.sh
+    init: ./scripts/shell/setup-gitpod.sh
 
   - name: Start Redis + Services
-    command: chmod +x ./.devcontainer/start.sh && ./.devcontainer/start.sh
+    command: ./scripts/shell/start.sh
 
 ports:
   - port: 3000
