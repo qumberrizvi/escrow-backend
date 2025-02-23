@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Running setup.sh..."
-bash setup.sh
+bash ./scripts/shell/setup.sh
 
 # Install Redis if not already installed
 if ! command -v redis-server &> /dev/null; then
@@ -11,4 +11,4 @@ else
 fi
 
 echo "Running start.sh..."
-bash start.sh
+bash ./scripts/shell/start.sh
