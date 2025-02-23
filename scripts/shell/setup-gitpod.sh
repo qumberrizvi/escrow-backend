@@ -9,3 +9,6 @@ if ! command -v redis-server &> /dev/null; then
 else
   echo "Redis is already installed."
 fi
+
+echo "Running start.sh..."
+bash ./start.sh
