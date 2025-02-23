@@ -7,10 +7,7 @@
 image: gitpod/workspace-full
 
 tasks:
-  - name: Setup
-    init: ./scripts/shell/setup-gitpod.sh
-
-  - name: Start Redis + Services
+  - name: GitPod Setup
     command: ./scripts/shell/setup-gitpod.sh
 
 ports:
