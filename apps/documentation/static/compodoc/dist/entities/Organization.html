@@ -141,7 +141,7 @@
                                     <span class="modifier"></span>
                                     <span class="modifier"></span>
                                     <span class="modifier">Optional</span>
-                                <a href="#metadata" >metadata</a>
+                                <a href="#meta" >meta</a>
                             </li>
                             <li>
                                     <span class="modifier"></span>
@@ -222,13 +222,13 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="metadata"></a>
+                    <a name="meta"></a>
                     <span class="name">
                             <span class="modifier"></span>
                             <span class="modifier"></span>
                             <span class="modifier">Optional</span>
-                        <span ><b>metadata</b></span>
-                        <a href="#metadata"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>meta</b></span>
+                        <a href="#meta"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -243,7 +243,7 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @Field(undefined, {nullable: true})<br />@OneToOne(undefined, metadata &#x3D;&gt; metadata.organization)<br />
+                            @Field(undefined, {nullable: true})<br />@OneToOne(undefined, meta &#x3D;&gt; meta.organization)<br />
                         </code>
                     </td>
                 </tr>
@@ -438,8 +438,8 @@ export class Organization extends BaseEntity {
   phone: string;
 
   @Field(() &#x3D;&gt; OrganizationMetadata, { nullable: true })
-  @OneToOne(() &#x3D;&gt; OrganizationMetadata, (metadata) &#x3D;&gt; metadata.organization)
-  metadata?: OrganizationMetadata;
+  @OneToOne(() &#x3D;&gt; OrganizationMetadata, (meta) &#x3D;&gt; meta.organization)
+  meta?: OrganizationMetadata;
 }
 </code></pre>
     </div>

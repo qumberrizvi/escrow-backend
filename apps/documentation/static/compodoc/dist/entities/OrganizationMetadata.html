@@ -360,7 +360,7 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @OneToOne(undefined, organization &#x3D;&gt; organization.metadata, {cascade: true, onDelete: &#x27;CASCADE&#x27;, onUpdate: &#x27;CASCADE&#x27;})<br />@JoinColumn({name: &#x27;organization_id&#x27;})<br />
+                            @OneToOne(undefined, organization &#x3D;&gt; organization.meta, {cascade: true, onDelete: &#x27;CASCADE&#x27;, onUpdate: &#x27;CASCADE&#x27;})<br />@JoinColumn({name: &#x27;organization_id&#x27;})<br />
                         </code>
                     </td>
                 </tr>
@@ -462,7 +462,7 @@ import { Organization } from &#x27;./organization.entity&#x27;;
 @ObjectType()
 @Entity()
 export class OrganizationMetadata extends BaseEntity {
-  @OneToOne(() &#x3D;&gt; Organization, (organization) &#x3D;&gt; organization.metadata, {
+  @OneToOne(() &#x3D;&gt; Organization, (organization) &#x3D;&gt; organization.meta, {
     cascade: true,
     onDelete: &#x27;CASCADE&#x27;,
     onUpdate: &#x27;CASCADE&#x27;,

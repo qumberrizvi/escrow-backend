@@ -143,6 +143,10 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier"></span>
+                                <a href="#organizations" >organizations</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
                                 <a href="#ping" >ping</a>
                             </li>
                         </ul>
@@ -157,6 +161,54 @@
     </table>
 </section>
 
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(organizationService: <a href="../injectables/OrganizationService.html" target="_self">OrganizationService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">apps/organization/src/organization.resolver.ts:6</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>organizationService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/OrganizationService.html" target="_self" >OrganizationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
             <section data-compodoc="block-methods">
@@ -164,6 +216,52 @@
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="organizations"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>organizations</b></span>
+                        <a href="#organizations"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>organizations()</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Query(undefined, {nullable: true})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="15"
+                                    class="link-to-prism">apps/organization/src/organization.resolver.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/Organization.html" target="_self" >Promise&lt;Organization[]&gt;</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -193,8 +291,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="6"
-                                    class="link-to-prism">apps/organization/src/organization.resolver.ts:6</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="10"
+                                    class="link-to-prism">apps/organization/src/organization.resolver.ts:10</a></div>
                         </td>
                     </tr>
 
@@ -221,12 +319,21 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Query, Resolver } from &#x27;@nestjs/graphql&#x27;;
+import { Organization } from &#x27;./entities/organization.entity&#x27;;
+import { OrganizationService } from &#x27;./organization.service&#x27;;
 
 @Resolver()
 export class OrganizationResolver {
+  constructor(private readonly organizationService: OrganizationService) {}
+
   @Query(() &#x3D;&gt; String, { name: &#x27;pingOrganization&#x27; })
   ping(): string {
     return &#x27;pong&#x27;;
+  }
+
+  @Query(() &#x3D;&gt; [Organization], { nullable: true })
+  organizations(): Promise&lt;Organization[]&gt; {
+    return this.organizationService.findAll();
   }
 }
 </code></pre>
