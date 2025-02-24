@@ -17,9 +17,9 @@ export class DataSource {
       database: process.env.DATABASE_NAME || 'my-db',
       ssl: { rejectUnauthorized: false },
       schema,
-      entities: ['src/**/**.entity{.ts,.js}'],
-      migrations: ['src/migrations/**/*{.ts,.js}'],
-      subscribers: ['src/subscriber/**/*{.ts,.js}'],
+      entities: [`apps/${schema}/**/**.entity{.ts,.js}`],
+      migrations: [`apps/${schema}/src/migrations/**/*{.ts,.js}`],
+      subscribers: [`apps/${schema}/src/subscriber/**/*{.ts,.js}`],
     });
   }
 }

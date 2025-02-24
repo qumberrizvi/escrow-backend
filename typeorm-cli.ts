@@ -46,7 +46,7 @@ const dataSourcePath = path.join(
 );
 
 // Prepare the TypeORM CLI command with the -d (dataSource) argument
-const typeormCommand = `ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:${command} ${title || ''} -d ${dataSourcePath} ${args || ''}`;
+const typeormCommand = `ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:${command} ${title ? './apps/' + microservice + '/src/migrations/' + title : ''} -d ${dataSourcePath} ${args || ''}`;
 
 // Execute the TypeORM CLI command
 console.log(`Executing: ${typeormCommand}`);
