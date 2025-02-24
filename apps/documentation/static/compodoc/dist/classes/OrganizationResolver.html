@@ -96,7 +96,7 @@
 
 <ol class="breadcrumb">
   <li class="breadcrumb-item">Classes</li>
-  <li class="breadcrumb-item" >DataSource</li>
+  <li class="breadcrumb-item" >OrganizationResolver</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -120,7 +120,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>libs/common/src/utils/data-source.util.ts</code>
+            <code>apps/organization/src/organization.resolver.ts</code>
         </p>
 
 
@@ -142,8 +142,8 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Static</span>
-                                <a href="#getInstance" >getInstance</a>
+                                    <span class="modifier"></span>
+                                <a href="#ping" >ping</a>
                             </li>
                         </ul>
                     </td>
@@ -168,26 +168,33 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getInstance"></a>
+                    <a name="ping"></a>
                     <span class="name">
-                            <span class="modifier">Static</span>
-                        <span ><b>getInstance</b></span>
-                        <a href="#getInstance"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier"></span>
+                        <span ><b>ping</b></span>
+                        <a href="#ping"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getInstance(schema: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    <code>ping()</code>
                 </td>
             </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Query(undefined, {name: &#x27;pingOrganization&#x27;})<br /></code>
+                </td>
+            </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="9"
-                                    class="link-to-prism">libs/common/src/utils/data-source.util.ts:9</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="6"
+                                    class="link-to-prism">apps/organization/src/organization.resolver.ts:6</a></div>
                         </td>
                     </tr>
 
@@ -195,40 +202,10 @@
             <tr>
                 <td class="col-md-4">
 
-                            <div class="io-description">
-                                <b>Parameters :</b>
-                                
-                                <table class="params">
-                                    <thead>
-                                        <tr>
-                                            <td>Name</td>
-                                                <td>Type</td>
-                                            <td>Optional</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                                <td>schema</td>
-                                            <td>
-                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                            </td>
-
-                                            <td>
-                                                    No
-                                            </td>
-
-
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                         </div>
-                            <div class="io-description">
-                                
-                            </div>
                 </td>
             </tr>
         </tbody>
@@ -243,29 +220,13 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import process from &#x27;node:process&#x27;;
-import * as dotenv from &#x27;dotenv&#x27;;
-import { DataSource as TypeormDataSource } from &#x27;typeorm&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Query, Resolver } from &#x27;@nestjs/graphql&#x27;;
 
-// Load environment variables from .env file
-dotenv.config();
-
-export class DataSource {
-  static getInstance(schema: string) {
-    return new TypeormDataSource({
-      migrationsTableName: &#x27;typeorm_migrations&#x27;,
-      type: (process.env.DATABASE_TYPE as &#x27;postgres&#x27;) || &#x27;postgres&#x27;,
-      host: process.env.DATABASE_HOST || &#x27;localhost&#x27;,
-      port: +process.env.DATABASE_PORT || 5432,
-      username: process.env.DATABASE_USERNAME || &#x27;postgres&#x27;,
-      password: process.env.DATABASE_PASSWORD || &#x27;postgres&#x27;,
-      database: process.env.DATABASE_NAME || &#x27;my-db&#x27;,
-      ssl: { rejectUnauthorized: false },
-      schema,
-      entities: [&#x60;apps/${schema}/**/**.entity{.ts,.js}&#x60;],
-      migrations: [&#x60;apps/${schema}/src/migrations/**/*{.ts,.js}&#x60;],
-      subscribers: [&#x60;apps/${schema}/src/subscriber/**/*{.ts,.js}&#x60;],
-    });
+@Resolver()
+export class OrganizationResolver {
+  @Query(() &#x3D;&gt; String, { name: &#x27;pingOrganization&#x27; })
+  ping(): string {
+    return &#x27;pong&#x27;;
   }
 }
 </code></pre>
@@ -306,7 +267,7 @@ export class DataSource {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'DataSource.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'OrganizationResolver.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

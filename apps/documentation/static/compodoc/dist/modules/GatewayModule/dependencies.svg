@@ -24,55 +24,55 @@
 <title>cluster_GatewayModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-70 8,-195 504,-195 504,-70 8,-70"/>
 </g>
-<g id="clust6" class="cluster">
-<title>cluster_GatewayModule_providers</title>
-<polygon fill="none" stroke="black" points="332,-78 332,-130 496,-130 496,-78 332,-78"/>
-</g>
 <g id="clust3" class="cluster">
 <title>cluster_GatewayModule_imports</title>
-<polygon fill="none" stroke="black" points="16,-78 16,-130 324,-130 324,-78 16,-78"/>
+<polygon fill="none" stroke="black" points="188,-78 188,-130 496,-130 496,-78 188,-78"/>
+</g>
+<g id="clust6" class="cluster">
+<title>cluster_GatewayModule_providers</title>
+<polygon fill="none" stroke="black" points="16,-78 16,-130 180,-130 180,-78 16,-78"/>
 </g>
 <!-- CommonModule -->
 <g id="node1" class="node">
 <title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="315.67,-122 312.67,-126 291.67,-126 288.67,-122 204.33,-122 204.33,-86 315.67,-86 315.67,-122"/>
-<text text-anchor="middle" x="260" y="-99.8" font-family="Times,serif" font-size="14.00">CommonModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="487.67,-122 484.67,-126 463.67,-126 460.67,-122 376.33,-122 376.33,-86 487.67,-86 487.67,-122"/>
+<text text-anchor="middle" x="432" y="-99.8" font-family="Times,serif" font-size="14.00">CommonModule</text>
 </g>
 <!-- GatewayModule -->
 <g id="node3" class="node">
 <title>GatewayModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="314.8,-187 311.8,-191 290.8,-191 287.8,-187 205.2,-187 205.2,-151 314.8,-151 314.8,-187"/>
-<text text-anchor="middle" x="260" y="-164.8" font-family="Times,serif" font-size="14.00">GatewayModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="331.8,-187 328.8,-191 307.8,-191 304.8,-187 222.2,-187 222.2,-151 331.8,-151 331.8,-187"/>
+<text text-anchor="middle" x="277" y="-164.8" font-family="Times,serif" font-size="14.00">GatewayModule</text>
 </g>
 <!-- CommonModule&#45;&gt;GatewayModule -->
 <g id="edge1" class="edge">
 <title>CommonModule&#45;&gt;GatewayModule</title>
-<path fill="none" stroke="black" d="M260,-122.11C260,-122.11 260,-140.99 260,-140.99"/>
-<polygon fill="black" stroke="black" points="256.5,-140.99 260,-150.99 263.5,-140.99 256.5,-140.99"/>
+<path fill="none" stroke="black" d="M432,-122.11C432,-141.34 432,-169 432,-169 432,-169 342.08,-169 342.08,-169"/>
+<polygon fill="black" stroke="black" points="342.08,-165.5 332.08,-169 342.08,-172.5 342.08,-165.5"/>
 </g>
 <!-- GraphQLGatewayModule -->
 <g id="node2" class="node">
 <title>GraphQLGatewayModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="186.44,-122 183.44,-126 162.44,-126 159.44,-122 23.56,-122 23.56,-86 186.44,-86 186.44,-122"/>
-<text text-anchor="middle" x="105" y="-99.8" font-family="Times,serif" font-size="14.00">GraphQLGatewayModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="358.44,-122 355.44,-126 334.44,-126 331.44,-122 195.56,-122 195.56,-86 358.44,-86 358.44,-122"/>
+<text text-anchor="middle" x="277" y="-99.8" font-family="Times,serif" font-size="14.00">GraphQLGatewayModule</text>
 </g>
 <!-- GraphQLGatewayModule&#45;&gt;GatewayModule -->
 <g id="edge2" class="edge">
 <title>GraphQLGatewayModule&#45;&gt;GatewayModule</title>
-<path fill="none" stroke="black" d="M105,-122.11C105,-141.34 105,-169 105,-169 105,-169 194.92,-169 194.92,-169"/>
-<polygon fill="black" stroke="black" points="194.92,-172.5 204.92,-169 194.92,-165.5 194.92,-172.5"/>
+<path fill="none" stroke="black" d="M277,-122.11C277,-122.11 277,-140.99 277,-140.99"/>
+<polygon fill="black" stroke="black" points="273.5,-140.99 277,-150.99 280.5,-140.99 273.5,-140.99"/>
 </g>
 <!-- GatewayService -->
 <g id="node4" class="node">
 <title>GatewayService</title>
-<ellipse fill="#fdb462" stroke="black" cx="414" cy="-104" rx="74.11" ry="18"/>
-<text text-anchor="middle" x="414" y="-99.8" font-family="Times,serif" font-size="14.00">GatewayService</text>
+<ellipse fill="#fdb462" stroke="black" cx="98" cy="-104" rx="74.11" ry="18"/>
+<text text-anchor="middle" x="98" y="-99.8" font-family="Times,serif" font-size="14.00">GatewayService</text>
 </g>
 <!-- GatewayService&#45;&gt;GatewayModule -->
 <g id="edge3" class="edge">
 <title>GatewayService&#45;&gt;GatewayModule</title>
-<path fill="none" stroke="black" d="M414,-122.11C414,-141.34 414,-169 414,-169 414,-169 324.73,-169 324.73,-169"/>
-<polygon fill="black" stroke="black" points="324.73,-165.5 314.73,-169 324.73,-172.5 324.73,-165.5"/>
+<path fill="none" stroke="black" d="M98,-122.11C98,-141.34 98,-169 98,-169 98,-169 212.32,-169 212.32,-169"/>
+<polygon fill="black" stroke="black" points="212.32,-172.5 222.32,-169 212.32,-165.5 212.32,-172.5"/>
 </g>
 </g>
 </svg>

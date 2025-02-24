@@ -96,7 +96,7 @@
 
 <ol class="breadcrumb">
   <li class="breadcrumb-item">Classes</li>
-  <li class="breadcrumb-item" >DataSource</li>
+  <li class="breadcrumb-item" >CreateOrganization1740356244243</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -120,18 +120,38 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>libs/common/src/utils/data-source.util.ts</code>
+            <code>apps/organization/src/migrations/1740356244243-CreateOrganization.ts</code>
         </p>
 
 
 
 
+            <p class="comment">
+                <h3>Implements</h3>
+            </p>
+            <p class="comment">
+                        <code>MigrationInterface</code>
+            </p>
 
 
             <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#name" >name</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -142,8 +162,14 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Static</span>
-                                <a href="#getInstance" >getInstance</a>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#down" >down</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#up" >up</a>
                             </li>
                         </ul>
                     </td>
@@ -158,6 +184,43 @@
 </section>
 
 
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="name"></a>
+                    <span class="name">
+                        <span ><b>name</b></span>
+                        <a href="#name"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;CreateOrganization1740356244243&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="4" class="link-to-prism">apps/organization/src/migrations/1740356244243-CreateOrganization.ts:4</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
 
             <section data-compodoc="block-methods">
     
@@ -168,26 +231,27 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getInstance"></a>
+                    <a name="down"></a>
                     <span class="name">
-                            <span class="modifier">Static</span>
-                        <span ><b>getInstance</b></span>
-                        <a href="#getInstance"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>down</b></span>
+                        <a href="#down"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getInstance(schema: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    <code>down(queryRunner: QueryRunner)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="9"
-                                    class="link-to-prism">libs/common/src/utils/data-source.util.ts:9</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="18"
+                                    class="link-to-prism">apps/organization/src/migrations/1740356244243-CreateOrganization.ts:18</a></div>
                         </td>
                     </tr>
 
@@ -208,9 +272,9 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>schema</td>
+                                                <td>queryRunner</td>
                                             <td>
-                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        <code>QueryRunner</code>
                                             </td>
 
                                             <td>
@@ -223,7 +287,77 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="up"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>up</b></span>
+                        <a href="#up"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>up(queryRunner: QueryRunner)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="6"
+                                    class="link-to-prism">apps/organization/src/migrations/1740356244243-CreateOrganization.ts:6</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>queryRunner</td>
+                                            <td>
+                                                        <code>QueryRunner</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
 
                         </div>
                             <div class="io-description">
@@ -243,29 +377,31 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import process from &#x27;node:process&#x27;;
-import * as dotenv from &#x27;dotenv&#x27;;
-import { DataSource as TypeormDataSource } from &#x27;typeorm&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { MigrationInterface, QueryRunner } from &#x27;typeorm&#x27;;
 
-// Load environment variables from .env file
-dotenv.config();
+export class CreateOrganization1740356244243 implements MigrationInterface {
+  name &#x3D; &#x27;CreateOrganization1740356244243&#x27;;
 
-export class DataSource {
-  static getInstance(schema: string) {
-    return new TypeormDataSource({
-      migrationsTableName: &#x27;typeorm_migrations&#x27;,
-      type: (process.env.DATABASE_TYPE as &#x27;postgres&#x27;) || &#x27;postgres&#x27;,
-      host: process.env.DATABASE_HOST || &#x27;localhost&#x27;,
-      port: +process.env.DATABASE_PORT || 5432,
-      username: process.env.DATABASE_USERNAME || &#x27;postgres&#x27;,
-      password: process.env.DATABASE_PASSWORD || &#x27;postgres&#x27;,
-      database: process.env.DATABASE_NAME || &#x27;my-db&#x27;,
-      ssl: { rejectUnauthorized: false },
-      schema,
-      entities: [&#x60;apps/${schema}/**/**.entity{.ts,.js}&#x60;],
-      migrations: [&#x60;apps/${schema}/src/migrations/**/*{.ts,.js}&#x60;],
-      subscribers: [&#x60;apps/${schema}/src/subscriber/**/*{.ts,.js}&#x60;],
-    });
+  public async up(queryRunner: QueryRunner): Promise&lt;void&gt; {
+    await queryRunner.query(
+      &#x60;CREATE TABLE &quot;organization&quot;.&quot;organization&quot; (&quot;id&quot; SERIAL NOT NULL, &quot;name&quot; character varying NOT NULL, &quot;slug&quot; character varying NOT NULL, &quot;primary_contact_name&quot; character varying NOT NULL, &quot;email&quot; character varying NOT NULL, &quot;phone&quot; character varying NOT NULL, &quot;created_at&quot; TIMESTAMP NOT NULL DEFAULT now(), &quot;updated_at&quot; TIMESTAMP DEFAULT now(), &quot;deleted_at&quot; TIMESTAMP, CONSTRAINT &quot;UQ_c21e615583a3ebbb0977452afb0&quot; UNIQUE (&quot;name&quot;), CONSTRAINT &quot;UQ_a08804baa7c5d5427067c49a31f&quot; UNIQUE (&quot;slug&quot;), CONSTRAINT &quot;PK_472c1f99a32def1b0abb219cd67&quot; PRIMARY KEY (&quot;id&quot;))&#x60;,
+    );
+    await queryRunner.query(
+      &#x60;CREATE TABLE &quot;organization&quot;.&quot;organization_metadata&quot; (&quot;id&quot; SERIAL NOT NULL, &quot;primary_color&quot; character varying, &quot;domain&quot; character varying, &quot;logo&quot; character varying NOT NULL, &quot;rent_fee_percentage&quot; numeric(5,2) NOT NULL DEFAULT &#x27;5&#x27;, &quot;deposit_fee_percentage&quot; numeric(5,2) NOT NULL DEFAULT &#x27;5&#x27;, &quot;allow_interest_earning&quot; boolean NOT NULL DEFAULT false, &quot;organization_id&quot; integer, &quot;created_at&quot; TIMESTAMP NOT NULL DEFAULT now(), &quot;updated_at&quot; TIMESTAMP DEFAULT now(), &quot;deleted_at&quot; TIMESTAMP, CONSTRAINT &quot;REL_efaca847c588a9817470f7c6ca&quot; UNIQUE (&quot;organization_id&quot;), CONSTRAINT &quot;PK_2fecc2ceb81f30a7f46be802cbd&quot; PRIMARY KEY (&quot;id&quot;))&#x60;,
+    );
+    await queryRunner.query(
+      &#x60;ALTER TABLE &quot;organization&quot;.&quot;organization_metadata&quot; ADD CONSTRAINT &quot;FK_efaca847c588a9817470f7c6ca8&quot; FOREIGN KEY (&quot;organization_id&quot;) REFERENCES &quot;organization&quot;.&quot;organization&quot;(&quot;id&quot;) ON DELETE CASCADE ON UPDATE CASCADE&#x60;,
+    );
+  }
+
+  public async down(queryRunner: QueryRunner): Promise&lt;void&gt; {
+    await queryRunner.query(
+      &#x60;ALTER TABLE &quot;organization&quot;.&quot;organization_metadata&quot; DROP CONSTRAINT &quot;FK_efaca847c588a9817470f7c6ca8&quot;&#x60;,
+    );
+    await queryRunner.query(
+      &#x60;DROP TABLE &quot;organization&quot;.&quot;organization_metadata&quot;&#x60;,
+    );
+    await queryRunner.query(&#x60;DROP TABLE &quot;organization&quot;.&quot;organization&quot;&#x60;);
   }
 }
 </code></pre>
@@ -306,7 +442,7 @@ export class DataSource {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'DataSource.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'CreateOrganization1740356244243.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

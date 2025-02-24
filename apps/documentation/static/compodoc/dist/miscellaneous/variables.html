@@ -134,6 +134,12 @@
                             <a href="#NotificationCommand" title="libs/common/src/constants/commands/notification.command.ts" ><b>NotificationCommand</b>&nbsp;&nbsp;&nbsp;(libs/.../notification.command.ts)</a>
                         </li>
                         <li>
+                            <a href="#ORDER_KEY" title="libs/common/src/decorators/column-order.decorator.ts" ><b>ORDER_KEY</b>&nbsp;&nbsp;&nbsp;(libs/.../column-order.decorator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#OrganizationCommand" title="libs/common/src/constants/commands/organization.command.ts" ><b>OrganizationCommand</b>&nbsp;&nbsp;&nbsp;(libs/.../organization.command.ts)</a>
+                        </li>
+                        <li>
                             <a href="#PaymentCommand" title="libs/common/src/constants/commands/payment.command.ts" ><b>PaymentCommand</b>&nbsp;&nbsp;&nbsp;(libs/.../payment.command.ts)</a>
                         </li>
                         <li>
@@ -150,6 +156,9 @@
                         </li>
                         <li>
                             <a href="#TypeormDataSource" title="apps/notification/src/typeorm.data-source.ts" ><b>TypeormDataSource</b>&nbsp;&nbsp;&nbsp;(apps/.../typeorm.data-source.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#TypeormDataSource" title="apps/organization/src/typeorm.data-source.ts" ><b>TypeormDataSource</b>&nbsp;&nbsp;&nbsp;(apps/.../typeorm.data-source.ts)</a>
                         </li>
                         <li>
                             <a href="#TypeormDataSource" title="apps/payment/src/typeorm.data-source.ts" ><b>TypeormDataSource</b>&nbsp;&nbsp;&nbsp;(apps/.../typeorm.data-source.ts)</a>
@@ -260,7 +269,7 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>&#x60;ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:${command} ${title || &#x27;&#x27;} -d ${dataSourcePath} ${args || &#x27;&#x27;}&#x60;</code>
+                        <i>Default value : </i><code>&#x60;ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:${command} ${title ? &#x27;./apps/&#x27; + microservice + &#x27;/src/migrations/&#x27; + title : &#x27;&#x27;} -d ${dataSourcePath} ${args || &#x27;&#x27;}&#x60;</code>
                     </td>
                 </tr>
 
@@ -353,6 +362,7 @@
   GATEWAY_PORT: &#x27;GATEWAY_PORT&#x27;,
   MEDIA_PORT: &#x27;MEDIA_PORT&#x27;,
   NOTIFICATION_PORT: &#x27;NOTIFICATION_PORT&#x27;,
+  ORGANIZATION_PORT: &#x27;ORGANIZATION_PORT&#x27;,
   PAYMENT_PORT: &#x27;PAYMENT_PORT&#x27;,
   PROPERTY_PORT: &#x27;PROPERTY_PORT&#x27;,
   USER_PORT: &#x27;USER_PORT&#x27;,
@@ -361,6 +371,7 @@
   GATEWAY_HOST: &#x27;GATEWAY_HOST&#x27;,
   MEDIA_HOST: &#x27;MEDIA_HOST&#x27;,
   NOTIFICATION_HOST: &#x27;NOTIFICATION_HOST&#x27;,
+  ORGANIZATION_HOST: &#x27;ORGANIZATION_HOST&#x27;,
   PAYMENT_HOST: &#x27;PAYMENT_HOST&#x27;,
   PROPERTY_HOST: &#x27;PROPERTY_HOST&#x27;,
   USER_HOST: &#x27;USER_HOST&#x27;,
@@ -463,6 +474,60 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>{
   PING_NOTIFICATION: &#x27;PING_NOTIFICATION&#x27;,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>libs/common/src/decorators/column-order.decorator.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ORDER_KEY"></a>
+                    <span class="name">
+                        <span ><b>ORDER_KEY</b></span>
+                        <a href="#ORDER_KEY"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>Symbol.for(&#x27;order_key&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>libs/common/src/constants/commands/organization.command.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="OrganizationCommand"></a>
+                    <span class="name">
+                        <span ><b>OrganizationCommand</b></span>
+                        <a href="#OrganizationCommand"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  PING_ORGANIZATION: &#x27;PING_ORGANIZATION&#x27;,
 }</code>
                     </td>
                 </tr>
@@ -595,6 +660,29 @@
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>DataSource.getInstance(&#x27;notification&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/organization/src/typeorm.data-source.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="TypeormDataSource"></a>
+                    <span class="name">
+                        <span ><b>TypeormDataSource</b></span>
+                        <a href="#TypeormDataSource"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>DataSource.getInstance(&#x27;organization&#x27;)</code>
                     </td>
                 </tr>
 
