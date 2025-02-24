@@ -7,7 +7,7 @@ import { Organization } from './organization.entity';
 @ObjectType()
 @Entity()
 export class OrganizationMetadata extends BaseEntity {
-  @OneToOne(() => Organization, (organization) => organization.metadata, {
+  @OneToOne(() => Organization, (organization) => organization.meta, {
     cascade: true,
     onDelete: 'CASCADE',
     onUpdate: 'CASCADE',

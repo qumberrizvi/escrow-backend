@@ -27,6 +27,6 @@ export class Organization extends BaseEntity {
   phone: string;
 
   @Field(() => OrganizationMetadata, { nullable: true })
-  @OneToOne(() => OrganizationMetadata, (metadata) => metadata.organization)
-  metadata?: OrganizationMetadata;
+  @OneToOne(() => OrganizationMetadata, (meta) => meta.organization)
+  meta?: OrganizationMetadata;
 }
