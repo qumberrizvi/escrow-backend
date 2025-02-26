@@ -1,12 +1,12 @@
 import { ConfigService } from '@nestjs/config';
-import { QushahConfigService } from './config.service';
+import { AppConfigService } from './config.service';
 import { NestFactory } from '@nestjs/core';
 import { ConfigModule } from '@nestjs/config';
 import { EnvironmentConstant } from '@qushah/common';
 
 export class ConfigHelper {
   private static instance: ConfigHelper;
-  private qushahConfigService: QushahConfigService;
+  private appConfigService: AppConfigService;
 
   private constructor() {}
 
@@ -19,10 +19,10 @@ export class ConfigHelper {
       );
 
       const configService = appContext.get(ConfigService);
-      const qushahConfigService = new QushahConfigService(configService);
+      const appConfigService = new AppConfigService(configService);
 
       ConfigHelper.instance = new ConfigHelper();
-      ConfigHelper.instance.qushahConfigService = qushahConfigService;
+      ConfigHelper.instance.appConfigService = appConfigService;
     }
 
     return ConfigHelper.instance;
@@ -65,6 +65,6 @@ export class ConfigHelper {
   }
 
   getConfig<T>(key: string) {
-    return this.qushahConfigService.getConfig<T>(key);
+    return this.appConfigService.getConfig<T>(key);
   }
 }

@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { CommonService } from './common.service';
-import { QushahConfigModule } from '@qushah/common/config';
+import { AppConfigModule } from '@qushah/common/config';
 
 @Module({
-  imports: [QushahConfigModule],
+  imports: [AppConfigModule],
   providers: [CommonService],
   exports: [CommonService],
 })

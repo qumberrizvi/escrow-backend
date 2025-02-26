@@ -22,4 +22,4 @@ import Joi from 'joi';
     }),
   ],
 })
-export class QushahConfigModule {}
+export class AppConfigModule {}

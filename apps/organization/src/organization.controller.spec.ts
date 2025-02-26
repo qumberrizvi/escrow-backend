@@ -18,7 +18,7 @@ describe('OrganizationController', () => {
         OrganizationService,
         {
           provide: getRepositoryToken(Organization),
-          useValue: mockOrganizationRepository, // ✅ Provide a mock repository
+          useValue: mockOrganizationRepository, // Provide a mock repository
         },
       ],
     }).compile();
