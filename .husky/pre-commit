@@ -1,4 +1,11 @@
 #!/usr/bin/env sh
 
+# Run tests
 pnpm test
+
+# Run formatter
 pnpm format
+
+# Generate docs and stage output
+pnpm docs:generate
+git add apps/documentation/static/compodoc/dist
