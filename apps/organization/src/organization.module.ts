@@ -13,10 +13,7 @@ import { OrganizationMetadata } from './entities/organization-metadata.entity';
 
 @Module({
   imports: [
-    DatabaseModule.forRoot(
-      [__dirname + '/entities/*.entity{.ts,.js}'],
-      'organization',
-    ),
+    DatabaseModule.forRoot('organization'),
     TypeOrmModule.forFeature([Organization, OrganizationMetadata]),
     CommonModule,
     GraphQLMicroserviceModule,

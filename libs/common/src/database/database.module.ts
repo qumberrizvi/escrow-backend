@@ -4,7 +4,7 @@ import { ConfigHelper } from '@qushah/common';
 
 @Module({})
 export class DatabaseModule {
-  static forRoot(entitiesPath: string[], schema: string): DynamicModule {
+  static forRoot(schema: string): DynamicModule {
     return {
       module: DatabaseModule,
       imports: [
@@ -21,7 +21,6 @@ export class DatabaseModule {
               password,
               database,
               schema: schema, // Set schema dynamically
-              entities: entitiesPath, // Pass entities dynamically
               autoLoadEntities: true,
               // synchronize: true, // Enable only for development
               ssl: { rejectUnauthorized: false },
