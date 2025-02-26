@@ -4,7 +4,7 @@
 pnpm test
 
 # Run formatter
-pnpm format
+pnpm lint-staged
 
 # Generate docs and stage output
 pnpm docs:generate

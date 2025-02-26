@@ -24,55 +24,55 @@
 <title>cluster_UserModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-70 8,-195 497,-195 497,-70 8,-70"/>
 </g>
-<g id="clust3" class="cluster">
-<title>cluster_UserModule_imports</title>
-<polygon fill="none" stroke="black" points="156,-78 156,-130 489,-130 489,-78 156,-78"/>
-</g>
 <g id="clust6" class="cluster">
 <title>cluster_UserModule_providers</title>
-<polygon fill="none" stroke="black" points="16,-78 16,-130 148,-130 148,-78 16,-78"/>
+<polygon fill="none" stroke="black" points="357,-78 357,-130 489,-130 489,-78 357,-78"/>
+</g>
+<g id="clust3" class="cluster">
+<title>cluster_UserModule_imports</title>
+<polygon fill="none" stroke="black" points="16,-78 16,-130 349,-130 349,-78 16,-78"/>
 </g>
 <!-- CommonModule -->
 <g id="node1" class="node">
 <title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="480.67,-122 477.67,-126 456.67,-126 453.67,-122 369.33,-122 369.33,-86 480.67,-86 480.67,-122"/>
-<text text-anchor="middle" x="425" y="-99.8" font-family="Times,serif" font-size="14.00">CommonModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="340.67,-122 337.67,-126 316.67,-126 313.67,-122 229.33,-122 229.33,-86 340.67,-86 340.67,-122"/>
+<text text-anchor="middle" x="285" y="-99.8" font-family="Times,serif" font-size="14.00">CommonModule</text>
 </g>
 <!-- UserModule -->
 <g id="node3" class="node">
 <title>UserModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="300.98,-187 297.98,-191 276.98,-191 273.98,-187 215.02,-187 215.02,-151 300.98,-151 300.98,-187"/>
-<text text-anchor="middle" x="258" y="-164.8" font-family="Times,serif" font-size="14.00">UserModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="327.98,-187 324.98,-191 303.98,-191 300.98,-187 242.02,-187 242.02,-151 327.98,-151 327.98,-187"/>
+<text text-anchor="middle" x="285" y="-164.8" font-family="Times,serif" font-size="14.00">UserModule</text>
 </g>
 <!-- CommonModule&#45;&gt;UserModule -->
 <g id="edge1" class="edge">
 <title>CommonModule&#45;&gt;UserModule</title>
-<path fill="none" stroke="black" d="M425,-122.11C425,-141.34 425,-169 425,-169 425,-169 311.01,-169 311.01,-169"/>
-<polygon fill="black" stroke="black" points="311.01,-165.5 301.01,-169 311.01,-172.5 311.01,-165.5"/>
+<path fill="none" stroke="black" d="M285,-122.11C285,-122.11 285,-140.99 285,-140.99"/>
+<polygon fill="black" stroke="black" points="281.5,-140.99 285,-150.99 288.5,-140.99 281.5,-140.99"/>
 </g>
 <!-- GraphQLMicroserviceModule -->
 <g id="node2" class="node">
 <title>GraphQLMicroserviceModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="351.54,-122 348.54,-126 327.54,-126 324.54,-122 164.46,-122 164.46,-86 351.54,-86 351.54,-122"/>
-<text text-anchor="middle" x="258" y="-99.8" font-family="Times,serif" font-size="14.00">GraphQLMicroserviceModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="211.54,-122 208.54,-126 187.54,-126 184.54,-122 24.46,-122 24.46,-86 211.54,-86 211.54,-122"/>
+<text text-anchor="middle" x="118" y="-99.8" font-family="Times,serif" font-size="14.00">GraphQLMicroserviceModule</text>
 </g>
 <!-- GraphQLMicroserviceModule&#45;&gt;UserModule -->
 <g id="edge2" class="edge">
 <title>GraphQLMicroserviceModule&#45;&gt;UserModule</title>
-<path fill="none" stroke="black" d="M258,-122.11C258,-122.11 258,-140.99 258,-140.99"/>
-<polygon fill="black" stroke="black" points="254.5,-140.99 258,-150.99 261.5,-140.99 254.5,-140.99"/>
+<path fill="none" stroke="black" d="M118,-122.11C118,-141.34 118,-169 118,-169 118,-169 231.99,-169 231.99,-169"/>
+<polygon fill="black" stroke="black" points="231.99,-172.5 241.99,-169 231.99,-165.5 231.99,-172.5"/>
 </g>
 <!-- UserService -->
 <g id="node4" class="node">
 <title>UserService</title>
-<ellipse fill="#fdb462" stroke="black" cx="82" cy="-104" rx="58.44" ry="18"/>
-<text text-anchor="middle" x="82" y="-99.8" font-family="Times,serif" font-size="14.00">UserService</text>
+<ellipse fill="#fdb462" stroke="black" cx="423" cy="-104" rx="58.44" ry="18"/>
+<text text-anchor="middle" x="423" y="-99.8" font-family="Times,serif" font-size="14.00">UserService</text>
 </g>
 <!-- UserService&#45;&gt;UserModule -->
 <g id="edge3" class="edge">
 <title>UserService&#45;&gt;UserModule</title>
-<path fill="none" stroke="black" d="M82,-122.11C82,-141.34 82,-169 82,-169 82,-169 204.95,-169 204.95,-169"/>
-<polygon fill="black" stroke="black" points="204.95,-172.5 214.95,-169 204.95,-165.5 204.95,-172.5"/>
+<path fill="none" stroke="black" d="M423,-122.11C423,-141.34 423,-169 423,-169 423,-169 338.29,-169 338.29,-169"/>
+<polygon fill="black" stroke="black" points="338.29,-165.5 328.29,-169 338.29,-172.5 338.29,-165.5"/>
 </g>
 </g>
 </svg>
