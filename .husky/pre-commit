@@ -1,3 +1,4 @@
+#!/usr/bin/env sh
+
 pnpm test
 pnpm format
-git add .
