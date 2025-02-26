@@ -80,52 +80,127 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content module">
+               <div class="content injectable">
                    <div class="content-data">
 
 
 
+
+
+
+
+
 <ol class="breadcrumb">
-    <li class="breadcrumb-item">Modules</li>
-    <li class="breadcrumb-item" >DatabaseModule</li>
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >AppConfigService</li>
 </ol>
 
-
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
-        <a href="#info" 
-            class="nav-link"
-            class="nav-link active"
-            role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
-    </li>
-    <li class="nav-item">
-        <a href="#source" 
-            class="nav-link"
-            
-            role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
-    </li>
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
 </ul>
 
 <div class="tab-content">
     <div class="tab-pane fade active in" id="info">
-
         <p class="comment">
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>libs/common/src/database/database.module.ts</code>
+            <code>libs/common/src/config/config.service.ts</code>
         </p>
 
 
 
 
 
-        <div class="container-fluid module">
-            <div class="row">
-            </div>
-        </div>
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
 
-        <section data-compodoc="block-methods">
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getConfig" >getConfig</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(configService: ConfigService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="5" class="link-to-prism">libs/common/src/config/config.service.ts:5</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>configService</td>
+                                                  
+                                                        <td>
+                                                                    <code>ConfigService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
     
     <h3 id="methods">
         Methods
@@ -134,29 +209,35 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="forRoot"></a>
+                    <a name="getConfig"></a>
                     <span class="name">
-                            <span class="modifier">Static</span>
-                        <span ><b>forRoot</b></span>
-                        <a href="#forRoot"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>getConfig</b></span>
+                        <a href="#getConfig"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>forRoot(schema: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>getConfig(key: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="7"
-                                    class="link-to-prism">libs/common/src/database/database.module.ts:7</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="8"
+                                    class="link-to-prism">libs/common/src/config/config.service.ts:8</a></div>
                         </td>
                     </tr>
 
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Type parameters :</b>
+                            <ul class="type-parameters">
+                                    <li>T</li>
+                            </ul>
+                        </td>
+                    </tr>
 
             <tr>
                 <td class="col-md-4">
@@ -174,7 +255,7 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>schema</td>
+                                                <td>key</td>
                                             <td>
                                                             <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                             </td>
@@ -189,7 +270,7 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>    <code>DynamicModule</code>
+                            <b>Returns : </b>    <code>T</code>
 
                         </div>
                             <div class="io-description">
@@ -200,52 +281,26 @@
         </tbody>
     </table>
 </section>
+
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Module, DynamicModule } from &#x27;@nestjs/common&#x27;;
-import { TypeOrmModule, TypeOrmModuleOptions } from &#x27;@nestjs/typeorm&#x27;;
-import { ConfigHelper } from &#x27;@qushah/common&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@nestjs/common&#x27;;
+import { ConfigService } from &#x27;@nestjs/config&#x27;;
 
-@Module({})
-export class DatabaseModule {
-  static forRoot(schema: string): DynamicModule {
-    return {
-      module: DatabaseModule,
-      imports: [
-        TypeOrmModule.forRootAsync({
-          useFactory: async () &#x3D;&gt; {
-            const configHelper &#x3D; await ConfigHelper.getInstance();
-            const { type, host, port, username, password, database } &#x3D;
-              configHelper.databaseConfig;
-            const options: TypeOrmModuleOptions &#x3D; {
-              type,
-              host,
-              port,
-              username,
-              password,
-              database,
-              schema: schema, // Set schema dynamically
-              autoLoadEntities: true,
-              // synchronize: true, // Enable only for development
-              ssl: { rejectUnauthorized: false },
-            };
+@Injectable()
+export class AppConfigService {
+  constructor(private readonly configService: ConfigService) {}
 
-            return options;
-          },
-        }),
-      ],
-    };
+  getConfig&lt;T&gt;(key: string): T {
+    return this.configService.get&lt;T&gt;(key);
   }
 }
 </code></pre>
     </div>
+
 </div>
-
-
-
-
 
 
 
@@ -284,8 +339,8 @@ export class DatabaseModule {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
-            var COMPODOC_CURRENT_PAGE_URL = 'DatabaseModule.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppConfigService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

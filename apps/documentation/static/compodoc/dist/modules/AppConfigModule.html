@@ -87,7 +87,7 @@
 
 <ol class="breadcrumb">
     <li class="breadcrumb-item">Modules</li>
-    <li class="breadcrumb-item" >DatabaseModule</li>
+    <li class="breadcrumb-item" >AppConfigModule</li>
 </ol>
 
 
@@ -113,7 +113,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>libs/common/src/database/database.module.ts</code>
+            <code>libs/common/src/config/config.module.ts</code>
         </p>
 
 
@@ -125,120 +125,36 @@
             </div>
         </div>
 
-        <section data-compodoc="block-methods">
-    
-    <h3 id="methods">
-        Methods
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="forRoot"></a>
-                    <span class="name">
-                            <span class="modifier">Static</span>
-                        <span ><b>forRoot</b></span>
-                        <a href="#forRoot"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>forRoot(schema: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
 
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="7"
-                                    class="link-to-prism">libs/common/src/database/database.module.ts:7</a></div>
-                        </td>
-                    </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                            <div class="io-description">
-                                <b>Parameters :</b>
-                                
-                                <table class="params">
-                                    <thead>
-                                        <tr>
-                                            <td>Name</td>
-                                                <td>Type</td>
-                                            <td>Optional</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                                <td>schema</td>
-                                            <td>
-                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                            </td>
-
-                                            <td>
-                                                    No
-                                            </td>
-
-
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        <div class="io-description">
-                            <b>Returns : </b>    <code>DynamicModule</code>
-
-                        </div>
-                            <div class="io-description">
-                                
-                            </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Module, DynamicModule } from &#x27;@nestjs/common&#x27;;
-import { TypeOrmModule, TypeOrmModuleOptions } from &#x27;@nestjs/typeorm&#x27;;
-import { ConfigHelper } from &#x27;@qushah/common&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ConfigModule } from &#x27;@nestjs/config&#x27;;
+import { Module } from &#x27;@nestjs/common&#x27;;
+import Joi from &#x27;joi&#x27;;
 
-@Module({})
-export class DatabaseModule {
-  static forRoot(schema: string): DynamicModule {
-    return {
-      module: DatabaseModule,
-      imports: [
-        TypeOrmModule.forRootAsync({
-          useFactory: async () &#x3D;&gt; {
-            const configHelper &#x3D; await ConfigHelper.getInstance();
-            const { type, host, port, username, password, database } &#x3D;
-              configHelper.databaseConfig;
-            const options: TypeOrmModuleOptions &#x3D; {
-              type,
-              host,
-              port,
-              username,
-              password,
-              database,
-              schema: schema, // Set schema dynamically
-              autoLoadEntities: true,
-              // synchronize: true, // Enable only for development
-              ssl: { rejectUnauthorized: false },
-            };
-
-            return options;
-          },
-        }),
-      ],
-    };
-  }
-}
+@Module({
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      validationSchema: Joi.object({
+        REDIS_HOST: Joi.string().required(),
+        REDIS_PORT: Joi.number().required(),
+        DATABASE_TYPE: Joi.string().required(),
+        DATABASE_HOST: Joi.string().required(),
+        DATABASE_PORT: Joi.string().required(),
+        DATABASE_USERNAME: Joi.string().required(),
+        DATABASE_PASSWORD: Joi.string().required(),
+        DATABASE_NAME: Joi.string().required(),
+        NODE_ENV: Joi.string()
+          .valid(&#x27;development&#x27;, &#x27;production&#x27;, &#x27;test&#x27;)
+          .default(&#x27;development&#x27;),
+      }),
+    }),
+  ],
+})
+export class AppConfigModule {}
 </code></pre>
     </div>
 </div>
@@ -285,7 +201,7 @@ export class DatabaseModule {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
-            var COMPODOC_CURRENT_PAGE_URL = 'DatabaseModule.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppConfigModule.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
