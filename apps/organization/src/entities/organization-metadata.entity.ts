@@ -5,7 +5,7 @@ import { JoinColumn } from 'typeorm';
 import { Organization } from './organization.entity';
 
 @ObjectType()
-@Entity()
+@Entity({ name: 'organizations_metadata' })
 export class OrganizationMetadata extends BaseEntity {
   @OneToOne(() => Organization, (organization) => organization.meta, {
     cascade: true,

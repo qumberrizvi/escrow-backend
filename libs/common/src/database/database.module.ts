@@ -1,10 +1,12 @@
 import { Module, DynamicModule } from '@nestjs/common';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { ConfigHelper } from '@qushah/common';
+import { EntityClassOrSchema } from '@nestjs/typeorm/dist/interfaces/entity-class-or-schema.type';
+import { DataSource, DataSourceOptions } from 'typeorm';
 
 @Module({})
 export class DatabaseModule {
-  static forRoot(schema: string): DynamicModule {
+  static init(schema: string): DynamicModule {
     return {
       module: DatabaseModule,
       imports: [
@@ -31,5 +33,12 @@ export class DatabaseModule {
         }),
       ],
     };
+  }
+
+  static loadEntities(
+    entities?: EntityClassOrSchema[],
+    dataSource?: DataSource | DataSourceOptions | string,
+  ): DynamicModule {
+    return TypeOrmModule.forFeature(entities, dataSource);
   }
 }

@@ -2,7 +2,7 @@ import { ConfigService } from '@nestjs/config';
 import { AppConfigService } from './config.service';
 import { NestFactory } from '@nestjs/core';
 import { ConfigModule } from '@nestjs/config';
-import { EnvironmentConstant } from '@qushah/common';
+import { ENVIRONMENT } from '@qushah/common';
 
 export class ConfigHelper {
   private static instance: ConfigHelper;
@@ -29,29 +29,25 @@ export class ConfigHelper {
   }
 
   get redisConfig() {
-    const host = this.getConfig<string>(EnvironmentConstant.REDIS_HOST);
-    const port = this.getConfig<number>(EnvironmentConstant.REDIS_PORT);
+    const host = this.getConfig<string>(ENVIRONMENT.REDIS_HOST);
+    const port = this.getConfig<number>(ENVIRONMENT.REDIS_PORT);
     return { host, port };
   }
 
   get databaseConfig() {
-    const type = this.getConfig<'postgres'>(EnvironmentConstant.DATABASE_TYPE);
-    const host = this.getConfig<string>(EnvironmentConstant.DATABASE_HOST);
-    const port = this.getConfig<number>(EnvironmentConstant.DATABASE_PORT);
-    const username = this.getConfig<string>(
-      EnvironmentConstant.DATABASE_USERNAME,
-    );
-    const password = this.getConfig<string>(
-      EnvironmentConstant.DATABASE_PASSWORD,
-    );
-    const database = this.getConfig<string>(EnvironmentConstant.DATABASE_NAME);
+    const type = this.getConfig<'postgres'>(ENVIRONMENT.DATABASE_TYPE);
+    const host = this.getConfig<string>(ENVIRONMENT.DATABASE_HOST);
+    const port = this.getConfig<number>(ENVIRONMENT.DATABASE_PORT);
+    const username = this.getConfig<string>(ENVIRONMENT.DATABASE_USERNAME);
+    const password = this.getConfig<string>(ENVIRONMENT.DATABASE_PASSWORD);
+    const database = this.getConfig<string>(ENVIRONMENT.DATABASE_NAME);
     return { type, host, port, username, password, database };
   }
 
   getModulePort(moduleName: string) {
     const key = moduleName?.split('Module')?.[0]?.toUpperCase();
     if (!key) return;
-    return this.getConfig<number>(EnvironmentConstant[`${key}_PORT`]);
+    return this.getConfig<number>(ENVIRONMENT[`${key}_PORT`]);
   }
 
   getMicroServiceHosts(microserviceName: string) {

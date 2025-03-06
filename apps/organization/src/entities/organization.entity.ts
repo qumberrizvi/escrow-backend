@@ -4,7 +4,7 @@ import { BaseEntity } from '@qushah/common';
 import { OrganizationMetadata } from './organization-metadata.entity';
 
 @ObjectType()
-@Entity()
+@Entity({ name: 'organizations' })
 export class Organization extends BaseEntity {
   @Field(() => String)
   @Column({ unique: true })

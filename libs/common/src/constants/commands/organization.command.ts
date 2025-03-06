@@ -1,3 +1,4 @@
 export const OrganizationCommand = {
   PING_ORGANIZATION: 'PING_ORGANIZATION',
+  FIND_ORGANIZATION_BY_ID: 'FIND_ORGANIZATION_BY_ID',
 };

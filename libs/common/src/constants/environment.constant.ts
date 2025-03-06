@@ -1,4 +1,4 @@
-export const EnvironmentConstant = {
+export const ENVIRONMENT = {
   REDIS_HOST: 'REDIS_HOST',
   REDIS_PORT: 'REDIS_PORT',
   AUTH_PORT: 'AUTH_PORT',

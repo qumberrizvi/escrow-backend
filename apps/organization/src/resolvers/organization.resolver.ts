@@ -1,6 +1,6 @@
 import { Query, Resolver } from '@nestjs/graphql';
-import { Organization } from './entities/organization.entity';
-import { OrganizationService } from './organization.service';
+import { Organization } from '../entities/organization.entity';
+import { OrganizationService } from '../organization.service';
 
 @Resolver()
 export class OrganizationResolver {
