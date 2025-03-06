@@ -105,5 +105,12 @@
     "moduleNameMapper": {
       "^@qushah/common(|/.*)$": "<rootDir>/libs/common/src/$1"
     }
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@apollo/protobufjs",
+      "@compodoc/compodoc",
+      "@nestjs/core"
+    ]
   }
 }
