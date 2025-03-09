@@ -4,7 +4,7 @@
 
 Qushah Escrow System backend containing microservices, gateway, libs, etc.
 
-# Prerequisites
+## Prerequisites
 
 To be able to run this project on machine, the following must be installed:
 
@@ -150,3 +150,5 @@ Here are the key concerns for each microservice in this architecture:
 ### 8. **gateway** (API Gateway)
 - **Request Routing**: Efficiently routing requests to the appropriate microservice based on the endpoint and service.
 - **Security**: Ensuring that requests passing through the gateway are authenticated and authorized.
+
+## Next: [Run Migrations and Seeders](https://escrow-backend-docs.vercel.app/additional-documentation/running-migrations-and-seeders.html)
