@@ -122,31 +122,30 @@ about DataSources and path resolutions.
 <b>Example :</b><div><pre class="line-numbers"><code class="language-none">qushah-backend/
 │
 ├── apps/
-│   ├── qushah-auth/        # Authentication Service
-│   ├── qushah-user/       # User Management Service
-│   ├── qushah-escrow/      # Escrow and Deposits Service
-│   ├── qushah-payment/    # Payments and Transactions Service
-│   ├── qushah-property/  # Property Listings Service
-│   ├── qushah-notification/      # Notifications Service
-│   └── qushah-gateway/     # API Gateway (separate app within the repo)
+│   ├── auth/        # Authentication Service
+│   ├── user/       # User Management Service
+│   ├── escrow/      # Escrow and Deposits Service
+│   ├── organization/    # Organization management Service
+│   ├── payment/    # Payments and Transactions Service
+│   ├── property/  # Property Listings Service
+│   ├── notification/      # Notifications Service
+│   └── gateway/     # API Gateway (separate app within the repo)
 │
 └── libs/                   # Shared Libraries (for DTOs, Interfaces, etc.)
-    ├── common/             # Common utilities, interceptors, and guards
-    ├── graphql/            # Shared GraphQL schemas and resolvers
-    └── db/                 # Database connection and models
+    └── common/             # Common utilities, interceptors, and guards
 </code></pre></div><h2>Architecture</h2>
 <b>Example :</b><div><pre class="line-numbers"><code class="language-none">            [Frontend (Angular)]
                      │
               [GraphQL Gateway]
                      │
-     ┌──────────┬────────────┬──────────────┬───────────┐
-     │          │            │              │           │
- [Auth]     [User]     [Property]     [Escrow]    [Payment]
-     │                                      │
- [Notification]                                [Disputes]
+     ┌──────────┬─────┬───────┬──────────────┬───────────┐
+     │          │     │       │              │           │
+ [Auth]     [User]    │ [Property]     [Escrow]    [Payment]
+     │                │                      │
+ [Notification]      [Organization]        [Disputes]
 </code></pre></div><h2>Concerns</h2>
 <p>Here are the key concerns for each microservice in this architecture:</p>
-<h3>1. <strong>qushah-auth</strong> (Authentication and Authorization)</h3>
+<h3>1. <strong>auth</strong> (Authentication and Authorization)</h3>
 <ul>
 <li><strong>Security</strong>: Ensuring the system is secure from unauthorized access. This includes strong password policies, token-based authentication (e.g., JWT), and OAuth if required.</li>
 <li><strong>Token Expiry and Refresh</strong>: Managing token expiration and refresh mechanisms. Implement token blacklisting for security.</li>
@@ -154,7 +153,7 @@ about DataSources and path resolutions.
 <li><strong>Secure API Communication</strong>: Ensuring all communication (especially authentication data) is encrypted with HTTPS.</li>
 <li><strong>User Roles and Permissions</strong>: Managing user roles and ensuring each user (tenant, landlord, admin) has the correct permissions for their actions.</li>
 </ul>
-<h3>2. <strong>qushah-user</strong> (User Management)</h3>
+<h3>2. <strong>user</strong> (User Management)</h3>
 <ul>
 <li><strong>User Data Management</strong>: Ensuring that personal data is secure, especially sensitive information like emails, addresses, and phone numbers.</li>
 <li><strong>Data Privacy</strong>: Complying with regulations like GDPR or CCPA, especially regarding the collection and storage of user data.</li>
@@ -162,7 +161,7 @@ about DataSources and path resolutions.
 <li><strong>Error Handling</strong>: Handling errors effectively, such as invalid user data, and providing clear feedback to users.</li>
 <li><strong>Scalability</strong>: Ensuring the system can handle large numbers of users (tenants, landlords).</li>
 </ul>
-<h3>3. <strong>qushah-property</strong> (Property Management)</h3>
+<h3>3. <strong>property</strong> (Property Management)</h3>
 <ul>
 <li><strong>Property Data Validation</strong>: Ensuring that property details are accurate, complete, and properly validated before being listed.</li>
 <li><strong>Search Functionality</strong>: Providing a fast and efficient way for tenants to search for properties (by location, price, features, etc.).</li>
@@ -170,7 +169,7 @@ about DataSources and path resolutions.
 <li><strong>Image and Media Handling</strong>: Handling and storing images, videos, and 3D scans securely and efficiently. Integrating with media service when required.</li>
 <li><strong>Data Consistency</strong>: Ensuring that any updates to the property data (e.g., status changes, price updates) are consistent and reflected across all services.</li>
 </ul>
-<h3>4. <strong>qushah-escrow</strong> (Escrow Service)</h3>
+<h3>4. <strong>escrow</strong> (Escrow Service)</h3>
 <ul>
 <li><strong>Deposit Security</strong>: Ensuring that the deposit is secure, especially when handling large amounts of money.</li>
 <li><strong>Transaction Auditing</strong>: Providing an auditable trail of deposit and release actions for transparency and security.</li>
@@ -179,42 +178,30 @@ about DataSources and path resolutions.
 <li><strong>Compliance</strong>: Ensuring that escrow services comply with local financial and regulatory standards (especially for handling money).</li>
 <li><strong>Event-Driven Updates</strong>: Integrating with other services (e.g., notifying users about escrow releases or disputes) using event-driven architecture.</li>
 </ul>
-<h3>5. <strong>qushah-payment</strong> (Payment Service)</h3>
+<h3>5. <strong>organization</strong> (Organization Management)</h3>
+<ul>
+<li><strong>Multi-Tenant Support</strong>: Managing organizations and their members, ensuring proper isolation between different organizations.</li>
+<li><strong>Access Control</strong>: Implementing role-based access control within organizations.</li>
+<li><strong>Billing and Subscriptions</strong>: Managing organization-level billing and payments.</li>
+<li><strong>Organization Verification</strong>: Ensuring that organizations are verified before allowing transactions.</li>
+</ul>
+<h3>6. <strong>payment</strong> (Payment Service)</h3>
 <ul>
 <li><strong>Payment Gateway Integration</strong>: Integrating with external payment providers (e.g., UPI, Paytm, Razorpay) for processing payments.</li>
 <li><strong>Transaction Security</strong>: Ensuring secure handling of payments and sensitive financial data. Use of encryption and secure protocols.</li>
 <li><strong>Transaction Failures</strong>: Handling payment failures and retries in case of network or gateway issues.</li>
 <li><strong>Payment Confirmation</strong>: Sending clear confirmation of successful payments and generating receipts.</li>
 <li><strong>Recurring Payments</strong>: Supporting recurring rent payments (e.g., monthly payments) and ensuring they are processed on time.</li>
-<li><strong>Multi-currency Support</strong>: Initially handling INR and later possibly adding other currencies, without complicating the architecture.</li>
-<li><strong>Scalability</strong>: Ensuring the service can handle large volumes of transactions, especially for a growing user base.</li>
 </ul>
-<h3>6. <strong>qushah-notification</strong> (Notification Service)</h3>
+<h3>7. <strong>notification</strong> (Notification Service)</h3>
 <ul>
 <li><strong>Notification Delivery</strong>: Ensuring timely delivery of notifications (SMS, email, push notifications) to users.</li>
-<li><strong>Message Templates</strong>: Using dynamic templates for notifications (e.g., rent payment reminders, property status updates).</li>
-<li><strong>Multi-channel Support</strong>: Ensuring support for multiple communication channels (SMS, email, mobile push notifications, etc.).</li>
-<li><strong>Handling Failures</strong>: Managing failed notification deliveries and retries, e.g., if an email service is down.</li>
-<li><strong>Personalization</strong>: Allowing notifications to be personalized based on user preferences (e.g., notification frequency, type of notifications).</li>
-<li><strong>Opt-in/Opt-out Preferences</strong>: Allowing users to manage their notification preferences (e.g., unsubscribing from specific types of notifications).</li>
+<li><strong>Opt-in/Opt-out Preferences</strong>: Allowing users to manage their notification preferences.</li>
 </ul>
-<h3>7. <strong>qushah-media</strong> (Media Handling)</h3>
-<ul>
-<li><strong>Storage</strong>: Securely storing large media files (images, videos, 3D scans) and ensuring they are easily accessible.</li>
-<li><strong>Performance</strong>: Ensuring that media uploads and downloads are fast and efficient, especially for large files.</li>
-<li><strong>Scalability</strong>: Managing storage at scale as media files (especially 3D scans) can consume significant space.</li>
-<li><strong>Compression and Optimization</strong>: Automatically compressing and optimizing media files for faster loading times and reduced storage usage.</li>
-<li><strong>Security</strong>: Protecting media files from unauthorized access and ensuring that the uploaded files are virus-free.</li>
-<li><strong>Integration</strong>: Providing an easy API for other microservices to use (e.g., for uploading profile pictures, property images, etc.).</li>
-</ul>
-<h3>8. <strong>qushah-gateway</strong> (API Gateway)</h3>
+<h3>8. <strong>gateway</strong> (API Gateway)</h3>
 <ul>
 <li><strong>Request Routing</strong>: Efficiently routing requests to the appropriate microservice based on the endpoint and service.</li>
 <li><strong>Security</strong>: Ensuring that requests passing through the gateway are authenticated and authorized.</li>
-<li><strong>Load Balancing</strong>: Ensuring requests are distributed evenly across multiple instances of each microservice for scalability.</li>
-<li><strong>Rate Limiting</strong>: Preventing abuse of the system by applying rate limits on specific endpoints.</li>
-<li><strong>API Documentation</strong>: Providing clear API documentation (e.g., using Swagger or GraphQL introspection) for the frontend and third-party developers.</li>
-<li><strong>Caching</strong>: Implementing caching for high-traffic endpoints to improve performance.</li>
 </ul>
 
 
