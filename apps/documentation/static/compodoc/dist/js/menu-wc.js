@@ -40,6 +40,30 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 </li>
                     </ul>
                 </li>
+                    <li class="chapter additional">
+                        <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ? 'data-bs-target="#additional-pages"'
+                            : 'data-bs-target="#xs-additional-pages"' }>
+                            <span class="icon ion-ios-book"></span>
+                            <span>Additional documentation</span>
+                            <span class="icon ion-ios-arrow-down"></span>
+                        </div>
+                        <ul class="links collapse " ${ isNormalMode ? 'id="additional-pages"' : 'id="xs-additional-pages"' }>
+                                    <li class="chapter inner">
+                                        <a data-type="chapter-link" href="additional-documentation/getting-started.html" data-context-id="additional">
+                                            <div class="menu-toggler linked" data-bs-toggle="collapse" ${ isNormalMode ?
+                                            'data-bs-target="#additional-page-62cc66f9648d9bcf9eea58e6c7f014637920e65230c0fa7e30c1dbff5bbde02928609740fa050c1e83c16b9397470dee7adc638498c918a08701ad2a2a5a8bf4"' : 'data-bs-target="#xs-additional-page-62cc66f9648d9bcf9eea58e6c7f014637920e65230c0fa7e30c1dbff5bbde02928609740fa050c1e83c16b9397470dee7adc638498c918a08701ad2a2a5a8bf4"' }>
+                                                <span class="link-name">Getting Started</span>
+                                                <span class="icon ion-ios-arrow-down"></span>
+                                            </div>
+                                        </a>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="additional-page-62cc66f9648d9bcf9eea58e6c7f014637920e65230c0fa7e30c1dbff5bbde02928609740fa050c1e83c16b9397470dee7adc638498c918a08701ad2a2a5a8bf4"' : 'id="xs-additional-page-62cc66f9648d9bcf9eea58e6c7f014637920e65230c0fa7e30c1dbff5bbde02928609740fa050c1e83c16b9397470dee7adc638498c918a08701ad2a2a5a8bf4"' }>
+                                            <li class="link for-chapter2">
+                                                <a href="additional-documentation/running-migrations-and-seeders/how-to-use-migration-tool.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">How to use migration tool</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                        </ul>
+                    </li>
                     <li class="chapter modules">
                         <a data-type="chapter-link" href="modules.html">
                             <div class="menu-toggler linked" data-bs-toggle="collapse" ${ isNormalMode ?

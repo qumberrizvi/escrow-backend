@@ -7,5 +7,6 @@
     "hideGenerator": true,
     "includeVersion": true,
     "language": "en",
-    "pwa": true
+    "pwa": true,
+    "includes": "docs"
   }

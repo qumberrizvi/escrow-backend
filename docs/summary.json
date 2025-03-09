@@ -1,0 +1,15 @@
+[
+  {
+    "title": "Getting Started",
+    "file": "README.md"
+  },
+  {
+    "title": "Running Migrations and Seeders",
+    "children": [
+      {
+        "title": "How to use migration tool",
+        "file": "migration-tool.md"
+      }
+    ]
+  }
+]
