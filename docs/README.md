@@ -60,7 +60,7 @@ $ pnpm run test:cov
 
 The Typeorm CLI Helper tool lets you run typeorm CLI commands without worrying
 about DataSources and path resolutions.
-[Learn how to use the tool here.](./apps/documentation/static/readme/typeorm-cli-manual.md)
+[Learn how to use the tool here.](typeorm-cli-manual.md)
 
 ## Structure
 
