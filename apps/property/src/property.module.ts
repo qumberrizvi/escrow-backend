@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { PropertyController } from './property.controller';
 import { PropertyService } from './property.service';
 import { CommonModule, GraphQLMicroserviceModule } from '@qushah/common';
-import { PropertyResolver } from './property.resolver';
+import { PropertyResolver } from './resolvers/property.resolver';
 
 @Module({
   imports: [CommonModule, GraphQLMicroserviceModule],

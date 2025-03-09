@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { GatewayService } from './gateway.service';
 import {
   CommonModule,
-  EnvironmentConstant,
+  ENVIRONMENT,
   GraphQLGatewayModule,
 } from '@qushah/common';
 
@@ -15,7 +15,7 @@ const {
   PAYMENT_HOST,
   PROPERTY_HOST,
   USER_HOST,
-} = EnvironmentConstant;
+} = ENVIRONMENT;
 
 @Module({
   imports: [

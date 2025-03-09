@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Running Migrations and Seeders",
+    "file": "migration-tool.md",
+    "children": [
+      {
+        "title": "How to use migration tool",
+        "file": "migration-tool.md"
+      }
+    ]
+  }
+]

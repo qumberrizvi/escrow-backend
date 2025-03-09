@@ -7,5 +7,6 @@ pnpm test
 pnpm lint-staged
 
 # Generate docs and stage output
+export IS_DOC_ENV=true
 pnpm docs:generate
 git add apps/documentation/static/compodoc/dist

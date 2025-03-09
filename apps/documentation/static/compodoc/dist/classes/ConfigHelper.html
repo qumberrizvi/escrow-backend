@@ -311,8 +311,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="67"
-                                    class="link-to-prism">libs/common/src/config/config.helper.ts:67</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="63"
+                                    class="link-to-prism">libs/common/src/config/config.helper.ts:63</a></div>
                         </td>
                     </tr>
 
@@ -426,8 +426,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="57"
-                                    class="link-to-prism">libs/common/src/config/config.helper.ts:57</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="53"
+                                    class="link-to-prism">libs/common/src/config/config.helper.ts:53</a></div>
                         </td>
                     </tr>
 
@@ -493,8 +493,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="51"
-                                    class="link-to-prism">libs/common/src/config/config.helper.ts:51</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="47"
+                                    class="link-to-prism">libs/common/src/config/config.helper.ts:47</a></div>
                         </td>
                     </tr>
 
@@ -603,7 +603,7 @@
 import { AppConfigService } from &#x27;./config.service&#x27;;
 import { NestFactory } from &#x27;@nestjs/core&#x27;;
 import { ConfigModule } from &#x27;@nestjs/config&#x27;;
-import { EnvironmentConstant } from &#x27;@qushah/common&#x27;;
+import { ENVIRONMENT } from &#x27;@qushah/common&#x27;;
 
 export class ConfigHelper {
   private static instance: ConfigHelper;
@@ -630,29 +630,25 @@ export class ConfigHelper {
   }
 
   get redisConfig() {
-    const host &#x3D; this.getConfig&lt;string&gt;(EnvironmentConstant.REDIS_HOST);
-    const port &#x3D; this.getConfig&lt;number&gt;(EnvironmentConstant.REDIS_PORT);
+    const host &#x3D; this.getConfig&lt;string&gt;(ENVIRONMENT.REDIS_HOST);
+    const port &#x3D; this.getConfig&lt;number&gt;(ENVIRONMENT.REDIS_PORT);
     return { host, port };
   }
 
   get databaseConfig() {
-    const type &#x3D; this.getConfig&lt;&#x27;postgres&#x27;&gt;(EnvironmentConstant.DATABASE_TYPE);
-    const host &#x3D; this.getConfig&lt;string&gt;(EnvironmentConstant.DATABASE_HOST);
-    const port &#x3D; this.getConfig&lt;number&gt;(EnvironmentConstant.DATABASE_PORT);
-    const username &#x3D; this.getConfig&lt;string&gt;(
-      EnvironmentConstant.DATABASE_USERNAME,
-    );
-    const password &#x3D; this.getConfig&lt;string&gt;(
-      EnvironmentConstant.DATABASE_PASSWORD,
-    );
-    const database &#x3D; this.getConfig&lt;string&gt;(EnvironmentConstant.DATABASE_NAME);
+    const type &#x3D; this.getConfig&lt;&#x27;postgres&#x27;&gt;(ENVIRONMENT.DATABASE_TYPE);
+    const host &#x3D; this.getConfig&lt;string&gt;(ENVIRONMENT.DATABASE_HOST);
+    const port &#x3D; this.getConfig&lt;number&gt;(ENVIRONMENT.DATABASE_PORT);
+    const username &#x3D; this.getConfig&lt;string&gt;(ENVIRONMENT.DATABASE_USERNAME);
+    const password &#x3D; this.getConfig&lt;string&gt;(ENVIRONMENT.DATABASE_PASSWORD);
+    const database &#x3D; this.getConfig&lt;string&gt;(ENVIRONMENT.DATABASE_NAME);
     return { type, host, port, username, password, database };
   }
 
   getModulePort(moduleName: string) {
     const key &#x3D; moduleName?.split(&#x27;Module&#x27;)?.[0]?.toUpperCase();
     if (!key) return;
-    return this.getConfig&lt;number&gt;(EnvironmentConstant[&#x60;${key}_PORT&#x60;]);
+    return this.getConfig&lt;number&gt;(ENVIRONMENT[&#x60;${key}_PORT&#x60;]);
   }
 
   getMicroServiceHosts(microserviceName: string) {

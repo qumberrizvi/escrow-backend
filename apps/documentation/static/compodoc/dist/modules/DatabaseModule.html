@@ -134,26 +134,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="forRoot"></a>
+                    <a name="init"></a>
                     <span class="name">
                             <span class="modifier">Static</span>
-                        <span ><b>forRoot</b></span>
-                        <a href="#forRoot"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>init</b></span>
+                        <a href="#init"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>forRoot(schema: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    <code>init(schema: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="7"
-                                    class="link-to-prism">libs/common/src/database/database.module.ts:7</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="9"
+                                    class="link-to-prism">libs/common/src/database/database.module.ts:9</a></div>
                         </td>
                     </tr>
 
@@ -199,6 +199,87 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadEntities"></a>
+                    <span class="name">
+                            <span class="modifier">Static</span>
+                        <span ><b>loadEntities</b></span>
+                        <a href="#loadEntities"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loadEntities(entities?: EntityClassOrSchema[], dataSource?: <a href="../classes/DataSource.html" target="_self">DataSource | DataSourceOptions | string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="38"
+                                    class="link-to-prism">libs/common/src/database/database.module.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>entities</td>
+                                            <td>
+                                                        <code>EntityClassOrSchema[]</code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>dataSource</td>
+                                            <td>
+                                                            <code><a href="../classes/DataSource.html" target="_self" >DataSource | DataSourceOptions | string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>DynamicModule</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
     </div>
 
@@ -207,10 +288,12 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Module, DynamicModule } from &#x27;@nestjs/common&#x27;;
 import { TypeOrmModule, TypeOrmModuleOptions } from &#x27;@nestjs/typeorm&#x27;;
 import { ConfigHelper } from &#x27;@qushah/common&#x27;;
+import { EntityClassOrSchema } from &#x27;@nestjs/typeorm/dist/interfaces/entity-class-or-schema.type&#x27;;
+import { DataSource, DataSourceOptions } from &#x27;typeorm&#x27;;
 
 @Module({})
 export class DatabaseModule {
-  static forRoot(schema: string): DynamicModule {
+  static init(schema: string): DynamicModule {
     return {
       module: DatabaseModule,
       imports: [
@@ -237,6 +320,13 @@ export class DatabaseModule {
         }),
       ],
     };
+  }
+
+  static loadEntities(
+    entities?: EntityClassOrSchema[],
+    dataSource?: DataSource | DataSourceOptions | string,
+  ): DynamicModule {
+    return TypeOrmModule.forFeature(entities, dataSource);
   }
 }
 </code></pre>

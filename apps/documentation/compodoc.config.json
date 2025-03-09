@@ -1,11 +1,13 @@
 {
-    "title": "Qushah API Documentation",
-    "customFavicon": "apps/documentation/static/assets/images/favicon.png",
-    "output": "apps/documentation/static/compodoc/dist",
-    "theme": "default",
-    "disableSourceCode": false,
-    "hideGenerator": true,
-    "includeVersion": true,
-    "language": "en",
-    "pwa": true
-  }
+  "title": "Qushah API Documentation",
+  "customFavicon": "apps/documentation/static/assets/images/favicon.png",
+  "output": "apps/documentation/static/compodoc/dist",
+  "theme": "default",
+  "disableSourceCode": false,
+  "hideGenerator": true,
+  "includeVersion": true,
+  "language": "en",
+  "pwa": true,
+  "includes": "docs",
+  "readme": "docs/README.md"
+}

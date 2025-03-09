@@ -24,55 +24,55 @@
 <title>cluster_EscrowModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-70 8,-195 519,-195 519,-70 8,-70"/>
 </g>
-<g id="clust6" class="cluster">
-<title>cluster_EscrowModule_providers</title>
-<polygon fill="none" stroke="black" points="357,-78 357,-130 511,-130 511,-78 357,-78"/>
-</g>
 <g id="clust3" class="cluster">
 <title>cluster_EscrowModule_imports</title>
-<polygon fill="none" stroke="black" points="16,-78 16,-130 349,-130 349,-78 16,-78"/>
+<polygon fill="none" stroke="black" points="178,-78 178,-130 511,-130 511,-78 178,-78"/>
+</g>
+<g id="clust6" class="cluster">
+<title>cluster_EscrowModule_providers</title>
+<polygon fill="none" stroke="black" points="16,-78 16,-130 170,-130 170,-78 16,-78"/>
 </g>
 <!-- CommonModule -->
 <g id="node1" class="node">
 <title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="340.67,-122 337.67,-126 316.67,-126 313.67,-122 229.33,-122 229.33,-86 340.67,-86 340.67,-122"/>
-<text text-anchor="middle" x="285" y="-99.8" font-family="Times,serif" font-size="14.00">CommonModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="502.67,-122 499.67,-126 478.67,-126 475.67,-122 391.33,-122 391.33,-86 502.67,-86 502.67,-122"/>
+<text text-anchor="middle" x="447" y="-99.8" font-family="Times,serif" font-size="14.00">CommonModule</text>
 </g>
 <!-- EscrowModule -->
 <g id="node3" class="node">
 <title>EscrowModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="335.53,-187 332.53,-191 311.53,-191 308.53,-187 234.47,-187 234.47,-151 335.53,-151 335.53,-187"/>
-<text text-anchor="middle" x="285" y="-164.8" font-family="Times,serif" font-size="14.00">EscrowModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="330.53,-187 327.53,-191 306.53,-191 303.53,-187 229.47,-187 229.47,-151 330.53,-151 330.53,-187"/>
+<text text-anchor="middle" x="280" y="-164.8" font-family="Times,serif" font-size="14.00">EscrowModule</text>
 </g>
 <!-- CommonModule&#45;&gt;EscrowModule -->
 <g id="edge1" class="edge">
 <title>CommonModule&#45;&gt;EscrowModule</title>
-<path fill="none" stroke="black" d="M285,-122.11C285,-122.11 285,-140.99 285,-140.99"/>
-<polygon fill="black" stroke="black" points="281.5,-140.99 285,-150.99 288.5,-140.99 281.5,-140.99"/>
+<path fill="none" stroke="black" d="M447,-122.11C447,-141.34 447,-169 447,-169 447,-169 340.56,-169 340.56,-169"/>
+<polygon fill="black" stroke="black" points="340.56,-165.5 330.56,-169 340.56,-172.5 340.56,-165.5"/>
 </g>
 <!-- GraphQLMicroserviceModule -->
 <g id="node2" class="node">
 <title>GraphQLMicroserviceModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="211.54,-122 208.54,-126 187.54,-126 184.54,-122 24.46,-122 24.46,-86 211.54,-86 211.54,-122"/>
-<text text-anchor="middle" x="118" y="-99.8" font-family="Times,serif" font-size="14.00">GraphQLMicroserviceModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="373.54,-122 370.54,-126 349.54,-126 346.54,-122 186.46,-122 186.46,-86 373.54,-86 373.54,-122"/>
+<text text-anchor="middle" x="280" y="-99.8" font-family="Times,serif" font-size="14.00">GraphQLMicroserviceModule</text>
 </g>
 <!-- GraphQLMicroserviceModule&#45;&gt;EscrowModule -->
 <g id="edge2" class="edge">
 <title>GraphQLMicroserviceModule&#45;&gt;EscrowModule</title>
-<path fill="none" stroke="black" d="M118,-122.11C118,-141.34 118,-169 118,-169 118,-169 224.44,-169 224.44,-169"/>
-<polygon fill="black" stroke="black" points="224.44,-172.5 234.44,-169 224.44,-165.5 224.44,-172.5"/>
+<path fill="none" stroke="black" d="M280,-122.11C280,-122.11 280,-140.99 280,-140.99"/>
+<polygon fill="black" stroke="black" points="276.5,-140.99 280,-150.99 283.5,-140.99 276.5,-140.99"/>
 </g>
 <!-- EscrowService -->
 <g id="node4" class="node">
 <title>EscrowService</title>
-<ellipse fill="#fdb462" stroke="black" cx="434" cy="-104" rx="68.9" ry="18"/>
-<text text-anchor="middle" x="434" y="-99.8" font-family="Times,serif" font-size="14.00">EscrowService</text>
+<ellipse fill="#fdb462" stroke="black" cx="93" cy="-104" rx="68.9" ry="18"/>
+<text text-anchor="middle" x="93" y="-99.8" font-family="Times,serif" font-size="14.00">EscrowService</text>
 </g>
 <!-- EscrowService&#45;&gt;EscrowModule -->
 <g id="edge3" class="edge">
 <title>EscrowService&#45;&gt;EscrowModule</title>
-<path fill="none" stroke="black" d="M434,-122.11C434,-141.34 434,-169 434,-169 434,-169 345.86,-169 345.86,-169"/>
-<polygon fill="black" stroke="black" points="345.86,-165.5 335.86,-169 345.86,-172.5 345.86,-165.5"/>
+<path fill="none" stroke="black" d="M93,-122.11C93,-141.34 93,-169 93,-169 93,-169 219.4,-169 219.4,-169"/>
+<polygon fill="black" stroke="black" points="219.4,-172.5 229.4,-169 219.4,-165.5 219.4,-172.5"/>
 </g>
 </g>
 </svg>

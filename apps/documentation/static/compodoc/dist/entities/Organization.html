@@ -211,7 +211,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">apps/organization/src/entities/organization.entity.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">apps/organization/src/entities/organization.entity.ts:24</a></div>
                         </td>
                     </tr>
 
@@ -249,7 +249,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">apps/organization/src/entities/organization.entity.ts:31</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">apps/organization/src/entities/organization.entity.ts:32</a></div>
                         </td>
                     </tr>
 
@@ -286,7 +286,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">apps/organization/src/entities/organization.entity.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">apps/organization/src/entities/organization.entity.ts:12</a></div>
                         </td>
                     </tr>
 
@@ -323,7 +323,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">apps/organization/src/entities/organization.entity.ts:27</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">apps/organization/src/entities/organization.entity.ts:28</a></div>
                         </td>
                     </tr>
 
@@ -360,7 +360,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">apps/organization/src/entities/organization.entity.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">apps/organization/src/entities/organization.entity.ts:20</a></div>
                         </td>
                     </tr>
 
@@ -397,7 +397,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">apps/organization/src/entities/organization.entity.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">apps/organization/src/entities/organization.entity.ts:16</a></div>
                         </td>
                     </tr>
 
@@ -411,11 +411,12 @@
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Field, ObjectType } from &#x27;@nestjs/graphql&#x27;;
 import { Column, Entity, OneToOne } from &#x27;typeorm&#x27;;
-import { BaseEntity } from &#x27;@qushah/common&#x27;;
+import { BaseEntity, GraphQLFederationDirective } from &#x27;@qushah/common&#x27;;
 import { OrganizationMetadata } from &#x27;./organization-metadata.entity&#x27;;
 
 @ObjectType()
-@Entity()
+@Entity({ name: &#x27;organizations&#x27; })
+@GraphQLFederationDirective(&#x27;@key(fields: &quot;id&quot;)&#x27;)
 export class Organization extends BaseEntity {
   @Field(() &#x3D;&gt; String)
   @Column({ unique: true })

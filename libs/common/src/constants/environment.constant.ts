@@ -1,4 +1,4 @@
-export const EnvironmentConstant = {
+export const ENVIRONMENT = {
   REDIS_HOST: 'REDIS_HOST',
   REDIS_PORT: 'REDIS_PORT',
   AUTH_PORT: 'AUTH_PORT',
@@ -25,4 +25,5 @@ export const EnvironmentConstant = {
   DATABASE_USERNAME: 'DATABASE_USERNAME',
   DATABASE_PASSWORD: 'DATABASE_PASSWORD',
   DATABASE_NAME: 'DATABASE_NAME',
+  IS_DOC_ENV: process.env.IS_DOC_ENV === 'true',
 };

@@ -13,7 +13,7 @@ const argv = yargs(process.argv.slice(2))
   .option('command', {
     alias: 'c',
     type: 'string',
-    describe: 'TypeORM CLI command (e.g., generate, run, revert)',
+    describe: 'TypeORM CLI command (e.g., generate, run, revert, seed)',
     demandOption: true,
   })
   .option('args', {
@@ -39,6 +39,18 @@ const { microservice, command, args, title } = argv as {
   title?: string;
 };
 
+// Handle seeding separately
+if (command === 'seed') {
+  const seederPath = `ts-node -r tsconfig-paths/register ./apps/${microservice}/src/seeder/seeder.ts`;
+  console.log(`Executing: ${seederPath}`);
+  try {
+    execSync(seederPath, { stdio: 'inherit' });
+  } catch {
+    process.exit(1);
+  }
+  process.exit(0);
+}
+
 // Dynamically set the path to the DataSource for the selected microservice
 const dataSourcePath = path.join(
   __dirname,
@@ -53,6 +65,5 @@ console.log(`Executing: ${typeormCommand}`);
 try {
   execSync(typeormCommand, { stdio: 'inherit' });
 } catch {
-  // Handle exceptions gracefully
   process.exit(1);
 }

@@ -5,16 +5,16 @@ import {
   CommonModule,
   DatabaseModule,
   GraphQLMicroserviceModule,
+  SCHEMA,
 } from '@qushah/common';
-import { OrganizationResolver } from './organization.resolver';
+import { OrganizationResolver } from './resolvers/organization.resolver';
 import { Organization } from './entities/organization.entity';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { OrganizationMetadata } from './entities/organization-metadata.entity';
 
 @Module({
   imports: [
-    DatabaseModule.forRoot('organization'),
-    TypeOrmModule.forFeature([Organization, OrganizationMetadata]),
+    DatabaseModule.init(SCHEMA.ORGANIZATION),
+    DatabaseModule.loadEntities([Organization, OrganizationMetadata]),
     CommonModule,
     GraphQLMicroserviceModule,
   ],

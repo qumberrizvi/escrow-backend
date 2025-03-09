@@ -1,5 +1,6 @@
 import {
   BaseEntity as BaseEntityTypeOrm,
+  BeforeInsert,
   CreateDateColumn,
   DataSource,
   DeleteDateColumn,
@@ -7,17 +8,18 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { Field, ID, ObjectType } from '@nestjs/graphql';
+import { Field, ObjectType } from '@nestjs/graphql';
 import { ColumnOrder, getColumnOrder } from '@qushah/common/decorators';
 import { ColumnMetadata } from 'typeorm/metadata/ColumnMetadata';
+import { DatabaseUtil } from '@qushah/common/utils';
 
 @ObjectType()
 @Entity()
 export abstract class BaseEntity extends BaseEntityTypeOrm {
   @ColumnOrder(-1)
-  @Field(() => ID)
-  @PrimaryGeneratedColumn()
-  id: number;
+  @Field(() => String)
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @ColumnOrder(9999)
   @Field(() => Date)
@@ -33,6 +35,11 @@ export abstract class BaseEntity extends BaseEntityTypeOrm {
   @Field(() => Date, { nullable: true })
   @DeleteDateColumn({ name: 'deleted_at', nullable: true })
   deletedAt?: Date;
+
+  @BeforeInsert()
+  generateUUID() {
+    this.id = DatabaseUtil.generateUUIDv7();
+  }
 
   static useDataSource(dataSource: DataSource) {
     BaseEntityTypeOrm.useDataSource.call(this, dataSource);

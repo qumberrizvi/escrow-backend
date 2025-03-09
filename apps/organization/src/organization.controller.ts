@@ -11,4 +11,9 @@ export class OrganizationController {
   getHello(): string {
     return this.organizationService.getHello();
   }
+
+  @MessagePattern({ cmd: OrganizationCommand.FIND_ORGANIZATION_BY_ID })
+  findOneById(id: string) {
+    return this.organizationService.findOne({ id });
+  }
 }
