@@ -493,15 +493,15 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Directive, Field, ObjectType } from &#x27;@nestjs/graphql&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Field, ObjectType } from &#x27;@nestjs/graphql&#x27;;
 import { Column, Entity, JoinColumn, ManyToOne } from &#x27;typeorm&#x27;;
-import { BaseEntity } from &#x27;@qushah/common&#x27;;
+import { BaseEntity, GraphQLFederationDirective } from &#x27;@qushah/common&#x27;;
 import { Role } from &#x27;./role.entity&#x27;;
 import { Organization } from &#x27;./external/organization.entity&#x27;;
 
 @ObjectType()
-// @Directive(&#x27;@key(fields: &quot;id&quot;)&#x27;)
 @Entity({ name: &#x27;users&#x27; })
+@GraphQLFederationDirective(&#x27;@key(fields: &quot;id&quot;)&#x27;)
 export class User extends BaseEntity {
   @Field(() &#x3D;&gt; String)
   @Column()

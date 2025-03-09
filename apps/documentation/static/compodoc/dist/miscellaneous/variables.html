@@ -128,6 +128,9 @@
                             <a href="#EscrowCommand" title="libs/common/src/constants/commands/escrow.command.ts" ><b>EscrowCommand</b>&nbsp;&nbsp;&nbsp;(libs/.../escrow.command.ts)</a>
                         </li>
                         <li>
+                            <a href="#isDocEnv" title="libs/common/src/decorators/graphql-federation-directive.decorator.ts" ><b>isDocEnv</b>&nbsp;&nbsp;&nbsp;(libs/.../graphql-federation-directive.decorator.ts)</a>
+                        </li>
+                        <li>
                             <a href="#MediaCommand" title="libs/common/src/constants/commands/media.command.ts" ><b>MediaCommand</b>&nbsp;&nbsp;&nbsp;(libs/.../media.command.ts)</a>
                         </li>
                         <li>
@@ -384,6 +387,7 @@
   DATABASE_USERNAME: &#x27;DATABASE_USERNAME&#x27;,
   DATABASE_PASSWORD: &#x27;DATABASE_PASSWORD&#x27;,
   DATABASE_NAME: &#x27;DATABASE_NAME&#x27;,
+  IS_DOC_ENV: process.env.IS_DOC_ENV &#x3D;&#x3D;&#x3D; &#x27;true&#x27;,
 }</code>
                     </td>
                 </tr>
@@ -416,6 +420,29 @@
                         <i>Default value : </i><code>{
   PING_ESCROW: &#x27;PING_ESCROW&#x27;,
 }</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>libs/common/src/decorators/graphql-federation-directive.decorator.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isDocEnv"></a>
+                    <span class="name">
+                        <span ><b>isDocEnv</b></span>
+                        <a href="#isDocEnv"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>ENVIRONMENT.IS_DOC_ENV</code>
                     </td>
                 </tr>
 

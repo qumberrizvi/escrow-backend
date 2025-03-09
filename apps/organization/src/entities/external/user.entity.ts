@@ -1,9 +1,10 @@
 import { Directive, Field, ObjectType } from '@nestjs/graphql';
 import { Organization } from '../organization.entity';
+import { GraphQLFederationDirective } from '@qushah/common';
 
 @ObjectType()
-@Directive('@extends') // 🚀 Extending User from User microservice
-@Directive('@key(fields: "id")') // Federated entity
+@GraphQLFederationDirective('@extends') // 🚀 Extending User from User microservice
+@GraphQLFederationDirective('@key(fields: "id")') // Federated entity
 export class User {
   @Field(() => String)
   id: string;

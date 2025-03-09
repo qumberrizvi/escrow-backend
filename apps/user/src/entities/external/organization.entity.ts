@@ -1,8 +1,9 @@
 import { Directive, Field, ObjectType } from '@nestjs/graphql';
+import { GraphQLFederationDirective } from '@qushah/common';
 
 @ObjectType()
-@Directive('@extends') // Extending from Organization Microservice
-@Directive('@key(fields: "id")') // Federation key
+@GraphQLFederationDirective('@extends') // Extending from Organization Microservice
+@GraphQLFederationDirective('@key(fields: "id")') // Federation key
 export class Organization {
   @Field(() => String)
   @Directive('@external') // This field is managed by Organization Microservice

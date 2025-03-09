@@ -1,12 +1,12 @@
-import { Directive, Field, ObjectType } from '@nestjs/graphql';
+import { Field, ObjectType } from '@nestjs/graphql';
 import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
-import { BaseEntity } from '@qushah/common';
+import { BaseEntity, GraphQLFederationDirective } from '@qushah/common';
 import { Role } from './role.entity';
 import { Organization } from './external/organization.entity';
 
 @ObjectType()
-@Directive('@key(fields: "id")')
 @Entity({ name: 'users' })
+@GraphQLFederationDirective('@key(fields: "id")')
 export class User extends BaseEntity {
   @Field(() => String)
   @Column()

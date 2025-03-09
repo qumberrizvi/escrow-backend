@@ -409,14 +409,14 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Directive, Field, ObjectType } from &#x27;@nestjs/graphql&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Field, ObjectType } from &#x27;@nestjs/graphql&#x27;;
 import { Column, Entity, OneToOne } from &#x27;typeorm&#x27;;
-import { BaseEntity } from &#x27;@qushah/common&#x27;;
+import { BaseEntity, GraphQLFederationDirective } from &#x27;@qushah/common&#x27;;
 import { OrganizationMetadata } from &#x27;./organization-metadata.entity&#x27;;
 
 @ObjectType()
 @Entity({ name: &#x27;organizations&#x27; })
-// @Directive(&#x27;@key(fields: &quot;id&quot;)&#x27;)
+@GraphQLFederationDirective(&#x27;@key(fields: &quot;id&quot;)&#x27;)
 export class Organization extends BaseEntity {
   @Field(() &#x3D;&gt; String)
   @Column({ unique: true })

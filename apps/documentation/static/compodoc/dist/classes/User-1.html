@@ -204,7 +204,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">apps/organization/src/entities/external/user.entity.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">apps/organization/src/entities/external/user.entity.ts:10</a></div>
                         </td>
                     </tr>
 
@@ -242,7 +242,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">apps/organization/src/entities/external/user.entity.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">apps/organization/src/entities/external/user.entity.ts:18</a></div>
                         </td>
                     </tr>
 
@@ -280,7 +280,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">apps/organization/src/entities/external/user.entity.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">apps/organization/src/entities/external/user.entity.ts:14</a></div>
                         </td>
                     </tr>
 
@@ -301,10 +301,11 @@
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Directive, Field, ObjectType } from &#x27;@nestjs/graphql&#x27;;
 import { Organization } from &#x27;../organization.entity&#x27;;
+import { GraphQLFederationDirective } from &#x27;@qushah/common&#x27;;
 
 @ObjectType()
-// @Directive(&#x27;@extends&#x27;) // 🚀 Extending User from User microservice
-// @Directive(&#x27;@key(fields: &quot;id&quot;)&#x27;) // Federated entity
+@GraphQLFederationDirective(&#x27;@extends&#x27;) // 🚀 Extending User from User microservice
+@GraphQLFederationDirective(&#x27;@key(fields: &quot;id&quot;)&#x27;) // Federated entity
 export class User {
   @Field(() &#x3D;&gt; String)
   id: string;
