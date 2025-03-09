@@ -4,6 +4,13 @@ import { BaseEntity, GraphQLFederationDirective } from '@qushah/common';
 import { Role } from './role.entity';
 import { Organization } from './external/organization.entity';
 
+/*
+ TODO: Add userType - Individual & Business. 
+  Make firstName, lastName nullable, add name field.
+  Add check in migration file to ensure firstName, lastName is
+  not null when user type is individual, and name is not null type is business.
+  Write a hook to join firstName, lastName before saving for individuals.
+*/
 @ObjectType()
 @Entity({ name: 'users' })
 @GraphQLFederationDirective('@key(fields: "id")')

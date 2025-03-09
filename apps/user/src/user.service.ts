@@ -4,6 +4,7 @@ import { MicroServiceClient } from '@qushah/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import { CreateUserInput } from './dtos/create-user.input';
 
 @Injectable()
 export class UserService {
@@ -20,5 +21,10 @@ export class UserService {
 
   find(): Promise<User[]> {
     return this.repository.find();
+  }
+
+  create(input: CreateUserInput): Promise<User> {
+    // TODO: Hash password
+    return this.repository.save(input);
   }
 }
