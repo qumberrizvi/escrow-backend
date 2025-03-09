@@ -155,15 +155,18 @@
 <p>Executes the seed script for a microservice.</p>
 <b>Example :</b><div><pre class="line-numbers"><code class="language-sh">pnpm migration -m user -c seed</code></pre></div><ul>
 <li><code>-m user</code> → Targets the <code>user</code> microservice.</li>
-<li><code>-c seed</code> → Runs the seeder script located at <code>apps/user/src/seeder/seeder.ts</code>.</li>
+<li><code>-c seed</code> → Runs the seeder script located at <code>apps/&lt;microservice&gt;/src/seeder/seeder.ts</code>.</li>
 </ul>
 <hr>
 <h2>Notes</h2>
 <ul>
 <li>The <code>-m</code> flag is mandatory to specify which microservice&#39;s migration should be executed.</li>
 <li>The CLI automatically resolves the correct TypeORM <code>DataSource</code> file based on the microservice name.</li>
-<li>If no changes are detected when generating a migration, the CLI will <strong>not throw an error</strong> but will log a warning instead.</li>
-<li>If <code>-c seed</code> is used, the CLI will execute the corresponding <code>seeder.ts</code> file for the specified microservice.</li>
+<li>If no changes are detected when generating a migration, the CLI will <strong>not throw an error</strong> but will log a warning
+instead.</li>
+<li>If <code>-c seed</code> is used, the CLI will execute the corresponding <code>seeder.ts</code> file for the specified microservice. Seeders
+are used to populate the database with initial data and should be located at
+<code>apps/&lt;microservice&gt;/src/seeder/seeder.ts</code>.</li>
 </ul>
 <h2>Troubleshooting</h2>
 <h3>Error: &quot;No changes in database schema were found&quot;</h3>
