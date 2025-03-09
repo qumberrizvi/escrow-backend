@@ -16,7 +16,7 @@ pnpm migration -m <microservice> -c <command> [-a <args>]
 
 ### Parameters:
 - `-m, --microservice` → Specifies the target microservice (e.g., `auth`, `escrow`, `user`, etc.).
-- `-c, --command` → Specifies the TypeORM migration command to run (e.g., `generate`, `run`, `revert`, etc.).
+- `-c, --command` → Specifies the TypeORM migration command to run (e.g., `generate`, `run`, `revert`, `seed`, etc.).
 - `-t, --title` (optional) → Title for migration file. Needed while running `generate`.
 - `-a, --args` (optional) → Additional arguments passed to TypeORM CLI.
 
@@ -73,10 +73,23 @@ pnpm migration -m property -c show
 
 ---
 
+### 5. Run Seeder
+Executes the seed script for a microservice.
+
+```sh
+pnpm migration -m user -c seed
+```
+
+- `-m user` → Targets the `user` microservice.
+- `-c seed` → Runs the seeder script located at `apps/user/src/seeder/seeder.ts`.
+
+---
+
 ## Notes
 - The `-m` flag is mandatory to specify which microservice's migration should be executed.
 - The CLI automatically resolves the correct TypeORM `DataSource` file based on the microservice name.
 - If no changes are detected when generating a migration, the CLI will **not throw an error** but will log a warning instead.
+- If `-c seed` is used, the CLI will execute the corresponding `seeder.ts` file for the specified microservice.
 
 ## Troubleshooting
 ### Error: "No changes in database schema were found"
@@ -96,4 +109,3 @@ pnpm migration -m property -c show
 ---
 
 This CLI provides an efficient way to manage database migrations across multiple microservices in a monorepo setup.
-
