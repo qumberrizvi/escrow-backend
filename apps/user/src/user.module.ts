@@ -12,6 +12,7 @@ import {
 import { UserResolver } from './resolvers/user.resolver';
 import { User } from './entities/user.entity';
 import { Role } from './entities/role.entity';
+import { SeederModule } from './seeder/seeder.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { Role } from './entities/role.entity';
     DatabaseModule.init(SCHEMA.USER),
     DatabaseModule.loadEntities([User, Role]),
     ClientsModule.register(MicroServiceClient.ORGANIZATION_CLIENT),
+    SeederModule,
   ],
   controllers: [UserController],
   providers: [UserService, UserResolver],

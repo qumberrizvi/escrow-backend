@@ -1,10 +1,11 @@
-import { Field, ObjectType } from '@nestjs/graphql';
+import { Directive, Field, ObjectType } from '@nestjs/graphql';
 import { Column, Entity, OneToOne } from 'typeorm';
 import { BaseEntity } from '@qushah/common';
 import { OrganizationMetadata } from './organization-metadata.entity';
 
 @ObjectType()
 @Entity({ name: 'organizations' })
+@Directive('@key(fields: "id")')
 export class Organization extends BaseEntity {
   @Field(() => String)
   @Column({ unique: true })

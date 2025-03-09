@@ -1,9 +1,8 @@
-import { Parent, Query, ResolveField, Resolver } from '@nestjs/graphql';
-import { Organization } from '../entities/external/organization.entity';
+import { Query, Resolver } from '@nestjs/graphql';
 import { User } from '../entities/user.entity';
 import { UserService } from '../user.service';
 
-@Resolver(() => User)
+@Resolver(User)
 export class UserResolver {
   constructor(private readonly userService: UserService) {}
 
@@ -12,8 +11,8 @@ export class UserResolver {
     return 'pong';
   }
 
-  @ResolveField(() => Organization, { nullable: true })
-  organization(@Parent() user: User): Promise<Organization> {
-    return this.userService.getOrganization(user);
+  @Query(() => [User])
+  users(): Promise<User[]> {
+    return this.userService.find();
   }
 }

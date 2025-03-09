@@ -1,9 +1,9 @@
 import { Field, ObjectType } from '@nestjs/graphql';
-import { Column, Entity, PrimaryColumn } from 'typeorm';
+import { BaseEntity, Column, Entity, PrimaryColumn } from 'typeorm';
 
 @ObjectType()
 @Entity({ name: 'roles' })
-export class Role {
+export class Role extends BaseEntity {
   @Field(() => String)
   @PrimaryColumn()
   name: string;

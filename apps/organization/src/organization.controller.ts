@@ -13,7 +13,7 @@ export class OrganizationController {
   }
 
   @MessagePattern({ cmd: OrganizationCommand.FIND_ORGANIZATION_BY_ID })
-  findOneById(id: number) {
+  findOneById(id: string) {
     return this.organizationService.findOne({ id });
   }
 }

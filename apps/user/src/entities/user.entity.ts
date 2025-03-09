@@ -32,10 +32,10 @@ export class User extends BaseEntity {
   @JoinColumn({ name: 'role_id' })
   role: Role;
 
-  @Column({ nullable: true })
+  @Field(() => String, { nullable: true })
+  @Column({ name: 'organization_id', type: 'uuid', nullable: true })
   organizationId?: string;
 
   @Field(() => [Organization], { nullable: true })
-  @Directive('@external')
   organization?: Organization;
 }
