@@ -96,7 +96,7 @@
 
 <ol class="breadcrumb">
   <li class="breadcrumb-item">Classes</li>
-  <li class="breadcrumb-item" >UserResolver</li>
+  <li class="breadcrumb-item" >CreateRoleTable1741519642145</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -120,18 +120,38 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>apps/user/src/resolvers/user.resolver.ts</code>
+            <code>apps/user/src/migrations/1741519642145-CreateRoleTable.ts</code>
         </p>
 
 
 
 
+            <p class="comment">
+                <h3>Implements</h3>
+            </p>
+            <p class="comment">
+                        <code>MigrationInterface</code>
+            </p>
 
 
             <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#name" >name</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -142,12 +162,14 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier"></span>
-                                <a href="#ping" >ping</a>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#down" >down</a>
                             </li>
                             <li>
-                                    <span class="modifier"></span>
-                                <a href="#users" >users</a>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#up" >up</a>
                             </li>
                         </ul>
                     </td>
@@ -161,55 +183,44 @@
     </table>
 </section>
 
-            <section data-compodoc="block-constructor">
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor(userService: <a href="../injectables/UserService.html" target="_self">UserService</a>)</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">apps/user/src/resolvers/user.resolver.ts:6</a></div>
-                            </td>
-                        </tr>
 
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="name"></a>
+                    <span class="name">
+                        <span ><b>name</b></span>
+                        <a href="#name"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>userService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
                     </td>
                 </tr>
-            </tbody>
-        </table>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;CreateRoleTable1741519642145&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="4" class="link-to-prism">apps/user/src/migrations/1741519642145-CreateRoleTable.ts:4</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
 </section>
-
 
             <section data-compodoc="block-methods">
     
@@ -220,33 +231,27 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="ping"></a>
+                    <a name="down"></a>
                     <span class="name">
-                            <span class="modifier"></span>
-                        <span ><b>ping</b></span>
-                        <a href="#ping"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>down</b></span>
+                        <a href="#down"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>ping()</code>
+                    <code>down(queryRunner: QueryRunner)</code>
                 </td>
             </tr>
 
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@Query(undefined, {name: &#x27;pingUser&#x27;})<br /></code>
-                </td>
-            </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="10"
-                                    class="link-to-prism">apps/user/src/resolvers/user.resolver.ts:10</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="15"
+                                    class="link-to-prism">apps/user/src/migrations/1741519642145-CreateRoleTable.ts:15</a></div>
                         </td>
                     </tr>
 
@@ -254,10 +259,40 @@
             <tr>
                 <td class="col-md-4">
 
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>queryRunner</td>
+                                            <td>
+                                                        <code>QueryRunner</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
 
                         </div>
+                            <div class="io-description">
+                                
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -266,33 +301,27 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="users"></a>
+                    <a name="up"></a>
                     <span class="name">
-                            <span class="modifier"></span>
-                        <span ><b>users</b></span>
-                        <a href="#users"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>up</b></span>
+                        <a href="#up"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>users()</code>
+                    <code>up(queryRunner: QueryRunner)</code>
                 </td>
             </tr>
 
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@Query(undefined)<br /></code>
-                </td>
-            </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="15"
-                                    class="link-to-prism">apps/user/src/resolvers/user.resolver.ts:15</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="6"
+                                    class="link-to-prism">apps/user/src/migrations/1741519642145-CreateRoleTable.ts:6</a></div>
                         </td>
                     </tr>
 
@@ -300,10 +329,40 @@
             <tr>
                 <td class="col-md-4">
 
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>queryRunner</td>
+                                            <td>
+                                                        <code>QueryRunner</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="../entitys/User.html" target="_self" >Promise&lt;User[]&gt;</a></code>
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
 
                         </div>
+                            <div class="io-description">
+                                
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -318,22 +377,22 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Query, Resolver } from &#x27;@nestjs/graphql&#x27;;
-import { User } from &#x27;../entities/user.entity&#x27;;
-import { UserService } from &#x27;../user.service&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { MigrationInterface, QueryRunner } from &#x27;typeorm&#x27;;
 
-@Resolver(User)
-export class UserResolver {
-  constructor(private readonly userService: UserService) {}
+export class CreateRoleTable1741519642145 implements MigrationInterface {
+  name &#x3D; &#x27;CreateRoleTable1741519642145&#x27;;
 
-  @Query(() &#x3D;&gt; String, { name: &#x27;pingUser&#x27; })
-  ping(): string {
-    return &#x27;pong&#x27;;
+  public async up(queryRunner: QueryRunner): Promise&lt;void&gt; {
+    await queryRunner.query(&#x60;CREATE TABLE &quot;user&quot;.&quot;roles&quot;
+                             (
+                                 &quot;name&quot;        character varying NOT NULL,
+                                 &quot;description&quot; character varying,
+                                 CONSTRAINT &quot;PK_648e3f5447f725579d7d4ffdfb7&quot; PRIMARY KEY (&quot;name&quot;)
+                             )&#x60;);
   }
 
-  @Query(() &#x3D;&gt; [User])
-  users(): Promise&lt;User[]&gt; {
-    return this.userService.find();
+  public async down(queryRunner: QueryRunner): Promise&lt;void&gt; {
+    await queryRunner.query(&#x60;DROP TABLE &quot;user&quot;.&quot;roles&quot;&#x60;);
   }
 }
 </code></pre>
@@ -374,7 +433,7 @@ export class UserResolver {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'UserResolver.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'CreateRoleTable1741519642145.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

@@ -460,7 +460,7 @@ import { JoinColumn } from &#x27;typeorm&#x27;;
 import { Organization } from &#x27;./organization.entity&#x27;;
 
 @ObjectType()
-@Entity()
+@Entity({ name: &#x27;organizations_metadata&#x27; })
 export class OrganizationMetadata extends BaseEntity {
   @OneToOne(() &#x3D;&gt; Organization, (organization) &#x3D;&gt; organization.meta, {
     cascade: true,

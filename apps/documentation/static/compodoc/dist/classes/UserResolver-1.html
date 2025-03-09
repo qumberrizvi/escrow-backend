@@ -120,7 +120,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>apps/user/src/resolvers/user.resolver.ts</code>
+            <code>apps/organization/src/resolvers/external/user.resolver.ts</code>
         </p>
 
 
@@ -143,11 +143,8 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier"></span>
-                                <a href="#ping" >ping</a>
-                            </li>
-                            <li>
-                                    <span class="modifier"></span>
-                                <a href="#users" >users</a>
+                                    <span class="modifier">Async</span>
+                                <a href="#organization" >organization</a>
                             </li>
                         </ul>
                     </td>
@@ -167,12 +164,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(userService: <a href="../injectables/UserService.html" target="_self">UserService</a>)</code>
+<code>constructor(organizationService: <a href="../injectables/OrganizationService.html" target="_self">OrganizationService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">apps/user/src/resolvers/user.resolver.ts:6</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">apps/organization/src/resolvers/external/user.resolver.ts:7</a></div>
                             </td>
                         </tr>
 
@@ -190,10 +187,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>userService</td>
+                                                        <td>organizationService</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                                        <code><a href="../injectables/OrganizationService.html" target="_self" >OrganizationService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -220,18 +217,19 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="ping"></a>
+                    <a name="organization"></a>
                     <span class="name">
                             <span class="modifier"></span>
-                        <span ><b>ping</b></span>
-                        <a href="#ping"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Async</span>
+                        <span ><b>organization</b></span>
+                        <a href="#organization"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>ping()</code>
+                    <code>organization(user: <a href="../classes/User.html" target="_self">User</a>)</code>
                 </td>
             </tr>
 
@@ -239,14 +237,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Query(undefined, {name: &#x27;pingUser&#x27;})<br /></code>
+                    <code>@ResolveField(undefined, {nullable: true})<br /></code>
                 </td>
             </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="10"
-                                    class="link-to-prism">apps/user/src/resolvers/user.resolver.ts:10</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="11"
+                                    class="link-to-prism">apps/organization/src/resolvers/external/user.resolver.ts:11</a></div>
                         </td>
                     </tr>
 
@@ -254,56 +252,40 @@
             <tr>
                 <td class="col-md-4">
 
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/User.html" target="_self" >User</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                            <b>Returns : </b>        <code><a href="../entitys/Organization.html" target="_self" >Promise&lt;Organization | null&gt;</a></code>
 
                         </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="users"></a>
-                    <span class="name">
-                            <span class="modifier"></span>
-                        <span ><b>users</b></span>
-                        <a href="#users"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>users()</code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@Query(undefined)<br /></code>
-                </td>
-            </tr>
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="15"
-                                    class="link-to-prism">apps/user/src/resolvers/user.resolver.ts:15</a></div>
-                        </td>
-                    </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="../entitys/User.html" target="_self" >Promise&lt;User[]&gt;</a></code>
-
-                        </div>
+                            <div class="io-description">
+                                
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -318,22 +300,19 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Query, Resolver } from &#x27;@nestjs/graphql&#x27;;
-import { User } from &#x27;../entities/user.entity&#x27;;
-import { UserService } from &#x27;../user.service&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Parent, ResolveField, Resolver } from &#x27;@nestjs/graphql&#x27;;
+import { User } from &#x27;../../entities/external/user.entity&#x27;;
+import { Organization } from &#x27;../../entities/organization.entity&#x27;;
+import { OrganizationService } from &#x27;../../organization.service&#x27;;
 
-@Resolver(User)
+@Resolver(() &#x3D;&gt; User)
 export class UserResolver {
-  constructor(private readonly userService: UserService) {}
+  constructor(private readonly organizationService: OrganizationService) {}
 
-  @Query(() &#x3D;&gt; String, { name: &#x27;pingUser&#x27; })
-  ping(): string {
-    return &#x27;pong&#x27;;
-  }
-
-  @Query(() &#x3D;&gt; [User])
-  users(): Promise&lt;User[]&gt; {
-    return this.userService.find();
+  @ResolveField(() &#x3D;&gt; Organization, { nullable: true })
+  async organization(@Parent() user: User): Promise&lt;Organization | null&gt; {
+    if (!user.organizationId) return null;
+    return this.organizationService.findOne({ id: user.organizationId });
   }
 }
 </code></pre>
@@ -374,7 +353,7 @@ export class UserResolver {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'UserResolver.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'UserResolver-1.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

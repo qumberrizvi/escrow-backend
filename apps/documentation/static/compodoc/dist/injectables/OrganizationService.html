@@ -140,6 +140,9 @@
                                 <a href="#findAll" >findAll</a>
                             </li>
                             <li>
+                                <a href="#findOne" >findOne</a>
+                            </li>
+                            <li>
                                 <a href="#getHello" >getHello</a>
                             </li>
                         </ul>
@@ -160,12 +163,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(repository: <a href="../classes/Organization.html" target="_self">Repository&lt;Organization&gt;</a>)</code>
+<code>constructor(repository: <a href="../entitys/Organization.html" target="_self">Repository&lt;Organization&gt;</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">apps/organization/src/organization.service.ts:7</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">apps/organization/src/organization.service.ts:8</a></div>
                             </td>
                         </tr>
 
@@ -186,7 +189,7 @@
                                                         <td>repository</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../classes/Organization.html" target="_self" >Repository&lt;Organization&gt;</a></code>
+                                                                        <code><a href="../entitys/Organization.html" target="_self" >Repository&lt;Organization&gt;</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -228,8 +231,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="17"
-                                    class="link-to-prism">apps/organization/src/organization.service.ts:17</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="18"
+                                    class="link-to-prism">apps/organization/src/organization.service.ts:18</a></div>
                         </td>
                     </tr>
 
@@ -238,9 +241,76 @@
                 <td class="col-md-4">
 
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="../classes/Organization.html" target="_self" >Promise&lt;Organization[]&gt;</a></code>
+                            <b>Returns : </b>        <code><a href="../entitys/Organization.html" target="_self" >Promise&lt;Organization[]&gt;</a></code>
 
                         </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findOne"></a>
+                    <span class="name">
+                        <span ><b>findOne</b></span>
+                        <a href="#findOne"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>findOne(where: <a href="../entitys/Organization.html" target="_self">FindOptionsWhere&lt;Organization&gt;</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="24"
+                                    class="link-to-prism">apps/organization/src/organization.service.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>where</td>
+                                            <td>
+                                                            <code><a href="../entitys/Organization.html" target="_self" >FindOptionsWhere&lt;Organization&gt;</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -265,8 +335,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="13"
-                                    class="link-to-prism">apps/organization/src/organization.service.ts:13</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="14"
+                                    class="link-to-prism">apps/organization/src/organization.service.ts:14</a></div>
                         </td>
                     </tr>
 
@@ -292,6 +362,7 @@
 import { Repository } from &#x27;typeorm&#x27;;
 import { Organization } from &#x27;./entities/organization.entity&#x27;;
 import { InjectRepository } from &#x27;@nestjs/typeorm&#x27;;
+import { FindOptionsWhere } from &#x27;typeorm/find-options/FindOptionsWhere&#x27;;
 
 @Injectable()
 export class OrganizationService {
@@ -308,6 +379,10 @@ export class OrganizationService {
     return this.repository.find({
       relations: [&#x27;meta&#x27;],
     });
+  }
+
+  findOne(where: FindOptionsWhere&lt;Organization&gt;) {
+    return this.repository.findOne({ where });
   }
 }
 </code></pre>

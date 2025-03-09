@@ -80,16 +80,23 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content controller">
+               <div class="content class">
                    <div class="content-data">
 
 
 
 
 
+
+
+
+
+
+
+
 <ol class="breadcrumb">
-  <li class="breadcrumb-item">Controllers</li>
-  <li class="breadcrumb-item" >OrganizationController</li>
+  <li class="breadcrumb-item">Classes</li>
+  <li class="breadcrumb-item" >CreateOrganizationAndMetaTable1741518145374</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -113,19 +120,38 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>apps/organization/src/organization.controller.ts</code>
+            <code>apps/organization/src/migrations/1741518145374-CreateOrganizationAndMetaTable.ts</code>
         </p>
 
 
 
 
-
+            <p class="comment">
+                <h3>Implements</h3>
+            </p>
+            <p class="comment">
+                        <code>MigrationInterface</code>
+            </p>
 
 
             <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#name" >name</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -136,12 +162,14 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier"></span>
-                                <a href="#findOneById" >findOneById</a>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#down" >down</a>
                             </li>
                             <li>
-                                    <span class="modifier"></span>
-                                <a href="#getHello" >getHello</a>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#up" >up</a>
                             </li>
                         </ul>
                     </td>
@@ -149,6 +177,45 @@
 
 
 
+
+
+        </tbody>
+    </table>
+</section>
+
+
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="name"></a>
+                    <span class="name">
+                        <span ><b>name</b></span>
+                        <a href="#name"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;CreateOrganizationAndMetaTable1741518145374&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">apps/organization/src/migrations/1741518145374-CreateOrganizationAndMetaTable.ts:6</a></div>
+                        </td>
+                    </tr>
 
 
         </tbody>
@@ -164,33 +231,27 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="findOneById"></a>
+                    <a name="down"></a>
                     <span class="name">
-                            <span class="modifier"></span>
-                        <span ><b>findOneById</b></span>
-                        <a href="#findOneById"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>down</b></span>
+                        <a href="#down"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>findOneById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    <code>down(queryRunner: QueryRunner)</code>
                 </td>
             </tr>
 
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@MessagePattern({cmd: undefined})<br /></code>
-                </td>
-            </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="16"
-                                    class="link-to-prism">apps/organization/src/organization.controller.ts:16</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="44"
+                                    class="link-to-prism">apps/organization/src/migrations/1741518145374-CreateOrganizationAndMetaTable.ts:44</a></div>
                         </td>
                     </tr>
 
@@ -211,9 +272,9 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>id</td>
+                                                <td>queryRunner</td>
                                             <td>
-                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        <code>QueryRunner</code>
                                             </td>
 
                                             <td>
@@ -226,7 +287,7 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
 
                         </div>
                             <div class="io-description">
@@ -240,33 +301,27 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getHello"></a>
+                    <a name="up"></a>
                     <span class="name">
-                            <span class="modifier"></span>
-                        <span ><b>getHello</b></span>
-                        <a href="#getHello"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>up</b></span>
+                        <a href="#up"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getHello()</code>
+                    <code>up(queryRunner: QueryRunner)</code>
                 </td>
             </tr>
 
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@MessagePattern({cmd: undefined})<br /></code>
-                </td>
-            </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="11"
-                                    class="link-to-prism">apps/organization/src/organization.controller.ts:11</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="8"
+                                    class="link-to-prism">apps/organization/src/migrations/1741518145374-CreateOrganizationAndMetaTable.ts:8</a></div>
                         </td>
                     </tr>
 
@@ -274,47 +329,109 @@
             <tr>
                 <td class="col-md-4">
 
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>queryRunner</td>
+                                            <td>
+                                                        <code>QueryRunner</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
 
                         </div>
+                            <div class="io-description">
+                                
+                            </div>
                 </td>
             </tr>
         </tbody>
     </table>
-</section>    </div>
+</section>
+
+
+
+
+
+    </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Controller } from &#x27;@nestjs/common&#x27;;
-import { OrganizationService } from &#x27;./organization.service&#x27;;
-import { MessagePattern } from &#x27;@nestjs/microservices&#x27;;
-import { OrganizationCommand } from &#x27;@qushah/common/constants/commands/organization.command&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { MigrationInterface, QueryRunner } from &#x27;typeorm&#x27;;
 
-@Controller()
-export class OrganizationController {
-  constructor(private readonly organizationService: OrganizationService) {}
+export class CreateOrganizationAndMetaTable1741518145374
+  implements MigrationInterface
+{
+  name &#x3D; &#x27;CreateOrganizationAndMetaTable1741518145374&#x27;;
 
-  @MessagePattern({ cmd: OrganizationCommand.PING_ORGANIZATION })
-  getHello(): string {
-    return this.organizationService.getHello();
+  public async up(queryRunner: QueryRunner): Promise&lt;void&gt; {
+    await queryRunner.query(&#x60;CREATE TABLE &quot;organization&quot;.&quot;organizations&quot;
+                             (
+                                 &quot;id&quot;                   uuid              NOT NULL DEFAULT uuid_generate_v4(),
+                                 &quot;name&quot;                 character varying NOT NULL,
+                                 &quot;slug&quot;                 character varying NOT NULL,
+                                 &quot;primary_contact_name&quot; character varying NOT NULL,
+                                 &quot;email&quot;                character varying NOT NULL,
+                                 &quot;phone&quot;                character varying NOT NULL,
+                                 &quot;created_at&quot;           TIMESTAMP         NOT NULL DEFAULT now(),
+                                 &quot;updated_at&quot;           TIMESTAMP                  DEFAULT now(),
+                                 &quot;deleted_at&quot;           TIMESTAMP,
+                                 CONSTRAINT &quot;UQ_9b7ca6d30b94fef571cff876884&quot; UNIQUE (&quot;name&quot;),
+                                 CONSTRAINT &quot;UQ_963693341bd612aa01ddf3a4b68&quot; UNIQUE (&quot;slug&quot;),
+                                 CONSTRAINT &quot;PK_6b031fcd0863e3f6b44230163f9&quot; PRIMARY KEY (&quot;id&quot;)
+                             )&#x60;);
+    await queryRunner.query(&#x60;CREATE TABLE &quot;organization&quot;.&quot;organizations_metadata&quot;
+                             (
+                                 &quot;id&quot;                     uuid              NOT NULL DEFAULT uuid_generate_v4(),
+                                 &quot;primary_color&quot;          character varying,
+                                 &quot;domain&quot;                 character varying,
+                                 &quot;logo&quot;                   character varying NOT NULL,
+                                 &quot;rent_fee_percentage&quot;    numeric(5, 2)     NOT NULL DEFAULT &#x27;5&#x27;,
+                                 &quot;deposit_fee_percentage&quot; numeric(5, 2)     NOT NULL DEFAULT &#x27;5&#x27;,
+                                 &quot;allow_interest_earning&quot; boolean           NOT NULL DEFAULT false,
+                                 &quot;organization_id&quot;        uuid,
+                                 &quot;created_at&quot;             TIMESTAMP         NOT NULL DEFAULT now(),
+                                 &quot;updated_at&quot;             TIMESTAMP                  DEFAULT now(),
+                                 &quot;deleted_at&quot;             TIMESTAMP,
+                                 CONSTRAINT &quot;REL_ad9c5b4a8fb0a54d63b8471019&quot; UNIQUE (&quot;organization_id&quot;),
+                                 CONSTRAINT &quot;PK_63bbcee313cee9e95bfba3c7d2b&quot; PRIMARY KEY (&quot;id&quot;)
+                             )&#x60;);
+    await queryRunner.query(&#x60;ALTER TABLE &quot;organization&quot;.&quot;organizations_metadata&quot;
+        ADD CONSTRAINT &quot;FK_ad9c5b4a8fb0a54d63b84710190&quot; FOREIGN KEY (&quot;organization_id&quot;) REFERENCES &quot;organization&quot;.&quot;organizations&quot; (&quot;id&quot;) ON DELETE CASCADE ON UPDATE CASCADE&#x60;);
   }
 
-  @MessagePattern({ cmd: OrganizationCommand.FIND_ORGANIZATION_BY_ID })
-  findOneById(id: string) {
-    return this.organizationService.findOne({ id });
+  public async down(queryRunner: QueryRunner): Promise&lt;void&gt; {
+    await queryRunner.query(&#x60;ALTER TABLE &quot;organization&quot;.&quot;organizations_metadata&quot;
+        DROP CONSTRAINT &quot;FK_ad9c5b4a8fb0a54d63b84710190&quot;&#x60;);
+    await queryRunner.query(
+      &#x60;DROP TABLE &quot;organization&quot;.&quot;organizations_metadata&quot;&#x60;,
+    );
+    await queryRunner.query(&#x60;DROP TABLE &quot;organization&quot;.&quot;organizations&quot;&#x60;);
   }
 }
 </code></pre>
     </div>
 </div>
-
-
-
-
-
-
-
 
 
 
@@ -349,8 +466,8 @@ export class OrganizationController {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'controller';
-            var COMPODOC_CURRENT_PAGE_URL = 'OrganizationController.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'CreateOrganizationAndMetaTable1741518145374.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

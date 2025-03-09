@@ -80,7 +80,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content class">
+               <div class="content injectable">
                    <div class="content-data">
 
 
@@ -90,13 +90,9 @@
 
 
 
-
-
-
-
 <ol class="breadcrumb">
-  <li class="breadcrumb-item">Classes</li>
-  <li class="breadcrumb-item" >UserResolver</li>
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >SeederService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -120,9 +116,8 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>apps/user/src/resolvers/user.resolver.ts</code>
+            <code>apps/user/src/seeder/seeder.service.ts</code>
         </p>
-
 
 
 
@@ -142,12 +137,13 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier"></span>
-                                <a href="#ping" >ping</a>
+                                    <span class="modifier">Async</span>
+                                <a href="#seed" >seed</a>
                             </li>
                             <li>
-                                    <span class="modifier"></span>
-                                <a href="#users" >users</a>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#seedRoles" >seedRoles</a>
                             </li>
                         </ul>
                     </td>
@@ -167,12 +163,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(userService: <a href="../injectables/UserService.html" target="_self">UserService</a>)</code>
+<code>constructor(roleRepository: <a href="../classes/Role.html" target="_self">Repository&lt;Role&gt;</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">apps/user/src/resolvers/user.resolver.ts:6</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">apps/user/src/seeder/seeder.service.ts:8</a></div>
                             </td>
                         </tr>
 
@@ -190,10 +186,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>userService</td>
+                                                        <td>roleRepository</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                                        <code><a href="../classes/Role.html" target="_self" >Repository&lt;Role&gt;</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -210,7 +206,6 @@
         </table>
 </section>
 
-
             <section data-compodoc="block-methods">
     
     <h3 id="methods">
@@ -220,33 +215,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="ping"></a>
+                    <a name="seed"></a>
                     <span class="name">
-                            <span class="modifier"></span>
-                        <span ><b>ping</b></span>
-                        <a href="#ping"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Async</span>
+                        <span ><b>seed</b></span>
+                        <a href="#seed"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>ping()</code>
+                    <code>seed()</code>
                 </td>
             </tr>
 
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@Query(undefined, {name: &#x27;pingUser&#x27;})<br /></code>
-                </td>
-            </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="10"
-                                    class="link-to-prism">apps/user/src/resolvers/user.resolver.ts:10</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="13"
+                                    class="link-to-prism">apps/user/src/seeder/seeder.service.ts:13</a></div>
                         </td>
                     </tr>
 
@@ -255,7 +243,7 @@
                 <td class="col-md-4">
 
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                         </div>
                 </td>
@@ -266,33 +254,27 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="users"></a>
+                    <a name="seedRoles"></a>
                     <span class="name">
-                            <span class="modifier"></span>
-                        <span ><b>users</b></span>
-                        <a href="#users"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>seedRoles</b></span>
+                        <a href="#seedRoles"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>users()</code>
+                    <code>seedRoles()</code>
                 </td>
             </tr>
 
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@Query(undefined)<br /></code>
-                </td>
-            </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="15"
-                                    class="link-to-prism">apps/user/src/resolvers/user.resolver.ts:15</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="18"
+                                    class="link-to-prism">apps/user/src/seeder/seeder.service.ts:18</a></div>
                         </td>
                     </tr>
 
@@ -301,7 +283,7 @@
                 <td class="col-md-4">
 
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="../entitys/User.html" target="_self" >Promise&lt;User[]&gt;</a></code>
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                         </div>
                 </td>
@@ -310,35 +292,50 @@
     </table>
 </section>
 
-
-
-
-
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Query, Resolver } from &#x27;@nestjs/graphql&#x27;;
-import { User } from &#x27;../entities/user.entity&#x27;;
-import { UserService } from &#x27;../user.service&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@nestjs/common&#x27;;
+import { InjectRepository } from &#x27;@nestjs/typeorm&#x27;;
+import { Repository } from &#x27;typeorm&#x27;;
+import { Role } from &#x27;../entities/role.entity&#x27;;
+import { Roles } from &#x27;@qushah/common&#x27;;
 
-@Resolver(User)
-export class UserResolver {
-  constructor(private readonly userService: UserService) {}
+@Injectable()
+export class SeederService {
+  constructor(
+    @InjectRepository(Role) private roleRepository: Repository&lt;Role&gt;,
+  ) {}
 
-  @Query(() &#x3D;&gt; String, { name: &#x27;pingUser&#x27; })
-  ping(): string {
-    return &#x27;pong&#x27;;
+  async seed() {
+    await this.seedRoles();
+    console.log(&#x27;✅ Database seeding completed.&#x27;);
   }
 
-  @Query(() &#x3D;&gt; [User])
-  users(): Promise&lt;User[]&gt; {
-    return this.userService.find();
+  private async seedRoles() {
+    const roles &#x3D; Object.values(Roles);
+    for (const roleName of roles) {
+      const roleExists &#x3D; await this.roleRepository.findOne({
+        where: { name: roleName },
+      });
+      if (!roleExists) {
+        await this.roleRepository.save(
+          this.roleRepository.create({ name: roleName }),
+        );
+        console.log(&#x60;Inserted Role: ${roleName}&#x60;);
+      }
+    }
   }
 }
 </code></pre>
     </div>
+
 </div>
+
+
+
+
 
 
 
@@ -373,8 +370,8 @@ export class UserResolver {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'UserResolver.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'SeederService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
