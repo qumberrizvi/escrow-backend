@@ -24,55 +24,55 @@
 <title>cluster_PropertyModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-70 8,-195 527,-195 527,-70 8,-70"/>
 </g>
-<g id="clust6" class="cluster">
-<title>cluster_PropertyModule_providers</title>
-<polygon fill="none" stroke="black" points="357,-78 357,-130 519,-130 519,-78 357,-78"/>
-</g>
 <g id="clust3" class="cluster">
 <title>cluster_PropertyModule_imports</title>
-<polygon fill="none" stroke="black" points="16,-78 16,-130 349,-130 349,-78 16,-78"/>
+<polygon fill="none" stroke="black" points="186,-78 186,-130 519,-130 519,-78 186,-78"/>
+</g>
+<g id="clust6" class="cluster">
+<title>cluster_PropertyModule_providers</title>
+<polygon fill="none" stroke="black" points="16,-78 16,-130 178,-130 178,-78 16,-78"/>
 </g>
 <!-- CommonModule -->
 <g id="node1" class="node">
 <title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="340.67,-122 337.67,-126 316.67,-126 313.67,-122 229.33,-122 229.33,-86 340.67,-86 340.67,-122"/>
-<text text-anchor="middle" x="285" y="-99.8" font-family="Times,serif" font-size="14.00">CommonModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="510.67,-122 507.67,-126 486.67,-126 483.67,-122 399.33,-122 399.33,-86 510.67,-86 510.67,-122"/>
+<text text-anchor="middle" x="455" y="-99.8" font-family="Times,serif" font-size="14.00">CommonModule</text>
 </g>
 <!-- PropertyModule -->
 <g id="node3" class="node">
 <title>PropertyModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="338.76,-187 335.76,-191 314.76,-191 311.76,-187 231.24,-187 231.24,-151 338.76,-151 338.76,-187"/>
-<text text-anchor="middle" x="285" y="-164.8" font-family="Times,serif" font-size="14.00">PropertyModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="341.76,-187 338.76,-191 317.76,-191 314.76,-187 234.24,-187 234.24,-151 341.76,-151 341.76,-187"/>
+<text text-anchor="middle" x="288" y="-164.8" font-family="Times,serif" font-size="14.00">PropertyModule</text>
 </g>
 <!-- CommonModule&#45;&gt;PropertyModule -->
 <g id="edge1" class="edge">
 <title>CommonModule&#45;&gt;PropertyModule</title>
-<path fill="none" stroke="black" d="M285,-122.11C285,-122.11 285,-140.99 285,-140.99"/>
-<polygon fill="black" stroke="black" points="281.5,-140.99 285,-150.99 288.5,-140.99 281.5,-140.99"/>
+<path fill="none" stroke="black" d="M455,-122.11C455,-141.34 455,-169 455,-169 455,-169 351.76,-169 351.76,-169"/>
+<polygon fill="black" stroke="black" points="351.76,-165.5 341.76,-169 351.76,-172.5 351.76,-165.5"/>
 </g>
 <!-- GraphQLMicroserviceModule -->
 <g id="node2" class="node">
 <title>GraphQLMicroserviceModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="211.54,-122 208.54,-126 187.54,-126 184.54,-122 24.46,-122 24.46,-86 211.54,-86 211.54,-122"/>
-<text text-anchor="middle" x="118" y="-99.8" font-family="Times,serif" font-size="14.00">GraphQLMicroserviceModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="381.54,-122 378.54,-126 357.54,-126 354.54,-122 194.46,-122 194.46,-86 381.54,-86 381.54,-122"/>
+<text text-anchor="middle" x="288" y="-99.8" font-family="Times,serif" font-size="14.00">GraphQLMicroserviceModule</text>
 </g>
 <!-- GraphQLMicroserviceModule&#45;&gt;PropertyModule -->
 <g id="edge2" class="edge">
 <title>GraphQLMicroserviceModule&#45;&gt;PropertyModule</title>
-<path fill="none" stroke="black" d="M118,-122.11C118,-141.34 118,-169 118,-169 118,-169 221.24,-169 221.24,-169"/>
-<polygon fill="black" stroke="black" points="221.24,-172.5 231.24,-169 221.24,-165.5 221.24,-172.5"/>
+<path fill="none" stroke="black" d="M288,-122.11C288,-122.11 288,-140.99 288,-140.99"/>
+<polygon fill="black" stroke="black" points="284.5,-140.99 288,-150.99 291.5,-140.99 284.5,-140.99"/>
 </g>
 <!-- PropertyService -->
 <g id="node4" class="node">
 <title>PropertyService</title>
-<ellipse fill="#fdb462" stroke="black" cx="438" cy="-104" rx="73.49" ry="18"/>
-<text text-anchor="middle" x="438" y="-99.8" font-family="Times,serif" font-size="14.00">PropertyService</text>
+<ellipse fill="#fdb462" stroke="black" cx="97" cy="-104" rx="73.49" ry="18"/>
+<text text-anchor="middle" x="97" y="-99.8" font-family="Times,serif" font-size="14.00">PropertyService</text>
 </g>
 <!-- PropertyService&#45;&gt;PropertyModule -->
 <g id="edge3" class="edge">
 <title>PropertyService&#45;&gt;PropertyModule</title>
-<path fill="none" stroke="black" d="M438,-122.11C438,-141.34 438,-169 438,-169 438,-169 348.94,-169 348.94,-169"/>
-<polygon fill="black" stroke="black" points="348.94,-165.5 338.94,-169 348.94,-172.5 348.94,-165.5"/>
+<path fill="none" stroke="black" d="M97,-122.11C97,-141.34 97,-169 97,-169 97,-169 224.03,-169 224.03,-169"/>
+<polygon fill="black" stroke="black" points="224.03,-172.5 234.03,-169 224.03,-165.5 224.03,-172.5"/>
 </g>
 </g>
 </svg>

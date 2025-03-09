@@ -60,7 +60,7 @@ $ pnpm run test:cov
 
 The Typeorm CLI Helper tool lets you run typeorm CLI commands without worrying
 about DataSources and path resolutions.
-[Learn how to use the tool here.](migration-tool.md)
+[Learn how to use the tool here.](https://escrow-backend-docs.vercel.app/additional-documentation/running-migrations-and-seeders.html)
 
 ## Structure
 

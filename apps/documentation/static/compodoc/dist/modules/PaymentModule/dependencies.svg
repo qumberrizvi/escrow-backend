@@ -24,55 +24,55 @@
 <title>cluster_PaymentModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-70 8,-195 529,-195 529,-70 8,-70"/>
 </g>
-<g id="clust3" class="cluster">
-<title>cluster_PaymentModule_imports</title>
-<polygon fill="none" stroke="black" points="188,-78 188,-130 521,-130 521,-78 188,-78"/>
-</g>
 <g id="clust6" class="cluster">
 <title>cluster_PaymentModule_providers</title>
-<polygon fill="none" stroke="black" points="16,-78 16,-130 180,-130 180,-78 16,-78"/>
+<polygon fill="none" stroke="black" points="357,-78 357,-130 521,-130 521,-78 357,-78"/>
+</g>
+<g id="clust3" class="cluster">
+<title>cluster_PaymentModule_imports</title>
+<polygon fill="none" stroke="black" points="16,-78 16,-130 349,-130 349,-78 16,-78"/>
 </g>
 <!-- CommonModule -->
 <g id="node1" class="node">
 <title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="512.67,-122 509.67,-126 488.67,-126 485.67,-122 401.33,-122 401.33,-86 512.67,-86 512.67,-122"/>
-<text text-anchor="middle" x="457" y="-99.8" font-family="Times,serif" font-size="14.00">CommonModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="340.67,-122 337.67,-126 316.67,-126 313.67,-122 229.33,-122 229.33,-86 340.67,-86 340.67,-122"/>
+<text text-anchor="middle" x="285" y="-99.8" font-family="Times,serif" font-size="14.00">CommonModule</text>
 </g>
 <!-- PaymentModule -->
 <g id="node3" class="node">
 <title>PaymentModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="344.04,-187 341.04,-191 320.04,-191 317.04,-187 235.96,-187 235.96,-151 344.04,-151 344.04,-187"/>
-<text text-anchor="middle" x="290" y="-164.8" font-family="Times,serif" font-size="14.00">PaymentModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="339.04,-187 336.04,-191 315.04,-191 312.04,-187 230.96,-187 230.96,-151 339.04,-151 339.04,-187"/>
+<text text-anchor="middle" x="285" y="-164.8" font-family="Times,serif" font-size="14.00">PaymentModule</text>
 </g>
 <!-- CommonModule&#45;&gt;PaymentModule -->
 <g id="edge1" class="edge">
 <title>CommonModule&#45;&gt;PaymentModule</title>
-<path fill="none" stroke="black" d="M457,-122.11C457,-141.34 457,-169 457,-169 457,-169 354.22,-169 354.22,-169"/>
-<polygon fill="black" stroke="black" points="354.22,-165.5 344.22,-169 354.22,-172.5 354.22,-165.5"/>
+<path fill="none" stroke="black" d="M285,-122.11C285,-122.11 285,-140.99 285,-140.99"/>
+<polygon fill="black" stroke="black" points="281.5,-140.99 285,-150.99 288.5,-140.99 281.5,-140.99"/>
 </g>
 <!-- GraphQLMicroserviceModule -->
 <g id="node2" class="node">
 <title>GraphQLMicroserviceModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="383.54,-122 380.54,-126 359.54,-126 356.54,-122 196.46,-122 196.46,-86 383.54,-86 383.54,-122"/>
-<text text-anchor="middle" x="290" y="-99.8" font-family="Times,serif" font-size="14.00">GraphQLMicroserviceModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="211.54,-122 208.54,-126 187.54,-126 184.54,-122 24.46,-122 24.46,-86 211.54,-86 211.54,-122"/>
+<text text-anchor="middle" x="118" y="-99.8" font-family="Times,serif" font-size="14.00">GraphQLMicroserviceModule</text>
 </g>
 <!-- GraphQLMicroserviceModule&#45;&gt;PaymentModule -->
 <g id="edge2" class="edge">
 <title>GraphQLMicroserviceModule&#45;&gt;PaymentModule</title>
-<path fill="none" stroke="black" d="M290,-122.11C290,-122.11 290,-140.99 290,-140.99"/>
-<polygon fill="black" stroke="black" points="286.5,-140.99 290,-150.99 293.5,-140.99 286.5,-140.99"/>
+<path fill="none" stroke="black" d="M118,-122.11C118,-141.34 118,-169 118,-169 118,-169 220.78,-169 220.78,-169"/>
+<polygon fill="black" stroke="black" points="220.78,-172.5 230.78,-169 220.78,-165.5 220.78,-172.5"/>
 </g>
 <!-- PaymentService -->
 <g id="node4" class="node">
 <title>PaymentService</title>
-<ellipse fill="#fdb462" stroke="black" cx="98" cy="-104" rx="73.57" ry="18"/>
-<text text-anchor="middle" x="98" y="-99.8" font-family="Times,serif" font-size="14.00">PaymentService</text>
+<ellipse fill="#fdb462" stroke="black" cx="439" cy="-104" rx="73.57" ry="18"/>
+<text text-anchor="middle" x="439" y="-99.8" font-family="Times,serif" font-size="14.00">PaymentService</text>
 </g>
 <!-- PaymentService&#45;&gt;PaymentModule -->
 <g id="edge3" class="edge">
 <title>PaymentService&#45;&gt;PaymentModule</title>
-<path fill="none" stroke="black" d="M98,-122.11C98,-141.34 98,-169 98,-169 98,-169 225.75,-169 225.75,-169"/>
-<polygon fill="black" stroke="black" points="225.75,-172.5 235.75,-169 225.75,-165.5 225.75,-172.5"/>
+<path fill="none" stroke="black" d="M439,-122.11C439,-141.34 439,-169 439,-169 439,-169 349.29,-169 349.29,-169"/>
+<polygon fill="black" stroke="black" points="349.29,-165.5 339.29,-169 349.29,-172.5 349.29,-165.5"/>
 </g>
 </g>
 </svg>
