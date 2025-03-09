@@ -49,14 +49,14 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="additional-pages"' : 'id="xs-additional-pages"' }>
                                     <li class="chapter inner">
-                                        <a data-type="chapter-link" href="additional-documentation/getting-started.html" data-context-id="additional">
+                                        <a data-type="chapter-link" href="additional-documentation/running-migrations-and-seeders.html" data-context-id="additional">
                                             <div class="menu-toggler linked" data-bs-toggle="collapse" ${ isNormalMode ?
-                                            'data-bs-target="#additional-page-62cc66f9648d9bcf9eea58e6c7f014637920e65230c0fa7e30c1dbff5bbde02928609740fa050c1e83c16b9397470dee7adc638498c918a08701ad2a2a5a8bf4"' : 'data-bs-target="#xs-additional-page-62cc66f9648d9bcf9eea58e6c7f014637920e65230c0fa7e30c1dbff5bbde02928609740fa050c1e83c16b9397470dee7adc638498c918a08701ad2a2a5a8bf4"' }>
-                                                <span class="link-name">Getting Started</span>
+                                            'data-bs-target="#additional-page-1677ebf405718fc4e7f90e217ae1078a0c9fb00aa36524c0ab16c0e28bb76d5267325b9f60f134ee780d4f61559cbe8be8bf0e3859c022b066951cfa86b5e1a0"' : 'data-bs-target="#xs-additional-page-1677ebf405718fc4e7f90e217ae1078a0c9fb00aa36524c0ab16c0e28bb76d5267325b9f60f134ee780d4f61559cbe8be8bf0e3859c022b066951cfa86b5e1a0"' }>
+                                                <span class="link-name">Running Migrations and Seeders</span>
                                                 <span class="icon ion-ios-arrow-down"></span>
                                             </div>
                                         </a>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="additional-page-62cc66f9648d9bcf9eea58e6c7f014637920e65230c0fa7e30c1dbff5bbde02928609740fa050c1e83c16b9397470dee7adc638498c918a08701ad2a2a5a8bf4"' : 'id="xs-additional-page-62cc66f9648d9bcf9eea58e6c7f014637920e65230c0fa7e30c1dbff5bbde02928609740fa050c1e83c16b9397470dee7adc638498c918a08701ad2a2a5a8bf4"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="additional-page-1677ebf405718fc4e7f90e217ae1078a0c9fb00aa36524c0ab16c0e28bb76d5267325b9f60f134ee780d4f61559cbe8be8bf0e3859c022b066951cfa86b5e1a0"' : 'id="xs-additional-page-1677ebf405718fc4e7f90e217ae1078a0c9fb00aa36524c0ab16c0e28bb76d5267325b9f60f134ee780d4f61559cbe8be8bf0e3859c022b066951cfa86b5e1a0"' }>
                                             <li class="link for-chapter2">
                                                 <a href="additional-documentation/running-migrations-and-seeders/how-to-use-migration-tool.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">How to use migration tool</a>
                                             </li>
