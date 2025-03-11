@@ -1,16 +1,13 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { User } from './entities/user.entity';
-import { MicroServiceClient } from '@qushah/common';
-import { ClientProxy } from '@nestjs/microservices';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateUserInput } from './dtos/create-user.input';
+import { genSalt, hash } from 'bcrypt';
 
 @Injectable()
 export class UserService {
   constructor(
-    @Inject(MicroServiceClient.ORGANIZATION_CLIENT)
-    private readonly organizationClient: ClientProxy,
     @InjectRepository(User)
     private readonly repository: Repository<User>,
   ) {}
@@ -23,8 +20,16 @@ export class UserService {
     return this.repository.find();
   }
 
-  create(input: CreateUserInput): Promise<User> {
-    // TODO: Hash password
-    return this.repository.save(input);
+  async create(input: CreateUserInput): Promise<User> {
+    const saltOrRounds = await genSalt();
+    const password = await hash(input.password, saltOrRounds);
+
+    return this.repository.save({
+      ...input,
+      password,
+      role: {
+        name: input.role,
+      },
+    });
   }
 }

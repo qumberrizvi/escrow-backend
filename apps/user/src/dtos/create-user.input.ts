@@ -1,8 +1,8 @@
-import { Field, ObjectType } from '@nestjs/graphql';
-import { Role } from '../entities/role.entity';
+import { Field, InputType } from '@nestjs/graphql';
+import { Roles } from '@qushah/common';
 
 //  TODO: Implement Class Validator
-@ObjectType()
+@InputType()
 export class CreateUserInput {
   @Field(() => String)
   firstName: string;
@@ -22,8 +22,8 @@ export class CreateUserInput {
   @Field(() => String)
   phone: string;
 
-  @Field(() => Role)
-  role: Role;
+  // @Field(() => Roles)  // FIXME: GraphQL unable to resolve type when running seeder
+  role: Roles;
 
   @Field(() => String)
   organizationId: string;

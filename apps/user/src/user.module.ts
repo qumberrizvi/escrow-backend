@@ -2,17 +2,16 @@ import { Module } from '@nestjs/common';
 import { UserController } from './user.controller';
 import { UserService } from './user.service';
 import {
-  ClientsModule,
   CommonModule,
   DatabaseModule,
   GraphQLMicroserviceModule,
-  MicroServiceClient,
   SCHEMA,
+  SeederModule,
 } from '@qushah/common';
 import { UserResolver } from './resolvers/user.resolver';
 import { User } from './entities/user.entity';
 import { Role } from './entities/role.entity';
-import { SeederModule } from './seeder/seeder.module';
+import { SeederService } from './seeder/seeder.service';
 
 @Module({
   imports: [
@@ -20,8 +19,7 @@ import { SeederModule } from './seeder/seeder.module';
     GraphQLMicroserviceModule,
     DatabaseModule.init(SCHEMA.USER),
     DatabaseModule.loadEntities([User, Role]),
-    ClientsModule.register(MicroServiceClient.ORGANIZATION_CLIENT),
-    SeederModule,
+    SeederModule.init([SeederService], [Role]),
   ],
   controllers: [UserController],
   providers: [UserService, UserResolver],

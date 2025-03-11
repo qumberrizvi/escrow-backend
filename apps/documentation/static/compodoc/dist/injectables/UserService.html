@@ -137,6 +137,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Async</span>
                                 <a href="#create" >create</a>
                             </li>
                             <li>
@@ -163,12 +164,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(organizationClient: ClientProxy, repository: <a href="../entitys/User.html" target="_self">Repository&lt;User&gt;</a>)</code>
+<code>constructor(repository: <a href="../entitys/User.html" target="_self">Repository&lt;User&gt;</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">apps/user/src/user.service.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">apps/user/src/user.service.ts:9</a></div>
                             </td>
                         </tr>
 
@@ -185,18 +186,6 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                                <tr>
-                                                        <td>organizationClient</td>
-                                                  
-                                                        <td>
-                                                                    <code>ClientProxy</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
                                                 <tr>
                                                         <td>repository</td>
                                                   
@@ -229,6 +218,7 @@
                 <td class="col-md-4">
                     <a name="create"></a>
                     <span class="name">
+                            <span class="modifier">Async</span>
                         <span ><b>create</b></span>
                         <a href="#create"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -236,15 +226,16 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>create(input: <a href="../classes/CreateUserInput.html" target="_self">CreateUserInput</a>)</code>
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>create(input: <a href="../classes/CreateUserInput.html" target="_self">CreateUserInput</a>)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="26"
-                                    class="link-to-prism">apps/user/src/user.service.ts:26</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="23"
+                                    class="link-to-prism">apps/user/src/user.service.ts:23</a></div>
                         </td>
                     </tr>
 
@@ -310,8 +301,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="22"
-                                    class="link-to-prism">apps/user/src/user.service.ts:22</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="19"
+                                    class="link-to-prism">apps/user/src/user.service.ts:19</a></div>
                         </td>
                     </tr>
 
@@ -347,8 +338,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="18"
-                                    class="link-to-prism">apps/user/src/user.service.ts:18</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="15"
+                                    class="link-to-prism">apps/user/src/user.service.ts:15</a></div>
                         </td>
                     </tr>
 
@@ -370,19 +361,16 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable } from &#x27;@nestjs/common&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@nestjs/common&#x27;;
 import { User } from &#x27;./entities/user.entity&#x27;;
-import { MicroServiceClient } from &#x27;@qushah/common&#x27;;
-import { ClientProxy } from &#x27;@nestjs/microservices&#x27;;
 import { InjectRepository } from &#x27;@nestjs/typeorm&#x27;;
 import { Repository } from &#x27;typeorm&#x27;;
 import { CreateUserInput } from &#x27;./dtos/create-user.input&#x27;;
+import { genSalt, hash } from &#x27;bcrypt&#x27;;
 
 @Injectable()
 export class UserService {
   constructor(
-    @Inject(MicroServiceClient.ORGANIZATION_CLIENT)
-    private readonly organizationClient: ClientProxy,
     @InjectRepository(User)
     private readonly repository: Repository&lt;User&gt;,
   ) {}
@@ -395,9 +383,17 @@ export class UserService {
     return this.repository.find();
   }
 
-  create(input: CreateUserInput): Promise&lt;User&gt; {
-    // TODO: Hash password
-    return this.repository.save(input);
+  async create(input: CreateUserInput): Promise&lt;User&gt; {
+    const saltOrRounds &#x3D; await genSalt();
+    const password &#x3D; await hash(input.password, saltOrRounds);
+
+    return this.repository.save({
+      ...input,
+      password,
+      role: {
+        name: input.role,
+      },
+    });
   }
 }
 </code></pre>

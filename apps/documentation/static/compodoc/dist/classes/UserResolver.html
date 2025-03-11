@@ -418,7 +418,7 @@ export class UserResolver {
   }
 
   @Mutation(() &#x3D;&gt; User)
-  createUser(@Args() input: CreateUserInput): Promise&lt;User&gt; {
+  createUser(@Args(&#x27;input&#x27;) input: CreateUserInput): Promise&lt;User&gt; {
     return this.userService.create(input);
   }
 }

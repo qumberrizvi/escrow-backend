@@ -12,7 +12,6 @@ export class SeederService {
 
   async seed() {
     await this.seedRoles();
-    console.log('✅ Database seeding completed.');
   }
 
   private async seedRoles() {
