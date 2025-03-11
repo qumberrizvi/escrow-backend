@@ -13,6 +13,7 @@
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "migration": "ts-node typeorm-cli.ts",
     "prepare": "husky",
+    "preinstall": "npx only-allow pnpm",
     "start": "nest start",
     "start:dev:auth": "nest start --watch auth",
     "start:dev:escrow": "nest start --watch escrow",
@@ -46,6 +47,7 @@
     "@nestjs/platform-express": "^10.0.0",
     "@nestjs/typeorm": "^11.0.0",
     "@types/yargs": "^17.0.33",
+    "bcrypt": "^5.1.1",
     "dotenv": "^16.4.7",
     "graphql": "^16.10.0",
     "ioredis": "^5.4.2",
@@ -110,7 +112,15 @@
     "onlyBuiltDependencies": [
       "@apollo/protobufjs",
       "@compodoc/compodoc",
-      "@nestjs/core"
+      "@nestjs/core",
+      "bcrypt"
     ]
+  },
+  "engines": {
+    "bun": "please-use-pnpm",
+    "cnpm": "please-use-pnpm",
+    "npm": "please-use-pnpm",
+    "pnpm": ">=10.0.0",
+    "yarn": "please-use-pnpm"
   }
 }
