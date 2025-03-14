@@ -475,7 +475,7 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @Field(undefined)<br />@ManyToOne(undefined)<br />@JoinColumn()<br />
+                            @Field(undefined)<br />@ManyToOne(undefined)<br />@JoinColumn({name: &#x27;role&#x27;})<br />
                         </code>
                     </td>
                 </tr>
@@ -524,7 +524,7 @@ export class User extends BaseEntity {
 
   @Field(() &#x3D;&gt; Role)
   @ManyToOne(() &#x3D;&gt; Role)
-  @JoinColumn()
+  @JoinColumn({ name: &#x27;role&#x27; })
   role: Role;
 
   @Field(() &#x3D;&gt; String, { nullable: true })

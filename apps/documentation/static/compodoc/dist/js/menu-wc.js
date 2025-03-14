@@ -383,13 +383,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/UserModule.html" data-type="entity-link" >UserModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ?
-                                            'data-bs-target="#controllers-links-module-UserModule-57bcdbabd46479eb78db12ea6e311c4733d111ca9ed5d8806382434a3cd096221fa30ad5372eed5d1b46c886249ab4fcb855fa27621049c22be1007d843ec9cb"' : 'data-bs-target="#xs-controllers-links-module-UserModule-57bcdbabd46479eb78db12ea6e311c4733d111ca9ed5d8806382434a3cd096221fa30ad5372eed5d1b46c886249ab4fcb855fa27621049c22be1007d843ec9cb"' }>
+                                            'data-bs-target="#controllers-links-module-UserModule-4c9878ebf48f4fef4dd3bf1e0aff389df26d6abbaf8fdf768cc50992d9598222d8846bcf18cc69fe2e778a5d889c8580c71e4a419462769f19ecd5bcf0881171"' : 'data-bs-target="#xs-controllers-links-module-UserModule-4c9878ebf48f4fef4dd3bf1e0aff389df26d6abbaf8fdf768cc50992d9598222d8846bcf18cc69fe2e778a5d889c8580c71e4a419462769f19ecd5bcf0881171"' }>
                                             <span class="icon ion-md-swap"></span>
                                             <span>Controllers</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="controllers-links-module-UserModule-57bcdbabd46479eb78db12ea6e311c4733d111ca9ed5d8806382434a3cd096221fa30ad5372eed5d1b46c886249ab4fcb855fa27621049c22be1007d843ec9cb"' :
-                                            'id="xs-controllers-links-module-UserModule-57bcdbabd46479eb78db12ea6e311c4733d111ca9ed5d8806382434a3cd096221fa30ad5372eed5d1b46c886249ab4fcb855fa27621049c22be1007d843ec9cb"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="controllers-links-module-UserModule-4c9878ebf48f4fef4dd3bf1e0aff389df26d6abbaf8fdf768cc50992d9598222d8846bcf18cc69fe2e778a5d889c8580c71e4a419462769f19ecd5bcf0881171"' :
+                                            'id="xs-controllers-links-module-UserModule-4c9878ebf48f4fef4dd3bf1e0aff389df26d6abbaf8fdf768cc50992d9598222d8846bcf18cc69fe2e778a5d889c8580c71e4a419462769f19ecd5bcf0881171"' }>
                                             <li class="link">
                                                 <a href="controllers/UserController.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >UserController</a>
                                             </li>
@@ -397,13 +397,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ?
-                                        'data-bs-target="#injectables-links-module-UserModule-57bcdbabd46479eb78db12ea6e311c4733d111ca9ed5d8806382434a3cd096221fa30ad5372eed5d1b46c886249ab4fcb855fa27621049c22be1007d843ec9cb"' : 'data-bs-target="#xs-injectables-links-module-UserModule-57bcdbabd46479eb78db12ea6e311c4733d111ca9ed5d8806382434a3cd096221fa30ad5372eed5d1b46c886249ab4fcb855fa27621049c22be1007d843ec9cb"' }>
+                                        'data-bs-target="#injectables-links-module-UserModule-4c9878ebf48f4fef4dd3bf1e0aff389df26d6abbaf8fdf768cc50992d9598222d8846bcf18cc69fe2e778a5d889c8580c71e4a419462769f19ecd5bcf0881171"' : 'data-bs-target="#xs-injectables-links-module-UserModule-4c9878ebf48f4fef4dd3bf1e0aff389df26d6abbaf8fdf768cc50992d9598222d8846bcf18cc69fe2e778a5d889c8580c71e4a419462769f19ecd5bcf0881171"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-UserModule-57bcdbabd46479eb78db12ea6e311c4733d111ca9ed5d8806382434a3cd096221fa30ad5372eed5d1b46c886249ab4fcb855fa27621049c22be1007d843ec9cb"' :
-                                        'id="xs-injectables-links-module-UserModule-57bcdbabd46479eb78db12ea6e311c4733d111ca9ed5d8806382434a3cd096221fa30ad5372eed5d1b46c886249ab4fcb855fa27621049c22be1007d843ec9cb"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-UserModule-4c9878ebf48f4fef4dd3bf1e0aff389df26d6abbaf8fdf768cc50992d9598222d8846bcf18cc69fe2e778a5d889c8580c71e4a419462769f19ecd5bcf0881171"' :
+                                        'id="xs-injectables-links-module-UserModule-4c9878ebf48f4fef4dd3bf1e0aff389df26d6abbaf8fdf768cc50992d9598222d8846bcf18cc69fe2e778a5d889c8580c71e4a419462769f19ecd5bcf0881171"' }>
                                         <li class="link">
                                             <a href="injectables/UserService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >UserService</a>
                                         </li>
@@ -462,6 +462,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="classes/CreateOrganizationAndMetaTable1741518145374.html" data-type="entity-link" >CreateOrganizationAndMetaTable1741518145374</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/CreatePermissionTables1741966377333.html" data-type="entity-link" >CreatePermissionTables1741966377333</a>
                             </li>
                             <li class="link">
                                 <a href="classes/CreateRoleTable1741519642145.html" data-type="entity-link" >CreateRoleTable1741519642145</a>

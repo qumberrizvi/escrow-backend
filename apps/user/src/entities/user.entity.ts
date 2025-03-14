@@ -29,7 +29,7 @@ export class User extends BaseEntity {
 
   @Field(() => Role)
   @ManyToOne(() => Role)
-  @JoinColumn()
+  @JoinColumn({ name: 'role' })
   role: Role;
 
   @Field(() => String, { nullable: true })

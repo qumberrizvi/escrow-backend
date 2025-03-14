@@ -142,34 +142,51 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                 <a href="#email" >email</a>
                             </li>
                             <li>
+                                    <span class="modifier"></span>
                                     <span class="modifier"></span>
                                     <span class="modifier"></span>
                                 <a href="#firstName" >firstName</a>
                             </li>
                             <li>
                                     <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                 <a href="#lastName" >lastName</a>
                             </li>
                             <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                     <span class="modifier"></span>
                                 <a href="#organizationId" >organizationId</a>
                             </li>
                             <li>
                                     <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                 <a href="#password" >password</a>
                             </li>
                             <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                     <span class="modifier"></span>
                                 <a href="#passwordConfirmation" >passwordConfirmation</a>
                             </li>
                             <li>
                                     <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                 <a href="#phone" >phone</a>
                             </li>
                             <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                     <span class="modifier"></span>
                                 <a href="#role" >role</a>
                             </li>
@@ -199,6 +216,8 @@
                     <a name="email"></a>
                     <span class="name">
                             <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
                         <span ><b>email</b></span>
                         <a href="#email"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -215,13 +234,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @Field(undefined)<br />
+                            @IsEmail()<br />@IsNotEmpty()<br />@Field(undefined)<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">apps/user/src/dtos/create-user.input.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">apps/user/src/dtos/create-user.input.ts:31</a></div>
                         </td>
                     </tr>
 
@@ -234,6 +253,7 @@
                 <td class="col-md-4">
                     <a name="firstName"></a>
                     <span class="name">
+                            <span class="modifier"></span>
                             <span class="modifier"></span>
                             <span class="modifier"></span>
                         <span ><b>firstName</b></span>
@@ -252,13 +272,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @IsString()<br />@Field(undefined)<br />
+                            @IsString()<br />@IsNotEmpty()<br />@Field(undefined)<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">apps/user/src/dtos/create-user.input.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">apps/user/src/dtos/create-user.input.ts:21</a></div>
                         </td>
                     </tr>
 
@@ -271,6 +291,8 @@
                 <td class="col-md-4">
                     <a name="lastName"></a>
                     <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
                             <span class="modifier"></span>
                         <span ><b>lastName</b></span>
                         <a href="#lastName"><span class="icon ion-ios-link"></span></a>
@@ -288,13 +310,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @Field(undefined)<br />
+                            @IsString()<br />@IsNotEmpty()<br />@Field(undefined)<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">apps/user/src/dtos/create-user.input.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">apps/user/src/dtos/create-user.input.ts:26</a></div>
                         </td>
                     </tr>
 
@@ -307,6 +329,8 @@
                 <td class="col-md-4">
                     <a name="organizationId"></a>
                     <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
                             <span class="modifier"></span>
                         <span ><b>organizationId</b></span>
                         <a href="#organizationId"><span class="icon ion-ios-link"></span></a>
@@ -324,13 +348,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @Field(undefined)<br />
+                            @IsOptional()<br />@IsUUID()<br />@Field(undefined)<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">apps/user/src/dtos/create-user.input.ts:31</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">apps/user/src/dtos/create-user.input.ts:66</a></div>
                         </td>
                     </tr>
 
@@ -343,6 +367,8 @@
                 <td class="col-md-4">
                     <a name="password"></a>
                     <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
                             <span class="modifier"></span>
                         <span ><b>password</b></span>
                         <a href="#password"><span class="icon ion-ios-link"></span></a>
@@ -360,13 +386,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @Field(undefined)<br />
+                            @IsNotEmpty()<br />@IsStrongPassword({minLength: 8, minLowercase: 1, minNumbers: 1, minSymbols: 1, minUppercase: 1})<br />@Field(undefined)<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">apps/user/src/dtos/create-user.input.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">apps/user/src/dtos/create-user.input.ts:42</a></div>
                         </td>
                     </tr>
 
@@ -379,6 +405,10 @@
                 <td class="col-md-4">
                     <a name="passwordConfirmation"></a>
                     <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
                             <span class="modifier"></span>
                         <span ><b>passwordConfirmation</b></span>
                         <a href="#passwordConfirmation"><span class="icon ion-ios-link"></span></a>
@@ -396,13 +426,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @Field(undefined)<br />
+                            @IsString()<br />@IsNotEmpty()<br />@ValidateIf(o &#x3D;&gt; )<br />@IsIn([&#x27;undefined&#x27;], {message: &#x27;Passwords do not match&#x27;})<br />@Field(undefined)<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">apps/user/src/dtos/create-user.input.ts:22</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">apps/user/src/dtos/create-user.input.ts:51</a></div>
                         </td>
                     </tr>
 
@@ -415,6 +445,8 @@
                 <td class="col-md-4">
                     <a name="phone"></a>
                     <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
                             <span class="modifier"></span>
                         <span ><b>phone</b></span>
                         <a href="#phone"><span class="icon ion-ios-link"></span></a>
@@ -432,13 +464,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @Field(undefined)<br />
+                            @IsNotEmpty()<br />@IsPhoneNumber()<br />@Field(undefined)<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">apps/user/src/dtos/create-user.input.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">apps/user/src/dtos/create-user.input.ts:56</a></div>
                         </td>
                     </tr>
 
@@ -451,6 +483,8 @@
                 <td class="col-md-4">
                     <a name="role"></a>
                     <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
                             <span class="modifier"></span>
                         <span ><b>role</b></span>
                         <a href="#role"><span class="icon ion-ios-link"></span></a>
@@ -468,13 +502,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @Field(undefined)<br />
+                            @IsNotEmpty()<br />@IsEnum(UserRole)<br />@Field(undefined)<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">apps/user/src/dtos/create-user.input.ts:28</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">apps/user/src/dtos/create-user.input.ts:61</a></div>
                         </td>
                     </tr>
 
@@ -495,33 +529,68 @@
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Field, InputType } from &#x27;@nestjs/graphql&#x27;;
 import { UserRole } from &#x27;@qushah/common&#x27;;
-import { IsString } from &#x27;class-validator&#x27;;
+import {
+  IsEmail,
+  IsEnum,
+  IsIn,
+  IsNotEmpty,
+  IsOptional,
+  IsPhoneNumber,
+  IsString,
+  IsStrongPassword,
+  IsUUID,
+  ValidateIf,
+} from &#x27;class-validator&#x27;;
 
-//  TODO: Implement Class Validator
 @InputType()
 export class CreateUserInput {
   @IsString()
+  @IsNotEmpty()
   @Field(() &#x3D;&gt; String)
   firstName: string;
 
+  @IsString()
+  @IsNotEmpty()
   @Field(() &#x3D;&gt; String)
   lastName: string;
 
+  @IsEmail()
+  @IsNotEmpty()
   @Field(() &#x3D;&gt; String)
   email: string;
 
+  @IsNotEmpty()
+  @IsStrongPassword({
+    minLength: 8,
+    minLowercase: 1,
+    minNumbers: 1,
+    minSymbols: 1,
+    minUppercase: 1,
+  })
   @Field(() &#x3D;&gt; String)
   password: string;
 
+  @IsString()
+  @IsNotEmpty()
+  @ValidateIf((o) &#x3D;&gt; o.password !&#x3D;&#x3D; o.passwordConfirmation) // Only validate if passwords don&#x27;t match
+  @IsIn([Math.random()], {
+    message: &#x27;Passwords do not match&#x27;, // This condition will always throw error if @ValidateIf fails
+  })
   @Field(() &#x3D;&gt; String)
   passwordConfirmation: string;
 
+  @IsNotEmpty()
+  @IsPhoneNumber()
   @Field(() &#x3D;&gt; String)
   phone: string;
 
+  @IsNotEmpty()
+  @IsEnum(UserRole)
   @Field(() &#x3D;&gt; UserRole)
   role: UserRole;
 
+  @IsOptional()
+  @IsUUID()
   @Field(() &#x3D;&gt; String)
   organizationId: string;
 }
