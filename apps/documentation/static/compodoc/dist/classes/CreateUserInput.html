@@ -574,7 +574,7 @@ export class CreateUserInput {
   @IsNotEmpty()
   @ValidateIf((o) &#x3D;&gt; o.password !&#x3D;&#x3D; o.passwordConfirmation) // Only validate if passwords don&#x27;t match
   @IsIn([Math.random()], {
-    message: &#x27;Passwords do not match&#x27;, // This condition will always throw error if @ValidateIf fails
+    message: &#x27;Passwords do not match&#x27;, // This condition will always throw error if @ValidateIf passes
   })
   @Field(() &#x3D;&gt; String)
   passwordConfirmation: string;

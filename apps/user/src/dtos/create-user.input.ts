@@ -45,7 +45,7 @@ export class CreateUserInput {
   @IsNotEmpty()
   @ValidateIf((o) => o.password !== o.passwordConfirmation) // Only validate if passwords don't match
   @IsIn([Math.random()], {
-    message: 'Passwords do not match', // This condition will always throw error if @ValidateIf fails
+    message: 'Passwords do not match', // This condition will always throw error if @ValidateIf passes
   })
   @Field(() => String)
   passwordConfirmation: string;
