@@ -1,9 +1,11 @@
 import { Field, InputType } from '@nestjs/graphql';
-import { Roles } from '@qushah/common';
+import { UserRole } from '@qushah/common';
+import { IsString } from 'class-validator';
 
 //  TODO: Implement Class Validator
 @InputType()
 export class CreateUserInput {
+  @IsString()
   @Field(() => String)
   firstName: string;
 
@@ -22,8 +24,8 @@ export class CreateUserInput {
   @Field(() => String)
   phone: string;
 
-  // @Field(() => Roles)  // FIXME: GraphQL unable to resolve type when running seeder
-  role: Roles;
+  @Field(() => UserRole)
+  role: UserRole;
 
   @Field(() => String)
   organizationId: string;

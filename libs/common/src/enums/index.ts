@@ -1,2 +1,2 @@
 export * from './micro-service-client.enum';
-export * from './roles.enum';
+export * from './user-role.enum';

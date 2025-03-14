@@ -430,6 +430,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="entities/OrganizationMetadata.html" data-type="entity-link" >OrganizationMetadata</a>
                                 </li>
                                 <li class="link">
+                                    <a href="entities/Permission.html" data-type="entity-link" >Permission</a>
+                                </li>
+                                <li class="link">
                                     <a href="entities/Role.html" data-type="entity-link" >Role</a>
                                 </li>
                                 <li class="link">
@@ -498,6 +501,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="classes/PaymentResolver.html" data-type="entity-link" >PaymentResolver</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/Permission.html" data-type="entity-link" >Permission</a>
                             </li>
                             <li class="link">
                                 <a href="classes/PropertyResolver.html" data-type="entity-link" >PropertyResolver</a>

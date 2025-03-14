@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Role } from '../entities/role.entity';
-import { Roles } from '@qushah/common';
+import { UserRole } from '@qushah/common';
 
 @Injectable()
 export class SeederService {
@@ -15,7 +15,7 @@ export class SeederService {
   }
 
   private async seedRoles() {
-    const roles = Object.values(Roles);
+    const roles = Object.values(UserRole);
     for (const roleName of roles) {
       const roleExists = await this.roleRepository.findOne({
         where: { name: roleName },

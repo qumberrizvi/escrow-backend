@@ -300,7 +300,7 @@
 import { InjectRepository } from &#x27;@nestjs/typeorm&#x27;;
 import { Repository } from &#x27;typeorm&#x27;;
 import { Role } from &#x27;../entities/role.entity&#x27;;
-import { Roles } from &#x27;@qushah/common&#x27;;
+import { UserRole } from &#x27;@qushah/common&#x27;;
 
 @Injectable()
 export class SeederService {
@@ -313,7 +313,7 @@ export class SeederService {
   }
 
   private async seedRoles() {
-    const roles &#x3D; Object.values(Roles);
+    const roles &#x3D; Object.values(UserRole);
     for (const roleName of roles) {
       const roleExists &#x3D; await this.roleRepository.findOne({
         where: { name: roleName },

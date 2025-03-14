@@ -221,7 +221,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">apps/user/src/entities/user.entity.ts:28</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">apps/user/src/entities/user.entity.ts:21</a></div>
                         </td>
                     </tr>
 
@@ -258,7 +258,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">apps/user/src/entities/user.entity.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">apps/user/src/entities/user.entity.ts:13</a></div>
                         </td>
                     </tr>
 
@@ -295,7 +295,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">apps/user/src/entities/user.entity.ts:24</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">apps/user/src/entities/user.entity.ts:17</a></div>
                         </td>
                     </tr>
 
@@ -332,7 +332,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">apps/user/src/entities/user.entity.ts:47</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">apps/user/src/entities/user.entity.ts:40</a></div>
                         </td>
                     </tr>
 
@@ -370,7 +370,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">apps/user/src/entities/user.entity.ts:44</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">apps/user/src/entities/user.entity.ts:37</a></div>
                         </td>
                     </tr>
 
@@ -406,7 +406,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">apps/user/src/entities/user.entity.ts:31</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">apps/user/src/entities/user.entity.ts:24</a></div>
                         </td>
                     </tr>
 
@@ -443,7 +443,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">apps/user/src/entities/user.entity.ts:35</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">apps/user/src/entities/user.entity.ts:28</a></div>
                         </td>
                     </tr>
 
@@ -475,13 +475,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @Field(undefined)<br />@ManyToOne(undefined)<br />@JoinColumn({name: &#x27;role_id&#x27;})<br />
+                            @Field(undefined)<br />@ManyToOne(undefined)<br />@JoinColumn()<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">apps/user/src/entities/user.entity.ts:40</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">apps/user/src/entities/user.entity.ts:33</a></div>
                         </td>
                     </tr>
 
@@ -496,16 +496,9 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Field, ObjectType } from &#x27;@nestjs/graphql&#x27;;
 import { Column, Entity, JoinColumn, ManyToOne } from &#x27;typeorm&#x27;;
 import { BaseEntity, GraphQLFederationDirective } from &#x27;@qushah/common&#x27;;
-import { Role } from &#x27;./role.entity&#x27;;
 import { Organization } from &#x27;./external/organization.entity&#x27;;
+import { Role } from &#x27;./role.entity&#x27;;
 
-/*
- TODO: Add userType - Individual &amp; Business. 
-  Make firstName, lastName nullable, add name field.
-  Add check in migration file to ensure firstName, lastName is
-  not null when user type is individual, and name is not null type is business.
-  Write a hook to join firstName, lastName before saving for individuals.
-*/
 @ObjectType()
 @Entity({ name: &#x27;users&#x27; })
 @GraphQLFederationDirective(&#x27;@key(fields: &quot;id&quot;)&#x27;)
@@ -531,7 +524,7 @@ export class User extends BaseEntity {
 
   @Field(() &#x3D;&gt; Role)
   @ManyToOne(() &#x3D;&gt; Role)
-  @JoinColumn({ name: &#x27;role_id&#x27; })
+  @JoinColumn()
   role: Role;
 
   @Field(() &#x3D;&gt; String, { nullable: true })

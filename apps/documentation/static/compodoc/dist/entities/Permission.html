@@ -80,7 +80,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content class">
+               <div class="content entity">
                    <div class="content-data">
 
 
@@ -88,15 +88,9 @@
 
 
 
-
-
-
-
-
-
 <ol class="breadcrumb">
-  <li class="breadcrumb-item">Classes</li>
-  <li class="breadcrumb-item" >Bootstrapper</li>
+  <li class="breadcrumb-item">Entities</li>
+  <li class="breadcrumb-item" >Permission</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -120,10 +114,8 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>libs/common/src/utils/bootstrapper.util.ts</code>
+            <code>apps/user/src/entities/permission.entity.ts</code>
         </p>
-
-
 
 
 
@@ -132,19 +124,16 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
-
                 <tr>
                     <td class="col-md-4">
-                        <h6><b>Methods</b></h6>
+                        <h6><b>Properties</b></h6>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Static</span>
-                                    <span class="modifier">Async</span>
-                                <a href="#init" >init</a>
+                                <a href="#name" >name</a>
                             </li>
                         </ul>
                     </td>
@@ -154,125 +143,64 @@
 
 
 
+
         </tbody>
     </table>
 </section>
 
-
-
-            <section data-compodoc="block-methods">
+            <section data-compodoc="block-properties">
     
-    <h3 id="methods">
-        Methods
+    <h3 id="inputs">
+        Properties
     </h3>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="init"></a>
+                    <a name="name"></a>
                     <span class="name">
-                            <span class="modifier">Static</span>
-                            <span class="modifier">Async</span>
-                        <span ><b>init</b></span>
-                        <a href="#init"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>name</b></span>
+                        <a href="#name"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
-            <tr>
-                <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>init(module: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
-                </td>
-            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
-
+                    </td>
+                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="7"
-                                    class="link-to-prism">libs/common/src/utils/bootstrapper.util.ts:7</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">apps/user/src/entities/permission.entity.ts:7</a></div>
                         </td>
                     </tr>
 
 
-            <tr>
-                <td class="col-md-4">
-
-                            <div class="io-description">
-                                <b>Parameters :</b>
-                                
-                                <table class="params">
-                                    <thead>
-                                        <tr>
-                                            <td>Name</td>
-                                                <td>Type</td>
-                                            <td>Optional</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                                <td>module</td>
-                                            <td>
-                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-                                            </td>
-
-                                            <td>
-                                                    No
-                                            </td>
-
-
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                        </div>
-                            <div class="io-description">
-                                
-                            </div>
-                </td>
-            </tr>
         </tbody>
     </table>
 </section>
-
-
-
-
-
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Logger, ValidationPipe } from &#x27;@nestjs/common&#x27;;
-import { ConfigHelper } from &#x27;@qushah/common&#x27;;
-import { NestFactory } from &#x27;@nestjs/core&#x27;;
-import { MicroserviceOptions, Transport } from &#x27;@nestjs/microservices&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ObjectType } from &#x27;@nestjs/graphql&#x27;;
+import { BaseEntity, Entity } from &#x27;typeorm&#x27;;
 
-export class Bootstrapper {
-  static async init(module: any) {
-    const logger &#x3D; new Logger(&#x60;${module.name}Bootstrap&#x60;);
-    const configHelper &#x3D; await ConfigHelper.getInstance();
-    const redisConfig &#x3D; configHelper.redisConfig;
-    const app &#x3D; await NestFactory.create(module);
-    app.connectMicroservice&lt;MicroserviceOptions&gt;({
-      transport: Transport.REDIS,
-      options: {
-        host: redisConfig.host,
-        port: redisConfig.port,
-      },
-    });
-    await app.startAllMicroservices();
-    const port: number &#x3D; configHelper.getModulePort(module.name);
-    app.useGlobalPipes(new ValidationPipe());
-    await app.listen(port);
-    logger.log(&#x60;Microservice listening on port ${port}...&#x60;);
-  }
+@ObjectType()
+@Entity()
+export class Permission extends BaseEntity {
+  name: string;
 }
 </code></pre>
     </div>
 </div>
+
+
+
+
+
+
 
 
 
@@ -307,8 +235,8 @@ export class Bootstrapper {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'Bootstrapper.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'entity';
+            var COMPODOC_CURRENT_PAGE_URL = 'Permission.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
