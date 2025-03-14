@@ -348,7 +348,7 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @IsOptional()<br />@IsUUID()<br />@Field(undefined)<br />
+                            @IsOptional()<br />@IsUUID()<br />@Field(undefined, {nullable: true})<br />
                         </code>
                     </td>
                 </tr>
@@ -591,7 +591,7 @@ export class CreateUserInput {
 
   @IsOptional()
   @IsUUID()
-  @Field(() &#x3D;&gt; String)
+  @Field(() &#x3D;&gt; String, { nullable: true })
   organizationId: string;
 }
 </code></pre>

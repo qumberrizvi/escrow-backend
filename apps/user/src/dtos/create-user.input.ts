@@ -62,6 +62,6 @@ export class CreateUserInput {
 
   @IsOptional()
   @IsUUID()
-  @Field(() => String)
+  @Field(() => String, { nullable: true })
   organizationId: string;
 }

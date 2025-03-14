@@ -476,9 +476,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/CreateUserTable1741519705062.html" data-type="entity-link" >CreateUserTable1741519705062</a>
                             </li>
                             <li class="link">
-                                <a href="classes/DatabaseUtil.html" data-type="entity-link" >DatabaseUtil</a>
-                            </li>
-                            <li class="link">
                                 <a href="classes/DataSource.html" data-type="entity-link" >DataSource</a>
                             </li>
                             <li class="link">

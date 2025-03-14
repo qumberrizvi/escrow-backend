@@ -250,8 +250,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="26"
-                                    class="link-to-prism">apps/user/src/migrations/1741519705062-CreateUserTable.ts:26</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="24"
+                                    class="link-to-prism">apps/user/src/migrations/1741519705062-CreateUserTable.ts:24</a></div>
                         </td>
                     </tr>
 
@@ -392,19 +392,15 @@ export class CreateUserTable1741519705062 implements MigrationInterface {
                                  &quot;password&quot;        character varying NOT NULL,
                                  &quot;phone&quot;           character varying NOT NULL,
                                  &quot;organization_id&quot; uuid,
-                                 &quot;role&quot;         character varying,
+                                 &quot;role&quot;            character varying,
                                  &quot;created_at&quot;      TIMESTAMP         NOT NULL DEFAULT now(),
                                  &quot;updated_at&quot;      TIMESTAMP                  DEFAULT now(),
                                  &quot;deleted_at&quot;      TIMESTAMP,
                                  CONSTRAINT &quot;PK_a3ffb1c0c8416b9fc6f907b7433&quot; PRIMARY KEY (&quot;id&quot;)
                              )&#x60;);
-    await queryRunner.query(&#x60;ALTER TABLE &quot;user&quot;.&quot;users&quot;
-        ADD CONSTRAINT &quot;FK_a2cecd1a3531c0b041e29ba46e1&quot; FOREIGN KEY (&quot;role&quot;) REFERENCES &quot;user&quot;.&quot;roles&quot; (&quot;name&quot;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
   }
 
   public async down(queryRunner: QueryRunner): Promise&lt;void&gt; {
-    await queryRunner.query(&#x60;ALTER TABLE &quot;user&quot;.&quot;users&quot;
-        DROP CONSTRAINT &quot;FK_a2cecd1a3531c0b041e29ba46e1&quot;&#x60;);
     await queryRunner.query(&#x60;DROP TABLE &quot;user&quot;.&quot;users&quot;&#x60;);
   }
 }

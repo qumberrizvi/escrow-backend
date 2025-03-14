@@ -215,6 +215,9 @@ import { SubgraphsBuilder } from &#x27;@qushah/common&#x27;;
 @Module({})
 export class GraphQLGatewayModule {
   static async register(...subgraphNames: string[]): Promise&lt;DynamicModule&gt; {
+    subgraphNames &#x3D; subgraphNames.map(
+      (name) &#x3D;&gt; name.split(&#x27;_HOST&#x27;)?.[0] || name,
+    );
     return {
       module: GraphQLGatewayModule,
       imports: [

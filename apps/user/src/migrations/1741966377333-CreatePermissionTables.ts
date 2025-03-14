@@ -4,9 +4,6 @@ export class CreatePermissionTables1741966377333 implements MigrationInterface {
   name = 'CreatePermissionTables1741966377333';
 
   public async up(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.query(
-      `ALTER TABLE "user"."users" DROP CONSTRAINT "FK_a2cecd1a3531c0b041e29ba46e1"`,
-    );
     await queryRunner.query(`CREATE TABLE "user"."permissions"
                              (
                                  "name"        character varying NOT NULL,
@@ -51,7 +48,5 @@ export class CreatePermissionTables1741966377333 implements MigrationInterface {
     );
     await queryRunner.query(`DROP TABLE "user"."role_permissions"`);
     await queryRunner.query(`DROP TABLE "user"."permissions"`);
-    await queryRunner.query(`ALTER TABLE "user"."users"
-        ADD CONSTRAINT "FK_a2cecd1a3531c0b041e29ba46e1" FOREIGN KEY ("role") REFERENCES "user"."roles" ("name") ON DELETE NO ACTION ON UPDATE NO ACTION`);
   }
 }
