@@ -526,6 +526,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <li class="link">
                                 <a href="classes/UserResolver-1.html" data-type="entity-link" >UserResolver</a>
                             </li>
+                            <li class="link">
+                                <a href="classes/UserUniqueConstraints1741988202974.html" data-type="entity-link" >UserUniqueConstraints1741988202974</a>
+                            </li>
                         </ul>
                     </li>
                         <li class="chapter">
