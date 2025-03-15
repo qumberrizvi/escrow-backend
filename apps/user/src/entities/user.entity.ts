@@ -30,7 +30,7 @@ export class User extends BaseEntity {
   phone: string;
 
   @Field(() => Role)
-  @ManyToOne(() => Role)
+  @ManyToOne(() => Role, { eager: true })
   @JoinColumn({ name: 'role' })
   role: Role;
 

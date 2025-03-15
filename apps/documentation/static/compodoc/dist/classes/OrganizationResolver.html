@@ -147,6 +147,7 @@
                             </li>
                             <li>
                                     <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                 <a href="#ping" >ping</a>
                             </li>
                         </ul>
@@ -172,7 +173,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">apps/organization/src/resolvers/organization.resolver.ts:6</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">apps/organization/src/resolvers/organization.resolver.ts:7</a></div>
                             </td>
                         </tr>
 
@@ -245,8 +246,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="15"
-                                    class="link-to-prism">apps/organization/src/resolvers/organization.resolver.ts:15</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="17"
+                                    class="link-to-prism">apps/organization/src/resolvers/organization.resolver.ts:17</a></div>
                         </td>
                     </tr>
 
@@ -269,6 +270,7 @@
                     <a name="ping"></a>
                     <span class="name">
                             <span class="modifier"></span>
+                            <span class="modifier"></span>
                         <span ><b>ping</b></span>
                         <a href="#ping"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -285,14 +287,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Query(undefined, {name: &#x27;pingOrganization&#x27;})<br /></code>
+                    <code>@Public()<br />@Query(undefined, {name: &#x27;pingOrganization&#x27;})<br /></code>
                 </td>
             </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="10"
-                                    class="link-to-prism">apps/organization/src/resolvers/organization.resolver.ts:10</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="12"
+                                    class="link-to-prism">apps/organization/src/resolvers/organization.resolver.ts:12</a></div>
                         </td>
                     </tr>
 
@@ -321,11 +323,13 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Query, Resolver } from &#x27;@nestjs/graphql&#x27;;
 import { Organization } from &#x27;../entities/organization.entity&#x27;;
 import { OrganizationService } from &#x27;../organization.service&#x27;;
+import { Public } from &#x27;@qushah/common&#x27;;
 
 @Resolver()
 export class OrganizationResolver {
   constructor(private readonly organizationService: OrganizationService) {}
 
+  @Public()
   @Query(() &#x3D;&gt; String, { name: &#x27;pingOrganization&#x27; })
   ping(): string {
     return &#x27;pong&#x27;;

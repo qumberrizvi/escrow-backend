@@ -7,4 +7,5 @@ export * from './database';
 export * from './decorators';
 export * from './enums';
 export * from './graphql';
+export * from './guards';
 export * from './utils';

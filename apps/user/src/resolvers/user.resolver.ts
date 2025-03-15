@@ -2,11 +2,13 @@ import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { User } from '../entities/user.entity';
 import { UserService } from '../user.service';
 import { CreateUserInput } from '../dtos/create-user.input';
+import { Public } from '@qushah/common';
 
 @Resolver(User)
 export class UserResolver {
   constructor(private readonly userService: UserService) {}
 
+  @Public()
   @Query(() => String, { name: 'pingUser' })
   ping(): string {
     return 'pong';

@@ -11,4 +11,9 @@ export class AuthController {
   getHello(): string {
     return this.authService.getHello();
   }
+
+  @MessagePattern({ cmd: AuthCommand.VALIDATE_TOKEN })
+  validateToken(accessToken: string) {
+    return this.authService.validateToken(accessToken);
+  }
 }

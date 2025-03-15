@@ -1,7 +1,7 @@
 import { Module, Global, DynamicModule } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloGatewayDriver, ApolloGatewayDriverConfig } from '@nestjs/apollo';
-import { IntrospectAndCompose } from '@apollo/gateway';
+import { IntrospectAndCompose, RemoteGraphQLDataSource } from '@apollo/gateway';
 import { SubgraphsBuilder } from '@qushah/common';
 
 @Global()
@@ -22,6 +22,19 @@ export class GraphQLGatewayModule {
                 supergraphSdl: new IntrospectAndCompose({
                   subgraphs: await SubgraphsBuilder.build(...subgraphNames),
                 }),
+                buildService({ url }) {
+                  return new RemoteGraphQLDataSource({
+                    url,
+                    willSendRequest({ request, context }) {
+                      if (context?.req?.headers?.authorization) {
+                        request.http.headers.set(
+                          'Authorization',
+                          context.req.headers.authorization,
+                        );
+                      }
+                    },
+                  });
+                },
               },
             };
           },

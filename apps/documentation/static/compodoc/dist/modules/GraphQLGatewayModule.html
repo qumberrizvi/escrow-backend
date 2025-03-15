@@ -208,7 +208,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Module, Global, DynamicModule } from &#x27;@nestjs/common&#x27;;
 import { GraphQLModule } from &#x27;@nestjs/graphql&#x27;;
 import { ApolloGatewayDriver, ApolloGatewayDriverConfig } from &#x27;@nestjs/apollo&#x27;;
-import { IntrospectAndCompose } from &#x27;@apollo/gateway&#x27;;
+import { IntrospectAndCompose, RemoteGraphQLDataSource } from &#x27;@apollo/gateway&#x27;;
 import { SubgraphsBuilder } from &#x27;@qushah/common&#x27;;
 
 @Global()
@@ -229,6 +229,19 @@ export class GraphQLGatewayModule {
                 supergraphSdl: new IntrospectAndCompose({
                   subgraphs: await SubgraphsBuilder.build(...subgraphNames),
                 }),
+                buildService({ url }) {
+                  return new RemoteGraphQLDataSource({
+                    url,
+                    willSendRequest({ request, context }) {
+                      if (context?.req?.headers?.authorization) {
+                        request.http.headers.set(
+                          &#x27;Authorization&#x27;,
+                          context.req.headers.authorization,
+                        );
+                      }
+                    },
+                  });
+                },
               },
             };
           },

@@ -143,6 +143,7 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                 <a href="#ping" >ping</a>
                             </li>
                         </ul>
@@ -171,6 +172,7 @@
                     <a name="ping"></a>
                     <span class="name">
                             <span class="modifier"></span>
+                            <span class="modifier"></span>
                         <span ><b>ping</b></span>
                         <a href="#ping"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -187,14 +189,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Query(undefined, {name: &#x27;pingEscrow&#x27;})<br /></code>
+                    <code>@Public()<br />@Query(undefined, {name: &#x27;pingEscrow&#x27;})<br /></code>
                 </td>
             </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="6"
-                                    class="link-to-prism">apps/escrow/src/resolvers/escrow.resolver.ts:6</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="8"
+                                    class="link-to-prism">apps/escrow/src/resolvers/escrow.resolver.ts:8</a></div>
                         </td>
                     </tr>
 
@@ -221,9 +223,11 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Query, Resolver } from &#x27;@nestjs/graphql&#x27;;
+import { Public } from &#x27;@qushah/common&#x27;;
 
 @Resolver()
 export class EscrowResolver {
+  @Public()
   @Query(() &#x3D;&gt; String, { name: &#x27;pingEscrow&#x27; })
   ping(): string {
     return &#x27;pong&#x27;;

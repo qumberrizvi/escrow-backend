@@ -5,13 +5,6 @@ import { UserService } from './user.service';
 describe('UserController', () => {
   let userController: UserController;
 
-  const mockClientProxy = {
-    send: jest.fn(() => ({
-      toPromise: jest.fn().mockResolvedValue({}),
-    })),
-    emit: jest.fn(),
-  };
-
   const mockUserService = {
     getHello: jest.fn(() => 'Hello from User Service!'),
   };
@@ -19,10 +12,7 @@ describe('UserController', () => {
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
       controllers: [UserController],
-      providers: [
-        { provide: UserService, useValue: mockUserService },
-        { provide: 'ORGANIZATION_CLIENT', useValue: mockClientProxy },
-      ],
+      providers: [{ provide: UserService, useValue: mockUserService }],
     }).compile();
 
     userController = app.get<UserController>(UserController);

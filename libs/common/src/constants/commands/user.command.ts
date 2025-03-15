@@ -1,3 +1,4 @@
 export const UserCommand = {
   PING_USER: 'PING_USER',
+  FIND_USER_BY_CREDENTIALS: 'FIND_USER_BY_CREDENTIALS',
 };
