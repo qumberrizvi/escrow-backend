@@ -36,7 +36,7 @@ export class SeederService {
   private async seedPermissions() {
     const permissions = Object.values(UserPermission);
     for (const permissionName of permissions) {
-      const permissionExists = await this.roleRepository.findOne({
+      const permissionExists = await this.permissionRepository.findOne({
         where: { name: permissionName },
       });
 
