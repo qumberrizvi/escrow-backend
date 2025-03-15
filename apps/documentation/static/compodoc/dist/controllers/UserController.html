@@ -137,6 +137,10 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier"></span>
+                                <a href="#findByCredentials" >findByCredentials</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
                                 <a href="#getHello" >getHello</a>
                             </li>
                         </ul>
@@ -156,6 +160,82 @@
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findByCredentials"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>findByCredentials</b></span>
+                        <a href="#findByCredentials"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>findByCredentials(input: <a href="../classes/ValidateUserInput.html" target="_self">ValidateUserInput</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@MessagePattern({cmd: undefined})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="17"
+                                    class="link-to-prism">apps/user/src/user.controller.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                            <code><a href="../classes/ValidateUserInput.html" target="_self" >ValidateUserInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -185,8 +265,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="11"
-                                    class="link-to-prism">apps/user/src/user.controller.ts:11</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="12"
+                                    class="link-to-prism">apps/user/src/user.controller.ts:12</a></div>
                         </td>
                     </tr>
 
@@ -210,6 +290,7 @@
 import { UserService } from &#x27;./user.service&#x27;;
 import { MessagePattern } from &#x27;@nestjs/microservices&#x27;;
 import { UserCommand } from &#x27;@qushah/common&#x27;;
+import { ValidateUserInput } from &#x27;./dtos/validate-user.input&#x27;;
 
 @Controller()
 export class UserController {
@@ -218,6 +299,11 @@ export class UserController {
   @MessagePattern({ cmd: UserCommand.PING_USER })
   getHello(): string {
     return this.userService.getHello();
+  }
+
+  @MessagePattern({ cmd: UserCommand.FIND_USER_BY_CREDENTIALS })
+  findByCredentials(input: ValidateUserInput) {
+    return this.userService.validate(input);
   }
 }
 </code></pre>

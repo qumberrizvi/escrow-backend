@@ -1,4 +1,4 @@
-import { Logger } from '@nestjs/common';
+import { Logger, ValidationPipe } from '@nestjs/common';
 import { ConfigHelper } from '@qushah/common';
 import { NestFactory } from '@nestjs/core';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
@@ -18,6 +18,7 @@ export class Bootstrapper {
     });
     await app.startAllMicroservices();
     const port: number = configHelper.getModulePort(module.name);
+    app.useGlobalPipes(new ValidationPipe());
     await app.listen(port);
     logger.log(`Microservice listening on port ${port}...`);
   }

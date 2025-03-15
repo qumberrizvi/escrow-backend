@@ -24,7 +24,6 @@ export class DatabaseModule {
               database,
               schema: schema, // Set schema dynamically
               autoLoadEntities: true,
-              // synchronize: true, // Enable only for development
               ssl: { rejectUnauthorized: false },
             };
 

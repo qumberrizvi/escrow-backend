@@ -143,6 +143,11 @@
                             <li>
                                     <span class="modifier">Private</span>
                                     <span class="modifier">Async</span>
+                                <a href="#seedPermissions" >seedPermissions</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
                                 <a href="#seedRoles" >seedRoles</a>
                             </li>
                         </ul>
@@ -163,12 +168,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(roleRepository: <a href="../classes/Role.html" target="_self">Repository&lt;Role&gt;</a>)</code>
+<code>constructor(roleRepository: <a href="../entitys/Role.html" target="_self">Repository&lt;Role&gt;</a>, permissionRepository: <a href="../classes/Permission.html" target="_self">Repository&lt;Permission&gt;</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">apps/user/src/seeder/seeder.service.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">apps/user/src/seeder/seeder.service.ts:9</a></div>
                             </td>
                         </tr>
 
@@ -189,7 +194,19 @@
                                                         <td>roleRepository</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../classes/Role.html" target="_self" >Repository&lt;Role&gt;</a></code>
+                                                                        <code><a href="../entitys/Role.html" target="_self" >Repository&lt;Role&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>permissionRepository</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/Permission.html" target="_self" >Repository&lt;Permission&gt;</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -233,8 +250,48 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="13"
-                                    class="link-to-prism">apps/user/src/seeder/seeder.service.ts:13</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="16"
+                                    class="link-to-prism">apps/user/src/seeder/seeder.service.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="seedPermissions"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>seedPermissions</b></span>
+                        <a href="#seedPermissions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>seedPermissions()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="36"
+                                    class="link-to-prism">apps/user/src/seeder/seeder.service.ts:36</a></div>
                         </td>
                     </tr>
 
@@ -273,8 +330,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="18"
-                                    class="link-to-prism">apps/user/src/seeder/seeder.service.ts:18</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="21"
+                                    class="link-to-prism">apps/user/src/seeder/seeder.service.ts:21</a></div>
                         </td>
                     </tr>
 
@@ -300,21 +357,24 @@
 import { InjectRepository } from &#x27;@nestjs/typeorm&#x27;;
 import { Repository } from &#x27;typeorm&#x27;;
 import { Role } from &#x27;../entities/role.entity&#x27;;
-import { Roles } from &#x27;@qushah/common&#x27;;
+import { UserPermission, UserRole } from &#x27;@qushah/common&#x27;;
+import { Permission } from &#x27;../entities/permission.entity&#x27;;
 
 @Injectable()
 export class SeederService {
   constructor(
     @InjectRepository(Role) private roleRepository: Repository&lt;Role&gt;,
+    @InjectRepository(Permission)
+    private permissionRepository: Repository&lt;Permission&gt;,
   ) {}
 
   async seed() {
     await this.seedRoles();
-    console.log(&#x27;✅ Database seeding completed.&#x27;);
+    await this.seedPermissions();
   }
 
   private async seedRoles() {
-    const roles &#x3D; Object.values(Roles);
+    const roles &#x3D; Object.values(UserRole);
     for (const roleName of roles) {
       const roleExists &#x3D; await this.roleRepository.findOne({
         where: { name: roleName },
@@ -324,6 +384,22 @@ export class SeederService {
           this.roleRepository.create({ name: roleName }),
         );
         console.log(&#x60;Inserted Role: ${roleName}&#x60;);
+      }
+    }
+  }
+
+  private async seedPermissions() {
+    const permissions &#x3D; Object.values(UserPermission);
+    for (const permissionName of permissions) {
+      const permissionExists &#x3D; await this.permissionRepository.findOne({
+        where: { name: permissionName },
+      });
+
+      if (!permissionExists) {
+        await this.permissionRepository.save(
+          this.permissionRepository.create({ name: permissionName }),
+        );
+        console.log(&#x60;Inserted Permission: ${permissionName}&#x60;);
       }
     }
   }

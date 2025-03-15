@@ -1,13 +1,16 @@
 import { Module, Global, DynamicModule } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloGatewayDriver, ApolloGatewayDriverConfig } from '@nestjs/apollo';
-import { IntrospectAndCompose } from '@apollo/gateway';
+import { IntrospectAndCompose, RemoteGraphQLDataSource } from '@apollo/gateway';
 import { SubgraphsBuilder } from '@qushah/common';
 
 @Global()
 @Module({})
 export class GraphQLGatewayModule {
   static async register(...subgraphNames: string[]): Promise<DynamicModule> {
+    subgraphNames = subgraphNames.map(
+      (name) => name.split('_HOST')?.[0] || name,
+    );
     return {
       module: GraphQLGatewayModule,
       imports: [
@@ -19,6 +22,19 @@ export class GraphQLGatewayModule {
                 supergraphSdl: new IntrospectAndCompose({
                   subgraphs: await SubgraphsBuilder.build(...subgraphNames),
                 }),
+                buildService({ url }) {
+                  return new RemoteGraphQLDataSource({
+                    url,
+                    willSendRequest({ request, context }) {
+                      if (context?.req?.headers?.authorization) {
+                        request.http.headers.set(
+                          'Authorization',
+                          context.req.headers.authorization,
+                        );
+                      }
+                    },
+                  });
+                },
               },
             };
           },

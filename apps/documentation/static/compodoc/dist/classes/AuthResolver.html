@@ -143,6 +143,13 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                <a href="#login" >login</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                 <a href="#ping" >ping</a>
                             </li>
                         </ul>
@@ -157,6 +164,54 @@
     </table>
 </section>
 
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">apps/auth/src/resolvers/auth.resolver.ts:10</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
             <section data-compodoc="block-methods">
@@ -168,8 +223,99 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="login"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                        <span ><b>login</b></span>
+                        <a href="#login"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>login(_input: <a href="../classes/LoginInput.html" target="_self">LoginInput</a>, context: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Public()<br />@UseGuards(LocalAuthGuard)<br />@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="22"
+                                    class="link-to-prism">apps/auth/src/resolvers/auth.resolver.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>_input</td>
+                                            <td>
+                                                            <code><a href="../classes/LoginInput.html" target="_self" >LoginInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>context</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/Login.html" target="_self" >Login</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="ping"></a>
                     <span class="name">
+                            <span class="modifier"></span>
                             <span class="modifier"></span>
                         <span ><b>ping</b></span>
                         <a href="#ping"><span class="icon ion-ios-link"></span></a>
@@ -187,14 +333,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Query(undefined, {name: &#x27;pingAuth&#x27;})<br /></code>
+                    <code>@Public()<br />@Query(undefined, {name: &#x27;pingAuth&#x27;})<br /></code>
                 </td>
             </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="6"
-                                    class="link-to-prism">apps/auth/src/resolvers/auth.resolver.ts:6</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="15"
+                                    class="link-to-prism">apps/auth/src/resolvers/auth.resolver.ts:15</a></div>
                         </td>
                     </tr>
 
@@ -220,13 +366,32 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Query, Resolver } from &#x27;@nestjs/graphql&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Args, Context, Mutation, Query, Resolver } from &#x27;@nestjs/graphql&#x27;;
+import { AuthService } from &#x27;../auth.service&#x27;;
+import { LoginInput } from &#x27;../dtos/login.input&#x27;;
+import { Login } from &#x27;../entities/login-entity&#x27;;
+import { LocalAuthGuard } from &#x27;../guards/local-auth.guard&#x27;;
+import { UseGuards } from &#x27;@nestjs/common&#x27;;
+import { Public } from &#x27;@qushah/common&#x27;;
 
 @Resolver()
 export class AuthResolver {
+  constructor(private readonly authService: AuthService) {}
+
+  @Public()
   @Query(() &#x3D;&gt; String, { name: &#x27;pingAuth&#x27; })
   ping(): string {
     return &#x27;pong&#x27;;
+  }
+
+  @Public()
+  @UseGuards(LocalAuthGuard)
+  @Mutation(() &#x3D;&gt; Login)
+  login(
+    @Args(&#x27;loginInput&#x27;) _input: LoginInput,
+    @Context() context: any,
+  ): Login {
+    return this.authService.login(context.req.user);
   }
 }
 </code></pre>

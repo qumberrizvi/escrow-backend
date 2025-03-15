@@ -143,6 +143,11 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier"></span>
+                                <a href="#createUser" >createUser</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                 <a href="#ping" >ping</a>
                             </li>
                             <li>
@@ -172,7 +177,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">apps/user/src/resolvers/user.resolver.ts:6</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">apps/user/src/resolvers/user.resolver.ts:8</a></div>
                             </td>
                         </tr>
 
@@ -220,8 +225,85 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="createUser"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>createUser</b></span>
+                        <a href="#createUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createUser(input: <a href="../classes/CreateUserInput.html" target="_self">CreateUserInput</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="23"
+                                    class="link-to-prism">apps/user/src/resolvers/user.resolver.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                            <code><a href="../classes/CreateUserInput.html" target="_self" >CreateUserInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../entitys/User.html" target="_self" >Promise&lt;User&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="ping"></a>
                     <span class="name">
+                            <span class="modifier"></span>
                             <span class="modifier"></span>
                         <span ><b>ping</b></span>
                         <a href="#ping"><span class="icon ion-ios-link"></span></a>
@@ -239,14 +321,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Query(undefined, {name: &#x27;pingUser&#x27;})<br /></code>
+                    <code>@Public()<br />@Query(undefined, {name: &#x27;pingUser&#x27;})<br /></code>
                 </td>
             </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="10"
-                                    class="link-to-prism">apps/user/src/resolvers/user.resolver.ts:10</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="13"
+                                    class="link-to-prism">apps/user/src/resolvers/user.resolver.ts:13</a></div>
                         </td>
                     </tr>
 
@@ -285,14 +367,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Query(undefined)<br /></code>
+                    <code>@Query(undefined, {nullable: true})<br /></code>
                 </td>
             </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="15"
-                                    class="link-to-prism">apps/user/src/resolvers/user.resolver.ts:15</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="18"
+                                    class="link-to-prism">apps/user/src/resolvers/user.resolver.ts:18</a></div>
                         </td>
                     </tr>
 
@@ -318,22 +400,30 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Query, Resolver } from &#x27;@nestjs/graphql&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Args, Mutation, Query, Resolver } from &#x27;@nestjs/graphql&#x27;;
 import { User } from &#x27;../entities/user.entity&#x27;;
 import { UserService } from &#x27;../user.service&#x27;;
+import { CreateUserInput } from &#x27;../dtos/create-user.input&#x27;;
+import { Public } from &#x27;@qushah/common&#x27;;
 
 @Resolver(User)
 export class UserResolver {
   constructor(private readonly userService: UserService) {}
 
+  @Public()
   @Query(() &#x3D;&gt; String, { name: &#x27;pingUser&#x27; })
   ping(): string {
     return &#x27;pong&#x27;;
   }
 
-  @Query(() &#x3D;&gt; [User])
+  @Query(() &#x3D;&gt; [User], { nullable: true })
   users(): Promise&lt;User[]&gt; {
     return this.userService.find();
+  }
+
+  @Mutation(() &#x3D;&gt; User)
+  createUser(@Args(&#x27;input&#x27;) input: CreateUserInput): Promise&lt;User&gt; {
+    return this.userService.create(input);
   }
 }
 </code></pre>

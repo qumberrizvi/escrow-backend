@@ -1,11 +1,13 @@
 import { Field, ObjectType } from '@nestjs/graphql';
-import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
+import { Column, Entity, JoinColumn, ManyToOne, Unique } from 'typeorm';
 import { BaseEntity, GraphQLFederationDirective } from '@qushah/common';
-import { Role } from './role.entity';
 import { Organization } from './external/organization.entity';
+import { Role } from './role.entity';
 
 @ObjectType()
 @Entity({ name: 'users' })
+@Unique(['email', 'organizationId'])
+@Unique(['phone', 'organizationId'])
 @GraphQLFederationDirective('@key(fields: "id")')
 export class User extends BaseEntity {
   @Field(() => String)
@@ -28,8 +30,8 @@ export class User extends BaseEntity {
   phone: string;
 
   @Field(() => Role)
-  @ManyToOne(() => Role)
-  @JoinColumn({ name: 'role_id' })
+  @ManyToOne(() => Role, { eager: true })
+  @JoinColumn({ name: 'role' })
   role: Role;
 
   @Field(() => String, { nullable: true })

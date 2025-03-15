@@ -245,7 +245,7 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Logger } from &#x27;@nestjs/common&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Logger, ValidationPipe } from &#x27;@nestjs/common&#x27;;
 import { ConfigHelper } from &#x27;@qushah/common&#x27;;
 import { NestFactory } from &#x27;@nestjs/core&#x27;;
 import { MicroserviceOptions, Transport } from &#x27;@nestjs/microservices&#x27;;
@@ -265,6 +265,7 @@ export class Bootstrapper {
     });
     await app.startAllMicroservices();
     const port: number &#x3D; configHelper.getModulePort(module.name);
+    app.useGlobalPipes(new ValidationPipe());
     await app.listen(port);
     logger.log(&#x60;Microservice listening on port ${port}...&#x60;);
   }
